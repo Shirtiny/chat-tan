@@ -1,0 +1,52 @@
+{
+  "git": {
+    "sha": "06b288541dd476ee9a62d17d78f25e6f8c58c418",
+    "abbreviatedSha": "06b288541d",
+    "branch": "master",
+    "tag": "0.0.1",
+    "committer": "majh <majh@cunxin.com>",
+    "committerDate": "2023-03-25T09:31:12.000Z",
+    "author": "majh <majh@cunxin.com>",
+    "authorDate": "2023-03-25T09:31:12.000Z",
+    "commitMessage": "first",
+    "root": "D:\\dev\\tauri-app",
+    "commonGitDir": "D:\\dev\\tauri-app\\.git",
+    "worktreeGitDir": "D:\\dev\\tauri-app\\.git",
+    "lastTag": "0.0.1",
+    "commitsSinceLastTag": 0
+  },
+  "package": {
+    "name": "tauri-app",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+      "predev": "yarn node ./.scripts/init.cjs",
+      "prebuild": "yarn node ./.scripts/init.cjs",
+      "dev": "yarn predev && vite",
+      "build": "yarn prebuild && tsc && vite build",
+      "preview": "vite preview",
+      "win": "tauri dev",
+      "ad": "cargo tauri android init && cargo tauri android dev"
+    },
+    "dependencies": {
+      "@shirtiny/logger": "latest",
+      "@tauri-apps/api": "next",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+      "@tauri-apps/cli": "next",
+      "@types/node": "^18.7.10",
+      "@types/react": "^18.0.15",
+      "@types/react-dom": "^18.0.6",
+      "@vitejs/plugin-react": "^3.0.0",
+      "git-repo-info": "^2.1.1",
+      "internal-ip": "^7.0.0",
+      "shelljs": "^0.8.5",
+      "typescript": "^4.9.3",
+      "vite": "^4.1.0"
+    },
+    "packageManager": "yarn@3.5.0"
+  }
+}

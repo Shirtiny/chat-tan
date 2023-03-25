@@ -2,13 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tauri + React + TS</title>
+    <title>Chat Tan</title>
+    <script
+      async
+      defer
+      src="https://www.recaptcha.net/recaptcha/api.js?onload=recaptchaCallback&render=6Lf8ohclAAAAAInG1aKYnPBL4129L8vP6ENZtNo4"
+    ></script>
   </head>
 
   <body>
     <div id="root"></div>
+    <script>
+      var recaptchaCallback = function () {
+        console.log("recaptcha callback");
+        grecaptcha.ready(function () {
+          console.log("recaptcha is ready"); // not showing
+        });
+      };
+      // How this code snippet works:
+      // This logic overwrites the default behavior of `grecaptcha.ready()` to
+      // ensure that it can be safely called at any time. When `grecaptcha.ready()`
+      // is called before reCAPTCHA is loaded, the callback function that is passed
+      // by `grecaptcha.ready()` is enqueued for execution after reCAPTCHA is
+      // loaded.
+      if (typeof grecaptcha === "undefined") {
+        grecaptcha = {};
+      }
+      grecaptcha.ready = function (cb) {
+        if (typeof grecaptcha === "undefined") {
+          // window.__grecaptcha_cfg is a global variable that stores reCAPTCHA's
+          // configuration. By default, any functions listed in its 'fns' property
+          // are automatically executed when reCAPTCHA loads.
+          const c = "___grecaptcha_cfg";
+          window[c] = window[c] || {};
+          (window[c]["fns"] = window[c]["fns"] || []).push(cb);
+        } else {
+          cb();
+        }
+      };
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

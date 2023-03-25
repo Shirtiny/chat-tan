@@ -1,16 +1,34 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/tauri";
+import { logVersion } from "./utils/logger";
 import "./App.css";
+
+logVersion();
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
+  const [count, setCount] = useState(0);
 
   async function greet() {
+    if (!window.__TAURI_IPC__) return;
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-    setGreetMsg(await invoke("greet", { name }));
+    const message = (await invoke("greet", { name })) as string;
+    setGreetMsg(message);
   }
+
+  const verify = useCallback(async () => {
+    setCount((v) => v + 1);
+    const grecaptcha = (window as any).grecaptcha;
+    grecaptcha.ready(async () => {
+      const token = await grecaptcha.execute(
+        "6Lf8ohclAAAAAInG1aKYnPBL4129L8vP6ENZtNo4",
+        { action: "login" }
+      );
+      console.log("token", token);
+    });
+  }, []);
 
   return (
     <div className="container">
@@ -46,6 +64,12 @@ function App() {
         </form>
       </div>
       <p>{greetMsg}</p>
+
+      <div style={{ textAlign: "center" }}>
+        <button onClick={verify} style={{ width: "fit-content" }}>
+          count is {count}
+        </button>
+      </div>
     </div>
   );
 }

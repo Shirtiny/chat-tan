@@ -504,7 +504,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shirtiny/logger@npm:^3.2.1":
+"@shirtiny/logger@npm:latest":
   version: 3.2.1
   resolution: "@shirtiny/logger@npm:3.2.1"
   checksum: c8dc10c9c14829b3b54e47294830e372831bf07106bb2832a90b1200921fc8442e50c34efb95d7f683c87e954b02f7ca61f8b412c705bc3d993f6f11b175b18d
@@ -2129,7 +2129,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "tauri-app@workspace:."
   dependencies:
-    "@shirtiny/logger": ^3.2.1
+    "@shirtiny/logger": latest
     "@tauri-apps/api": next
     "@tauri-apps/cli": next
     "@types/node": ^18.7.10
@@ -2141,8 +2141,8 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     shelljs: ^0.8.5
-    typescript: ^4.6.4
-    vite: ^4.0.0
+    typescript: ^4.9.3
+    vite: ^4.1.0
   languageName: unknown
   linkType: soft
 
@@ -2153,7 +2153,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.6.4":
+"typescript@npm:^4.9.3":
   version: 4.9.5
   resolution: "typescript@npm:4.9.5"
   bin:
@@ -2163,7 +2163,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.6.4#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.9.3#~builtin<compat/typescript>":
   version: 4.9.5
   resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"
   bin:
@@ -2212,7 +2212,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^4.0.0":
+"vite@npm:^4.1.0":
   version: 4.2.1
   resolution: "vite@npm:4.2.1"
   dependencies:
