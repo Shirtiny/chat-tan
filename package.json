@@ -1,0 +1,33 @@
+{
+  "name": "tauri-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "postinstall": "node ./.scripts/init.js",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri dev",
+    "ad": "cargo tauri android dev"
+  },
+  "dependencies": {
+    "@shirtiny/logger": "^3.2.1",
+    "@tauri-apps/api": "next",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "next",
+    "@types/node": "^18.7.10",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^3.0.0",
+    "git-repo-info": "^2.1.1",
+    "internal-ip": "^7.0.0",
+    "shelljs": "^0.8.5",
+    "typescript": "^4.6.4",
+    "vite": "^4.0.0"
+  },
+  "packageManager": "yarn@3.5.0"
+}
