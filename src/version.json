@@ -1,19 +1,22 @@
 {
   "git": {
-    "sha": "06b288541dd476ee9a62d17d78f25e6f8c58c418",
-    "abbreviatedSha": "06b288541d",
-    "branch": "master",
-    "tag": "0.0.1",
+    "sha": "6028229d3aa340b1d4dcd98b5aab66ab5310e0d6",
+    "abbreviatedSha": "6028229d3a",
+    "branch": "main",
+    "tag": null,
     "committer": "majh <majh@cunxin.com>",
-    "committerDate": "2023-03-25T09:31:12.000Z",
+    "committerDate": "2023-03-25T10:53:12.000Z",
     "author": "majh <majh@cunxin.com>",
-    "authorDate": "2023-03-25T09:31:12.000Z",
-    "commitMessage": "first",
+    "authorDate": "2023-03-25T10:53:12.000Z",
+    "commitMessage": "update",
     "root": "D:\\dev\\tauri-app",
     "commonGitDir": "D:\\dev\\tauri-app\\.git",
     "worktreeGitDir": "D:\\dev\\tauri-app\\.git",
     "lastTag": "0.0.1",
-    "commitsSinceLastTag": 0
+    "commitsSinceLastTag": 2,
+    "parents": [
+      "491b462a7d8f367de5422cfee932c652593d0f9a"
+    ]
   },
   "package": {
     "name": "tauri-app",
