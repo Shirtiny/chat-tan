@@ -3,6 +3,7 @@ const { promises: fsP, writeFileSync } = require("fs");
 const getRepoInfo = require("git-repo-info");
 
 const versionFilePath = path.resolve(__dirname, "../src/version.json");
+const publicVersionFilePath = path.resolve(__dirname, "../public/version.json");
 
 const run = async () => {
   const git = getRepoInfo();
@@ -15,10 +16,10 @@ const run = async () => {
   }
   console.log("versionFilePath", versionFilePath);
   console.log("is versionFile exist", isExist);
-
+  console.log("lastTag", git.lastTag);
   if (!git.lastTag) {
-    git.lastTag = "0.0.0"
-  };
+    return;
+  }
 
   git.branch; // current branch
   git.sha; // current sha
@@ -43,7 +44,6 @@ const run = async () => {
   const packages = JSON.parse(
     await fsP.readFile(path.resolve(__dirname, "../package.json"), "utf8")
   );
-  // package.version = git.lastTag || package.version; // current version
 
   const versionInfo = { git, package: packages };
 
@@ -51,6 +51,11 @@ const run = async () => {
 
   await fsP.writeFile(
     versionFilePath,
+    JSON.stringify(versionInfo, null, 2),
+    "utf8"
+  );
+  await fsP.writeFile(
+    publicVersionFilePath,
     JSON.stringify(versionInfo, null, 2),
     "utf8"
   );
