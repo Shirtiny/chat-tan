@@ -7,15 +7,7 @@ const publicVersionFilePath = path.resolve(__dirname, "../public/version.json");
 
 const run = async () => {
   const git = getRepoInfo();
-  let isExist = false;
-  try {
-    const stats = await fsP.stat(versionFilePath);
-    isExist = stats.isFile();
-  } catch (e) {
-    writeFileSync(versionFilePath, "");
-  }
   console.log("versionFilePath", versionFilePath);
-  console.log("is versionFile exist", isExist);
   console.log("lastTag", git.lastTag);
   if (!git.lastTag) {
     return;
@@ -59,6 +51,20 @@ const run = async () => {
     JSON.stringify(versionInfo, null, 2),
     "utf8"
   );
+
+  let isExist = false;
+  try {
+    const results = await Promise.all(
+      [versionFilePath, publicVersionFilePath].map(async (p) => {
+        const s = await fsP.stat(p);
+        return s.isFile();
+      })
+    );
+    isExist = results.every((b) => b);
+  } catch (e) {
+    isExist = false;
+  }
+  console.log("is version file all exist", isExist);
 };
 
 run();

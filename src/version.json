@@ -1,21 +1,21 @@
 {
   "git": {
-    "sha": "defcfc8494440fd49bfbbf976b657a89f82b1e5c",
-    "abbreviatedSha": "defcfc8494",
+    "sha": "5c477e2f4aa9c5f5fd22e4f5bec87eb440adb4a5",
+    "abbreviatedSha": "5c477e2f4a",
     "branch": "main",
-    "tag": "0.0.2",
+    "tag": null,
     "committer": "majh <majh@cunxin.com>",
-    "committerDate": "2023-03-25T11:12:08.000Z",
+    "committerDate": "2023-03-25T11:20:47.000Z",
     "author": "majh <majh@cunxin.com>",
-    "authorDate": "2023-03-25T11:12:08.000Z",
-    "commitMessage": "update app name",
-    "root": "D:\\dev\\tauri-app",
-    "commonGitDir": "D:\\dev\\tauri-app\\.git",
-    "worktreeGitDir": "D:\\dev\\tauri-app\\.git",
+    "authorDate": "2023-03-25T11:20:47.000Z",
+    "commitMessage": "git push",
+    "root": "D:\\dev\\chat-tan",
+    "commonGitDir": "D:\\dev\\chat-tan\\.git",
+    "worktreeGitDir": "D:\\dev\\chat-tan\\.git",
     "lastTag": "0.0.2",
-    "commitsSinceLastTag": 0,
+    "commitsSinceLastTag": 1,
     "parents": [
-      "cba48545854a3c7b69c89056e71deeaae64645c3"
+      "defcfc8494440fd49bfbbf976b657a89f82b1e5c"
     ]
   },
   "package": {
