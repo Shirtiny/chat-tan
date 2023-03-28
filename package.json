@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "vscode-support": "yarn dlx @yarnpkg/sdks vscode",
     "predev": "yarn node ./.scripts/init.cjs",
     "prebuild": "yarn node ./.scripts/init.cjs",
     "dev": "yarn predev && vite",
@@ -15,12 +16,14 @@
   "dependencies": {
     "@shirtiny/logger": "latest",
     "@tauri-apps/api": "next",
+    "eccrypto-js": "^5.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@tauri-apps/cli": "next",
     "@types/node": "^18.7.10",
+    "@types/node-forge": "^1.3.1",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^3.0.0",
