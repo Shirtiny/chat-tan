@@ -14,11 +14,13 @@
     "ad": "cargo tauri android init && cargo tauri android dev"
   },
   "dependencies": {
-    "@shirtiny/logger": "latest",
+    "@shirtiny/logger": "^3.2.1",
+    "@shirtiny/utils": "latest",
     "@tauri-apps/api": "next",
     "eccrypto-js": "^5.4.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "snappyjs": "^0.7.0"
   },
   "devDependencies": {
     "@tauri-apps/cli": "next",

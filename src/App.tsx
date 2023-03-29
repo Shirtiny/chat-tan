@@ -1,15 +1,19 @@
 import { useState, useCallback } from "react";
-import * as eccryptoJS from 'eccrypto-js';
-
-const pubKeyPem = `
-`;
+import snappy from "snappyjs";
+import { str2ab, ab2str } from "@shirtiny/utils/lib/base64";
 
 function App() {
   const [input, setInput] = useState("");
 
   const handleEncode = useCallback(() => {
-    // const pubKey = PublicKey.fromHex(pubKeyPem);
-    // console.log(input, pubKey);
+    const ab = str2ab(input);
+    console.log("str2ab", ab);
+
+    const result = snappy.compress(ab);
+    console.log("result\n", result);
+
+    const uncompressData = snappy.uncompress(result);
+    console.log("uncompress\n", ab2str(uncompressData));
   }, [input]);
 
   return (

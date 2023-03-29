@@ -29,6 +29,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@shirtiny/logger", "npm:3.2.1"],\
+            ["@shirtiny/utils", "npm:1.1.0"],\
             ["@tauri-apps/api", "npm:2.0.0-alpha.1"],\
             ["@tauri-apps/cli", "npm:2.0.0-alpha.4"],\
             ["@types/node", "npm:18.15.7"],\
@@ -42,6 +43,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:18.2.0"],\
             ["shelljs", "npm:0.8.5"],\
+            ["snappyjs", "npm:0.7.0"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
             ["vite", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:4.2.1"]\
           ],\
@@ -675,6 +677,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@shirtiny/utils", [\
+        ["npm:1.1.0", {\
+          "packageLocation": "./.yarn/cache/@shirtiny-utils-npm-1.1.0-e9a65fdd80-155bdfb465.zip/node_modules/@shirtiny/utils/",\
+          "packageDependencies": [\
+            ["@shirtiny/utils", "npm:1.1.0"],\
+            ["date-fns", "npm:2.29.3"],\
+            ["rxjs", "npm:7.8.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@tauri-apps/api", [\
         ["npm:2.0.0-alpha.1", {\
           "packageLocation": "./.yarn/cache/@tauri-apps-api-npm-2.0.0-alpha.1-9a662b926e-deace727d4.zip/node_modules/@tauri-apps/api/",\
@@ -1139,6 +1152,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["chat-tan", "workspace:."],\
             ["@shirtiny/logger", "npm:3.2.1"],\
+            ["@shirtiny/utils", "npm:1.1.0"],\
             ["@tauri-apps/api", "npm:2.0.0-alpha.1"],\
             ["@tauri-apps/cli", "npm:2.0.0-alpha.4"],\
             ["@types/node", "npm:18.15.7"],\
@@ -1152,6 +1166,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:18.2.0"],\
             ["shelljs", "npm:0.8.5"],\
+            ["snappyjs", "npm:0.7.0"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
             ["vite", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:4.2.1"]\
           ],\
@@ -1288,6 +1303,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/csstype-npm-3.1.1-3857baf48b-1f7b4f5fdd.zip/node_modules/csstype/",\
           "packageDependencies": [\
             ["csstype", "npm:3.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["date-fns", [\
+        ["npm:2.29.3", {\
+          "packageLocation": "./.yarn/cache/date-fns-npm-2.29.3-fef7e3c72c-e01cf5b62a.zip/node_modules/date-fns/",\
+          "packageDependencies": [\
+            ["date-fns", "npm:2.29.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2593,6 +2617,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["rxjs", [\
+        ["npm:7.8.0", {\
+          "packageLocation": "./.yarn/cache/rxjs-npm-7.8.0-722f1c7172-61b4d4fd32.zip/node_modules/rxjs/",\
+          "packageDependencies": [\
+            ["rxjs", "npm:7.8.0"],\
+            ["tslib", "npm:2.5.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["safe-buffer", [\
         ["npm:5.2.1", {\
           "packageLocation": "./.yarn/cache/safe-buffer-npm-5.2.1-3481c8aa9b-b99c4b41fd.zip/node_modules/safe-buffer/",\
@@ -2725,6 +2759,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["snappyjs", [\
+        ["npm:0.7.0", {\
+          "packageLocation": "./.yarn/cache/snappyjs-npm-0.7.0-71a4782584-d0baa6197e.zip/node_modules/snappyjs/",\
+          "packageDependencies": [\
+            ["snappyjs", "npm:0.7.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["socks", [\
         ["npm:2.7.1", {\
           "packageLocation": "./.yarn/cache/socks-npm-2.7.1-17f2b53052-259d9e3e8e.zip/node_modules/socks/",\
@@ -2847,6 +2890,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/to-fast-properties-npm-2.0.0-0dc60cc481-be2de62fe5.zip/node_modules/to-fast-properties/",\
           "packageDependencies": [\
             ["to-fast-properties", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["tslib", [\
+        ["npm:2.5.0", {\
+          "packageLocation": "./.yarn/cache/tslib-npm-2.5.0-bb364efebd-ae3ed5f9ce.zip/node_modules/tslib/",\
+          "packageDependencies": [\
+            ["tslib", "npm:2.5.0"]\
           ],\
           "linkType": "HARD"\
         }]\
