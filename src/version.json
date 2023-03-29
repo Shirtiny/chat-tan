@@ -1,21 +1,21 @@
 {
   "git": {
-    "sha": "5c477e2f4aa9c5f5fd22e4f5bec87eb440adb4a5",
-    "abbreviatedSha": "5c477e2f4a",
+    "sha": "db3cc32f0939419ecd4cf0d7fb765c9fb77f1d97",
+    "abbreviatedSha": "db3cc32f09",
     "branch": "main",
     "tag": null,
-    "committer": "majh <majh@cunxin.com>",
-    "committerDate": "2023-03-25T11:20:47.000Z",
-    "author": "majh <majh@cunxin.com>",
-    "authorDate": "2023-03-25T11:20:47.000Z",
-    "commitMessage": "git push",
+    "committer": "Shirtiny <49592759+Shirtiny@users.noreply.github.com>",
+    "committerDate": "2023-03-29T10:27:01.000Z",
+    "author": "Shirtiny <49592759+Shirtiny@users.noreply.github.com>",
+    "authorDate": "2023-03-29T10:27:01.000Z",
+    "commitMessage": "test snappy",
     "root": "D:\\dev\\chat-tan",
     "commonGitDir": "D:\\dev\\chat-tan\\.git",
     "worktreeGitDir": "D:\\dev\\chat-tan\\.git",
     "lastTag": "0.0.2",
-    "commitsSinceLastTag": 1,
+    "commitsSinceLastTag": 4,
     "parents": [
-      "defcfc8494440fd49bfbbf976b657a89f82b1e5c"
+      "f81b896fd97f8db7fa072650d2c32ce534e6be39"
     ]
   },
   "package": {
@@ -24,6 +24,7 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
+      "vscode-support": "yarn dlx @yarnpkg/sdks vscode",
       "predev": "yarn node ./.scripts/init.cjs",
       "prebuild": "yarn node ./.scripts/init.cjs",
       "dev": "yarn predev && vite",
@@ -33,20 +34,32 @@
       "ad": "cargo tauri android init && cargo tauri android dev"
     },
     "dependencies": {
-      "@shirtiny/logger": "latest",
+      "@fontsource/jetbrains-mono": "^4.5.12",
+      "@shirtiny/logger": "^3.3.0",
+      "@shirtiny/utils": "^1.1.0",
       "@tauri-apps/api": "next",
+      "eccrypto-js": "^5.4.0",
+      "modern-normalize": "^1.1.0",
+      "nprogress": "^0.2.0",
       "react": "^18.2.0",
-      "react-dom": "^18.2.0"
+      "react-dom": "^18.2.0",
+      "react-icons": "^4.8.0",
+      "react-router-dom": "^6.9.0",
+      "snappyjs": "^0.7.0"
     },
     "devDependencies": {
       "@tauri-apps/cli": "next",
       "@types/node": "^18.7.10",
+      "@types/node-forge": "^1.3.1",
+      "@types/nprogress": "^0.2.0",
       "@types/react": "^18.0.15",
       "@types/react-dom": "^18.0.6",
       "@vitejs/plugin-react": "^3.0.0",
       "git-repo-info": "^2.1.1",
       "internal-ip": "^7.0.0",
+      "sass": "^1.60.0",
       "shelljs": "^0.8.5",
+      "terser": "^5.16.8",
       "typescript": "^4.9.3",
       "vite": "^4.1.0"
     },

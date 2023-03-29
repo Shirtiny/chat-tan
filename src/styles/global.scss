@@ -1,0 +1,60 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+
+  font-family: "JetBrains Mono", monospace, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  /* will-change: background-color, color; */
+}
+
+#rc-anchor-container,
+.rc-anchor,
+.grecaptcha-badge {
+  display: none !important;
+}
+
+
+.root-app-layout {
+  font-size: .16rem;
+}
+
+.flex-space {
+  flex: 1;
+}
+
+html[data-theme="fashion"]:root {
+  --color-primary: #ff7576;
+  --color-primary-light: #ff9b9c;
+  --color-primary-dark: #ff4e4f;
+  --color-primary-background-color: #fdfdfd;
+  --color-primary-background-color-dark: #f6f6f6;
+  --color-primary-text: #8b8b8b;
+  --color-primary-text-light: #fff;
+  --color-primary-text-dark: #848484;
+  --color-primary-text-lighter: #fff;
+  --color-primary-text-darker: #fff;
+}
+
+html[data-theme="miku"]:root {
+  --color-primary: #00b7c3;
+  --color-primary-light: #00d9e6;
+  --color-primary-dark: #0097a3;
+  --color-primary-background-color: #fdfdfd;
+  --color-primary-background-color-dark: #f6f6f6;
+  --color-primary-text: #8b8b8b;
+  --color-primary-text-light: #fff;
+  --color-primary-text-dark: #848484;
+  --color-primary-text-lighter: #fff;
+  --color-primary-text-darker: #fff;
+}
