@@ -17,7 +17,7 @@ const v1: RouteObject[] = [
         path: "chat",
         lazy: async () => {
           const { default: Component } = await import("@/pages/Chat");
-          return { loader: () => {}, Component };
+          return { loader: () => null, Component };
         },
       },
     ],
