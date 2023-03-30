@@ -3,6 +3,7 @@ import { redirect } from "react-router-dom";
 import ChatLayout from "@/layouts/Chat";
 // import ChatPage from "@/pages/Chat";
 import ErrorPage from "@/pages/Error";
+import NotFoundPage from "@/pages/404";
 
 (window as any).redirect = redirect;
 
@@ -20,6 +21,7 @@ const v1: RouteObject[] = [
           return { loader: () => null, Component };
         },
       },
+      { path: "*", element: <NotFoundPage /> },
     ],
   },
   // {
