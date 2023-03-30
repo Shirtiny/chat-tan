@@ -1,21 +1,24 @@
-import { RouteObject, redirect } from "react-router-dom";
+import type { RouteObject } from "react-router-dom";
+import { redirect } from "react-router-dom";
 import ChatLayout from "@/layouts/Chat";
-import ChatPage from "@/pages/Chat";
+// import ChatPage from "@/pages/Chat";
 import ErrorPage from "@/pages/Error";
 
 (window as any).redirect = redirect;
 
-const v1 = [
+const v1: RouteObject[] = [
   {
     path: "/",
     errorElement: <ErrorPage />,
-    Element: ChatLayout,
+    element: <ChatLayout />,
     children: [
       {
         index: true,
         path: "chat",
-        element: <ChatPage />,
-        // lazy: () => import("@/pages/Chat")
+        lazy: async () => {
+          const { default: Component } = await import("@/pages/Chat");
+          return { loader: () => {}, Component };
+        },
       },
     ],
   },

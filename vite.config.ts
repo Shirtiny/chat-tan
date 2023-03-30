@@ -28,6 +28,7 @@ export default defineConfig(async () => {
       target: ["es2015"],
       minify: "terser",
     },
+    base: "./"
   };
   return config;
 });

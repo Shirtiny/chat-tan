@@ -1,6 +1,10 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
-const ChatLayout: FC<any> = ({ children }) => {
+interface Props {
+  children?: ReactNode;
+}
+
+const ChatLayout: FC<Props> = ({  }) => {
   return <div>chat layout {children}</div>;
 };
 

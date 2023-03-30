@@ -4,14 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "vscode-support": "yarn dlx @yarnpkg/sdks vscode",
     "predev": "yarn node ./.scripts/init.cjs",
     "prebuild": "yarn node ./.scripts/init.cjs",
     "dev": "yarn predev && vite",
     "build": "yarn prebuild && tsc && vite build",
     "preview": "vite preview",
     "win": "tauri dev",
-    "ad": "cargo tauri android init && cargo tauri android dev"
+    "ad": "cargo tauri android init && cargo tauri android dev",
+    "vscode-support": "yarn dlx @yarnpkg/sdks vscode",
+    "install-netlify": "npm install -g netlify-cli",
+    "deploy:preview": "ntl deploy",
+    "deploy:prod": "ntl deploy --prod"
   },
   "dependencies": {
     "@fontsource/jetbrains-mono": "^4.5.12",
