@@ -4,7 +4,7 @@ interface Props {
   children?: ReactNode;
 }
 
-const ChatLayout: FC<Props> = ({  }) => {
+const ChatLayout: FC<Props> = ({ children }) => {
   return <div>chat layout {children}</div>;
 };
 
