@@ -1,4 +1,5 @@
 import { FC, ReactNode, useEffect, useCallback, useLayoutEffect } from "react";
+import { Link, Outlet, useNavigation } from "react-router-dom";
 import { IconContext } from "react-icons/lib";
 import reactiveX from "@shirtiny/utils/lib/reactiveX";
 import dev from "@shirtiny/utils/lib/dev";
@@ -10,13 +11,15 @@ import "modern-normalize/modern-normalize.css";
 // import "@fontsource/jetbrains-mono";
 
 interface IProps {
-  children?: ReactNode;
+  loadingEl?: ReactNode;
 }
 
 (window as any).dev = dev;
 logger.log("dev key taskMap");
 
-const AppLayout: FC<IProps> = ({ children }) => {
+const RootAppLayout: FC<IProps> = ({ loadingEl }) => {
+  const navigation = useNavigation();
+
   const loadRef = useCallback((node: HTMLDivElement) => {
     logger.debug("AppLayout", "loadRef", node);
   }, []);
@@ -43,9 +46,14 @@ const AppLayout: FC<IProps> = ({ children }) => {
 
   return (
     <IconContext.Provider value={{ className: "react-icon", style: {} }}>
-      <div ref={loadRef}>{children}</div>
+      {navigation.state === "loading" ? loadingEl : ""}
+      <div className="root-app-layout" ref={loadRef}>
+        <Link to="/chat">chat</Link>
+        <Link to="/">home</Link>
+        <Outlet />
+      </div>
     </IconContext.Provider>
   );
 };
 
-export default component<IProps>(AppLayout);
+export default component<IProps>(RootAppLayout);

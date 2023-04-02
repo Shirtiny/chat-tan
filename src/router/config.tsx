@@ -1,9 +1,10 @@
 import type { RouteObject } from "react-router-dom";
 import { redirect } from "react-router-dom";
+import RootAppLayout from "@/layouts/index";
 import ChatLayout from "@/layouts/Chat";
-// import ChatPage from "@/pages/Chat";
 import ErrorPage from "@/pages/Error";
 import NotFoundPage from "@/pages/404";
+import Loading from "./Loading";
 
 (window as any).redirect = redirect;
 
@@ -11,7 +12,7 @@ const v1: RouteObject[] = [
   {
     path: "/",
     errorElement: <ErrorPage />,
-    element: <ChatLayout />,
+    element: <RootAppLayout loadingEl={<Loading />} />,
     children: [
       {
         index: true,
