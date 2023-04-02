@@ -1,7 +1,7 @@
 import { FC,  Suspense } from "react";
 import { Routes, Route,} from "react-router-dom";
 import { IRoute } from "./type";
-import RouterLoading from "./Loading";
+import RouterLoading from "../components/Loading";
 import component from "@/hoc/component";
 
 interface IProps {

@@ -1,21 +1,21 @@
 {
   "git": {
-    "sha": "aa5718ec6e2bd22a825579fd6c08b0e393e54b49",
-    "abbreviatedSha": "aa5718ec6e",
+    "sha": "93d92721e55dec69662fbc9b99cb1516ac493e14",
+    "abbreviatedSha": "93d92721e5",
     "branch": "main",
     "tag": null,
-    "committer": "Shirtiny <49592759+Shirtiny@users.noreply.github.com>",
-    "committerDate": "2023-03-30T03:57:27.000Z",
-    "author": "Shirtiny <49592759+Shirtiny@users.noreply.github.com>",
-    "authorDate": "2023-03-30T03:57:27.000Z",
-    "commitMessage": "patch",
+    "committer": "majh <majh@cunxin.com>",
+    "committerDate": "2023-04-02T08:47:16.000Z",
+    "author": "majh <majh@cunxin.com>",
+    "authorDate": "2023-04-02T08:47:16.000Z",
+    "commitMessage": "test",
     "root": "D:\\dev\\chat-tan",
     "commonGitDir": "D:\\dev\\chat-tan\\.git",
     "worktreeGitDir": "D:\\dev\\chat-tan\\.git",
     "lastTag": "0.0.2",
-    "commitsSinceLastTag": 9,
+    "commitsSinceLastTag": 10,
     "parents": [
-      "2717f77c2ed575d9ae37ee0282610a444f3fc8f7"
+      "aa5718ec6e2bd22a825579fd6c08b0e393e54b49"
     ]
   },
   "package": {
