@@ -1,5 +1,6 @@
 import { FC, memo, useLayoutEffect, useEffect } from "react";
 import logger from "@/utils/logger";
+import { cls } from "@shirtiny/utils/lib/style";
 
 interface IOptions {
   memorize?: boolean;
@@ -9,13 +10,15 @@ const defaultOptions = {
   memorize: true,
 };
 
-export default function component<P extends Object>(
+const CLASS_NAME_PREFIX = "chatTan__";
+
+export default function component<P>(
   Component: FC<P>,
   options: IOptions = defaultOptions
 ) {
   const { memorize } = options;
   const componentName = Component.displayName || Component.name;
-  const Func: FC<P> = (props) => {
+  const Func: FC<P> = (props: any) => {
     useLayoutEffect(() => {
       logger.component(componentName, "useLayoutEffect");
     }, []);
@@ -24,7 +27,9 @@ export default function component<P extends Object>(
       logger.component(componentName, "useEffect");
     }, []);
 
-    return <Component {...props} />;
+    return (
+      <Component {...props} data-comp={`${CLASS_NAME_PREFIX}${componentName}`} />
+    );
   };
   Object.assign(Func, Component);
 

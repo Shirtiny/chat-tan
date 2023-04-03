@@ -17,3 +17,9 @@ declare module "snappyjs" {
 
   export default snappy;
 }
+
+declare namespace React {
+  interface HTMLAttributes<T> {
+    [key: string]: any;
+  }
+}

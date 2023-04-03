@@ -5,7 +5,12 @@
     flex-direction: column;
 
     &__header {
-        padding: 0.1rem;
+        padding: 0.08rem 0.16rem;
+
+        display: flex;
+        justify-content: flex-start;
+        height: 0.3rem;
+        
         border-bottom: 1px solid #eeeeee;
     }
 
