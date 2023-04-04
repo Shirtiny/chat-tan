@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import reactLogo from "./assets/react.svg";
+import reactLogo from "../assets/react.svg";
 import { invoke } from "@tauri-apps/api/tauri";
 
 const Component = () => {
