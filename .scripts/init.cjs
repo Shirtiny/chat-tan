@@ -1,4 +1,6 @@
 const shell = require("shelljs");
+const ci = require("ci-info");
+const husky = require("husky");
 
 //检查控制台是否以运行`git `开头的命令
 if (!shell.which("git")) {
@@ -8,4 +10,11 @@ if (!shell.which("git")) {
 }
 
 shell.exec("git pull --tags");
-shell.exec("yarn node .scripts/version.cjs");
+
+if (ci.isCI) {
+  console.log("The name of the CI server is:", ci.name);
+} else {
+  console.log("This program is not running on a CI server");
+  husky.install();
+  shell.exec("yarn node .scripts/version.cjs");
+}
