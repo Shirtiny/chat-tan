@@ -1,21 +1,21 @@
 {
   "git": {
-    "sha": "c607cecf5c8a64cfa68c79052b815e976a008c27",
-    "abbreviatedSha": "c607cecf5c",
+    "sha": "ee84d8bd05af00ffa60de9b5cb5a0bebb8bdec98",
+    "abbreviatedSha": "ee84d8bd05",
     "branch": "main",
     "tag": null,
     "committer": "Shirtiny <49592759+Shirtiny@users.noreply.github.com>",
-    "committerDate": "2023-04-06T07:43:39.000Z",
+    "committerDate": "2023-04-06T07:46:21.000Z",
     "author": "Shirtiny <49592759+Shirtiny@users.noreply.github.com>",
-    "authorDate": "2023-04-06T07:43:39.000Z",
-    "commitMessage": "update husky",
+    "authorDate": "2023-04-06T07:46:21.000Z",
+    "commitMessage": "update",
     "root": "/workspaces/chat-tan",
     "commonGitDir": "/workspaces/chat-tan/.git",
     "worktreeGitDir": "/workspaces/chat-tan/.git",
     "lastTag": null,
     "commitsSinceLastTag": null,
     "parents": [
-      "7c3785c61609e7a2c129e1122ae6968427b5108d"
+      "c607cecf5c8a64cfa68c79052b815e976a008c27"
     ]
   },
   "package": {
@@ -75,8 +75,7 @@
     },
     "packageManager": "yarn@3.5.0",
     "hooks": {
-      "pre-commit": "yarn node ./.scripts/init.cjs && git add .",
-      "pre-commit__test-example": "yarn node ./.scripts/init.cjs exit 1"
+      "pre-commit__test-example": "yarn node any.js exit 1"
     }
   }
 }
