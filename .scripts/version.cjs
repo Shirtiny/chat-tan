@@ -8,8 +8,8 @@ const publicVersionFilePath = path.resolve(__dirname, "../public/version.json");
 const run = async () => {
   const git = getRepoInfo();
   console.log("versionFilePath", versionFilePath);
-  console.log("lastTag", git.lastTag);
-  if (!git.lastTag) {
+  console.log("branch", git.branch);
+  if (!git.branch) {
     return;
   }
 

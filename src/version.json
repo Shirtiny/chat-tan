@@ -1,21 +1,21 @@
 {
   "git": {
-    "sha": "8926b2cf1dc665d4fe15ba9d3e56ac397bd57f0b",
-    "abbreviatedSha": "8926b2cf1d",
+    "sha": "320d055dc40fda330b07f664d5c64f88ad614863",
+    "abbreviatedSha": "320d055dc4",
     "branch": "main",
     "tag": null,
-    "committer": "majh <majh@cunxin.com>",
-    "committerDate": "2023-04-02T11:11:04.000Z",
-    "author": "majh <majh@cunxin.com>",
-    "authorDate": "2023-04-02T11:11:04.000Z",
+    "committer": "Shirtiny <49592759+Shirtiny@users.noreply.github.com>",
+    "committerDate": "2023-04-06T06:17:20.000Z",
+    "author": "Shirtiny <49592759+Shirtiny@users.noreply.github.com>",
+    "authorDate": "2023-04-06T06:17:20.000Z",
     "commitMessage": "update",
-    "root": "D:\\dev\\chat-tan",
-    "commonGitDir": "D:\\dev\\chat-tan\\.git",
-    "worktreeGitDir": "D:\\dev\\chat-tan\\.git",
-    "lastTag": "0.0.2",
-    "commitsSinceLastTag": 11,
+    "root": "/workspaces/chat-tan",
+    "commonGitDir": "/workspaces/chat-tan/.git",
+    "worktreeGitDir": "/workspaces/chat-tan/.git",
+    "lastTag": null,
+    "commitsSinceLastTag": null,
     "parents": [
-      "93d92721e55dec69662fbc9b99cb1516ac493e14"
+      "44a4a7729ab69e79abdcd95a8717cced2e18e3ee"
     ]
   },
   "package": {
@@ -37,7 +37,12 @@
       "deploy:prod": "ntl deploy --prod"
     },
     "dependencies": {
+      "@emotion/cache": "^11.10.7",
+      "@emotion/react": "^11.10.6",
+      "@emotion/serialize": "^1.1.1",
+      "@emotion/utils": "^1.2.0",
       "@fontsource/jetbrains-mono": "^4.5.12",
+      "@novu/notification-center": "^0.13.0",
       "@shirtiny/logger": "^3.3.0",
       "@shirtiny/utils": "^1.1.0",
       "@tauri-apps/api": "next",
