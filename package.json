@@ -6,7 +6,7 @@
   "scripts": {
     "prebuild": "yarn node ./.scripts/init.cjs",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "yarn prebuild && tsc && vite build",
     "preview": "vite preview",
     "win": "tauri dev",
     "ad": "cargo tauri android init && cargo tauri android dev",
@@ -43,6 +43,7 @@
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^3.0.0",
     "ci-info": "^3.8.0",
+    "dotenv": "^16.0.3",
     "git-repo-info": "^2.1.1",
     "husky": "^8.0.3",
     "internal-ip": "^7.0.0",

@@ -2368,6 +2368,7 @@ __metadata:
     "@types/react-dom": ^18.0.6
     "@vitejs/plugin-react": ^3.0.0
     ci-info: ^3.8.0
+    dotenv: ^16.0.3
     git-repo-info: ^2.1.1
     husky: ^8.0.3
     internal-ip: ^7.0.0
@@ -2688,6 +2689,13 @@ __metadata:
   version: 29.4.3
   resolution: "diff-sequences@npm:29.4.3"
   checksum: 28b265e04fdddcf7f9f814effe102cc95a9dec0564a579b5aed140edb24fc345c611ca52d76d725a3cab55d3888b915b5e8a4702e0f6058968a90fa5f41fcde7
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^16.0.3":
+  version: 16.0.3
+  resolution: "dotenv@npm:16.0.3"
+  checksum: afcf03f373d7a6d62c7e9afea6328e62851d627a4e73f2e12d0a8deae1cd375892004f3021883f8aec85932cd2834b091f568ced92b4774625b321db83b827f8
   languageName: node
   linkType: hard
 

@@ -1,22 +1,19 @@
 {
   "git": {
-    "sha": "ee84d8bd05af00ffa60de9b5cb5a0bebb8bdec98",
-    "abbreviatedSha": "ee84d8bd05",
+    "sha": "d03362961de6a3b7f6714d2e3d981d112cfaef21",
+    "abbreviatedSha": "d03362961d",
     "branch": "main",
     "tag": null,
-    "committer": "Shirtiny <49592759+Shirtiny@users.noreply.github.com>",
-    "committerDate": "2023-04-06T07:46:21.000Z",
-    "author": "Shirtiny <49592759+Shirtiny@users.noreply.github.com>",
-    "authorDate": "2023-04-06T07:46:21.000Z",
-    "commitMessage": "update",
-    "root": "/workspaces/chat-tan",
-    "commonGitDir": "/workspaces/chat-tan/.git",
-    "worktreeGitDir": "/workspaces/chat-tan/.git",
+    "committer": null,
+    "committerDate": null,
+    "author": null,
+    "authorDate": null,
+    "commitMessage": null,
+    "root": "D:\\dev\\chat-tan",
+    "commonGitDir": "D:\\dev\\chat-tan\\.git",
+    "worktreeGitDir": "D:\\dev\\chat-tan\\.git",
     "lastTag": null,
-    "commitsSinceLastTag": null,
-    "parents": [
-      "c607cecf5c8a64cfa68c79052b815e976a008c27"
-    ]
+    "commitsSinceLastTag": null
   },
   "package": {
     "name": "chat-tan",
@@ -63,6 +60,7 @@
       "@types/react-dom": "^18.0.6",
       "@vitejs/plugin-react": "^3.0.0",
       "ci-info": "^3.8.0",
+      "dotenv": "^16.0.3",
       "git-repo-info": "^2.1.1",
       "husky": "^8.0.3",
       "internal-ip": "^7.0.0",

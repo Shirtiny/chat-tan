@@ -46,6 +46,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.0.11"],\
             ["@vitejs/plugin-react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.1.0"],\
             ["ci-info", "npm:3.8.0"],\
+            ["dotenv", "npm:16.0.3"],\
             ["git-repo-info", "npm:2.1.1"],\
             ["husky", "npm:8.0.3"],\
             ["internal-ip", "npm:7.0.0"],\
@@ -3408,6 +3409,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.0.11"],\
             ["@vitejs/plugin-react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.1.0"],\
             ["ci-info", "npm:3.8.0"],\
+            ["dotenv", "npm:16.0.3"],\
             ["git-repo-info", "npm:2.1.1"],\
             ["husky", "npm:8.0.3"],\
             ["internal-ip", "npm:7.0.0"],\
@@ -3789,6 +3791,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/diff-sequences-npm-29.4.3-ffe403944f-28b265e04f.zip/node_modules/diff-sequences/",\
           "packageDependencies": [\
             ["diff-sequences", "npm:29.4.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["dotenv", [\
+        ["npm:16.0.3", {\
+          "packageLocation": "./.yarn/cache/dotenv-npm-16.0.3-4cc29121dc-afcf03f373.zip/node_modules/dotenv/",\
+          "packageDependencies": [\
+            ["dotenv", "npm:16.0.3"]\
           ],\
           "linkType": "HARD"\
         }]\

@@ -17,7 +17,7 @@ test:
 	@echo "Testing..."
 	@./.scripts/test.sh
 
-build: init clean
+build: clean
 	@echo "👩‍🏭 Building..."
 	@yarn build
 	
