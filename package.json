@@ -44,6 +44,7 @@
     "@vitejs/plugin-react": "^3.0.0",
     "ci-info": "^3.8.0",
     "dotenv": "^16.0.3",
+    "esbuild": "^0.17.15",
     "git-repo-info": "^2.1.1",
     "husky": "^8.0.3",
     "internal-ip": "^7.0.0",

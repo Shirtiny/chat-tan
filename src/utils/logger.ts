@@ -10,7 +10,7 @@ const logger = new CustomLogger({
 
 export const logVersion = async () => {
   const res = await fetch("/version.json");
-  const versionInfo: any = res.json();
+  const versionInfo: any = await res.json();
   versionInfo &&
     (await logger.unionVersion(
       versionInfo.package.name,
