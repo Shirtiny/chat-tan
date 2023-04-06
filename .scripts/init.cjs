@@ -14,15 +14,16 @@ if (!shell.which("git")) {
 
 if (ci.isCI) {
   console.log("The name of the CI server is:", ci.name);
-  shell.exec("git config --global user.name shirtiny");
-  shell.exec("git config --global user.email shirtiny@gmail.com");
-  shell.exec(
-    `git remote set-url origin https://shirtiny:${GITHUB_TOKEN}@github.com/Shirtiny/chat-tan.git `
-  );
-  shell.exec(`git add .`);
-  shell.exec(`git reset --hard`);
-  shell.exec(`git checkout main`);
-  shell.exec("git pull --tags");
+  // shell.exec("git config --global user.name shirtiny");
+  // shell.exec("git config --global user.email shirtiny@gmail.com");
+  // shell.exec(
+  //   `git remote set-url origin https://shirtiny:${GITHUB_TOKEN}@github.com/Shirtiny/chat-tan.git `
+  // );
+  // shell.exec(`git add .`);
+  // shell.exec(`git reset --hard`);
+  // shell.exec(`git checkout main`);
+  // shell.exec("git pull");
+  // shell.exec("git pull --tags");
 } else {
   console.log("This program is not running on a CI server");
   dotenv.config({ path: "./.env.local" });
