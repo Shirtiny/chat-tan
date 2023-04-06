@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "prebuild": "yarn node ./.scripts/init.cjs",
+    "prebuild": "yarn node ./.scripts/init.cjs && yarn run tsc ",
     "dev": "vite",
-    "build": "yarn prebuild && yarn run tsc && vite build",
+    "build": "yarn prebuild && vite build",
     "preview": "vite preview",
     "win": "tauri dev",
     "ad": "cargo tauri android init && cargo tauri android dev",
@@ -41,7 +41,7 @@
     "@types/nprogress": "^0.2.0",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
-    "@vitejs/plugin-react": "^3.0.0",
+    "@vitejs/plugin-react": "^3.1.0",
     "ci-info": "^3.8.0",
     "dotenv": "^16.0.3",
     "git-repo-info": "^2.1.1",
@@ -52,7 +52,7 @@
     "shelljs": "^0.8.5",
     "terser": "^5.16.8",
     "typescript": "^4.9.3",
-    "vite": "^4.1.0"
+    "vite": "^4.2.1"
   },
   "packageManager": "yarn@3.5.0",
   "hooks": {
