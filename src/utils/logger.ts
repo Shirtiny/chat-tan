@@ -1,5 +1,4 @@
 import { ShLogger, LEVELS } from "@shirtiny/logger";
-import versionInfo from "../version.json";
 
 const miku = "https://i.giphy.com/media/11lxCeKo6cHkJy/giphy.webp";
 
@@ -10,6 +9,8 @@ const logger = new CustomLogger({
 });
 
 export const logVersion = async () => {
+  const res = await fetch("/version.json");
+  const versionInfo: any = res.json();
   versionInfo &&
     (await logger.unionVersion(
       versionInfo.package.name,

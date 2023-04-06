@@ -42,11 +42,11 @@ const run = async () => {
 
   console.log("Get version info:\n", versionInfo);
 
-  await fsP.writeFile(
-    versionFilePath,
-    JSON.stringify(versionInfo, null, 2),
-    "utf8"
-  );
+  // await fsP.writeFile(
+  //   versionFilePath,
+  //   JSON.stringify(versionInfo, null, 2),
+  //   "utf8"
+  // );
   await fsP.writeFile(
     publicVersionFilePath,
     JSON.stringify(versionInfo, null, 2),
@@ -56,7 +56,7 @@ const run = async () => {
   let isExist = false;
   try {
     const results = await Promise.all(
-      [versionFilePath, publicVersionFilePath].map(async (p) => {
+      [publicVersionFilePath].map(async (p) => {
         const s = await fsP.stat(p);
         return s.isFile();
       })
