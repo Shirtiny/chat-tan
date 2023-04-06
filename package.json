@@ -55,7 +55,6 @@
   },
   "packageManager": "yarn@3.5.0",
   "hooks": {
-    "pre-commit": "yarn node ./.scripts/init.cjs && git add .",
-    "pre-commit__test-example": "yarn node ./.scripts/init.cjs exit 1"
+    "pre-commit__test-example": "yarn node any.js exit 1"
   }
 }

@@ -1,21 +1,21 @@
 {
   "git": {
-    "sha": "7c3785c61609e7a2c129e1122ae6968427b5108d",
-    "abbreviatedSha": "7c3785c616",
+    "sha": "c607cecf5c8a64cfa68c79052b815e976a008c27",
+    "abbreviatedSha": "c607cecf5c",
     "branch": "main",
     "tag": null,
     "committer": "Shirtiny <49592759+Shirtiny@users.noreply.github.com>",
-    "committerDate": "2023-04-06T06:49:24.000Z",
+    "committerDate": "2023-04-06T07:43:39.000Z",
     "author": "Shirtiny <49592759+Shirtiny@users.noreply.github.com>",
-    "authorDate": "2023-04-06T06:49:24.000Z",
-    "commitMessage": "update",
+    "authorDate": "2023-04-06T07:43:39.000Z",
+    "commitMessage": "update husky",
     "root": "/workspaces/chat-tan",
     "commonGitDir": "/workspaces/chat-tan/.git",
     "worktreeGitDir": "/workspaces/chat-tan/.git",
     "lastTag": null,
     "commitsSinceLastTag": null,
     "parents": [
-      "320d055dc40fda330b07f664d5c64f88ad614863"
+      "7c3785c61609e7a2c129e1122ae6968427b5108d"
     ]
   },
   "package": {
@@ -25,8 +25,8 @@
     "type": "module",
     "scripts": {
       "prebuild": "yarn node ./.scripts/init.cjs",
-      "dev": "yarn prebuild && vite",
-      "build": "yarn prebuild && tsc && vite build",
+      "dev": "vite",
+      "build": "tsc && vite build",
       "preview": "vite preview",
       "win": "tauri dev",
       "ad": "cargo tauri android init && cargo tauri android dev",
@@ -73,6 +73,10 @@
       "typescript": "^4.9.3",
       "vite": "^4.1.0"
     },
-    "packageManager": "yarn@3.5.0"
+    "packageManager": "yarn@3.5.0",
+    "hooks": {
+      "pre-commit": "yarn node ./.scripts/init.cjs && git add .",
+      "pre-commit__test-example": "yarn node ./.scripts/init.cjs exit 1"
+    }
   }
 }
