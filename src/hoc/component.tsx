@@ -10,7 +10,7 @@ const defaultOptions = {
   memorize: true,
 };
 
-const CLASS_NAME_PREFIX = "chatTan__";
+const NAME_PREFIX = "";
 
 export default function component<P>(
   Component: FC<P>,
@@ -28,7 +28,7 @@ export default function component<P>(
     }, []);
 
     return (
-      <Component {...props} data-comp={`${CLASS_NAME_PREFIX}${componentName}`} />
+      <Component {...props} data-comp={`${NAME_PREFIX}${componentName}`} />
     );
   };
   Object.assign(Func, Component);
