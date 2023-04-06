@@ -1,32 +1,32 @@
 {
   "git": {
-    "sha": "3a183d320e2a5cca0b9a4a560bffd0ddc4bee78e",
-    "abbreviatedSha": "3a183d320e",
+    "sha": "7e8a484f10ee07cb77b7930a577786a3e0c73164",
+    "abbreviatedSha": "7e8a484f10",
     "branch": "main",
     "tag": null,
     "committer": "shirtiny <shirtiny@gmail.com>",
-    "committerDate": "2023-04-06T14:35:53.000Z",
+    "committerDate": "2023-04-06T15:30:01.000Z",
     "author": "shirtiny <shirtiny@gmail.com>",
-    "authorDate": "2023-04-06T14:35:53.000Z",
-    "commitMessage": "test",
+    "authorDate": "2023-04-06T15:30:01.000Z",
+    "commitMessage": "update",
     "root": "D:\\dev\\chat-tan",
     "commonGitDir": "D:\\dev\\chat-tan\\.git",
     "worktreeGitDir": "D:\\dev\\chat-tan\\.git",
     "lastTag": null,
     "commitsSinceLastTag": null,
     "parents": [
-      "eb772cd3427e1137392323fe4f518c873e42a4b7"
+      "65d096c1686729c8f939ae3bb1da1d0c2c1cd53b"
     ]
   },
   "package": {
     "name": "chat-tan",
     "private": true,
-    "version": "0.0.0",
+    "version": "0.0.3",
     "type": "module",
     "scripts": {
-      "prebuild": "yarn node ./.scripts/init.cjs",
+      "prebuild": "yarn node ./.scripts/init.cjs && yarn run tsc ",
       "dev": "vite",
-      "build": "yarn prebuild && tsc && vite build",
+      "build": "yarn prebuild && vite build",
       "preview": "vite preview",
       "win": "tauri dev",
       "ad": "cargo tauri android init && cargo tauri android dev",
@@ -61,7 +61,7 @@
       "@types/nprogress": "^0.2.0",
       "@types/react": "^18.0.15",
       "@types/react-dom": "^18.0.6",
-      "@vitejs/plugin-react": "^3.0.0",
+      "@vitejs/plugin-react": "^3.1.0",
       "ci-info": "^3.8.0",
       "dotenv": "^16.0.3",
       "git-repo-info": "^2.1.1",
@@ -72,11 +72,11 @@
       "shelljs": "^0.8.5",
       "terser": "^5.16.8",
       "typescript": "^4.9.3",
-      "vite": "^4.1.0"
+      "vite": "^4.2.1"
     },
     "packageManager": "yarn@3.5.0",
     "hooks": {
-      "pre-commit__test-example": "yarn node any.js exit 1"
+      "pre-commit": "yarn version && git add ."
     }
   }
 }

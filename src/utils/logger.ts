@@ -14,7 +14,7 @@ export const logVersion = async () => {
   versionInfo &&
     (await logger.unionVersion(
       versionInfo.package.name,
-      versionInfo.git.branch,
+      "main",
       versionInfo.git.abbreviatedSha,
       { src: miku }
     ));

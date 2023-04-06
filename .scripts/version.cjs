@@ -10,9 +10,9 @@ const run = async () => {
   console.log("versionFilePath", versionFilePath);
   console.log("\ngit info", git, "\n");
   console.log("branch", git.branch);
-  if (!git.branch) {
-    return;
-  }
+  // if (!git.branch) {
+  //   return;
+  // }
 
   git.branch; // current branch
   git.sha; // current sha
