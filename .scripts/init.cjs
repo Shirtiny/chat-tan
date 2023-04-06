@@ -25,6 +25,8 @@ shell.exec("git config --global user.email shirtiny@gmail.com");
 shell.exec(
   `git remote set-url origin https://shirtiny:${GITHUB_TOKEN}@github.com/Shirtiny/chat-tan.git `
 );
-
+shell.exec(`git add .`);
+shell.exec(`git reset --hard`);
+shell.exec(`git checkout main`);
 shell.exec("git pull --tags");
 shell.exec("yarn node .scripts/version.cjs");
