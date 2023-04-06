@@ -6,7 +6,7 @@
   "scripts": {
     "prebuild": "yarn node ./.scripts/init.cjs",
     "dev": "vite",
-    "build": "yarn prebuild",
+    "build": "yarn prebuild && yarn run tsc && yarn run vite build",
     "preview": "vite preview",
     "win": "tauri dev",
     "ad": "cargo tauri android init && cargo tauri android dev",
