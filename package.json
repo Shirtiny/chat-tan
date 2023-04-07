@@ -6,7 +6,7 @@
   "scripts": {
     "prebuild": "yarn node ./.scripts/init.cjs && yarn run tsc ",
     "dev": "vite",
-    "build": "yarn prebuild && vite build",
+    "build": "yarn prebuild && vite build && jampack ./dist --cleancache",
     "preview": "vite preview",
     "win": "tauri dev",
     "ad": "cargo tauri android init && cargo tauri android dev",

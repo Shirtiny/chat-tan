@@ -1,17 +1,17 @@
 {
   "git": {
-    "sha": "7e8a484f10ee07cb77b7930a577786a3e0c73164",
-    "abbreviatedSha": "7e8a484f10",
+    "sha": "10e43021607121c9bc31ba59e4906c0e576335f8",
+    "abbreviatedSha": "10e4302160",
     "branch": "main",
     "tag": null,
     "committer": "shirtiny <shirtiny@gmail.com>",
-    "committerDate": "2023-04-06T15:30:01.000Z",
+    "committerDate": "2023-04-06T15:40:11.000Z",
     "author": "shirtiny <shirtiny@gmail.com>",
-    "authorDate": "2023-04-06T15:30:01.000Z",
+    "authorDate": "2023-04-06T15:40:11.000Z",
     "commitMessage": "update",
-    "root": "D:\\dev\\chat-tan",
-    "commonGitDir": "D:\\dev\\chat-tan\\.git",
-    "worktreeGitDir": "D:\\dev\\chat-tan\\.git",
+    "root": "/workspaces/chat-tan",
+    "commonGitDir": "/workspaces/chat-tan/.git",
+    "worktreeGitDir": "/workspaces/chat-tan/.git",
     "lastTag": null,
     "commitsSinceLastTag": null,
     "parents": [
@@ -26,7 +26,7 @@
     "scripts": {
       "prebuild": "yarn node ./.scripts/init.cjs && yarn run tsc ",
       "dev": "vite",
-      "build": "yarn prebuild && vite build",
+      "build": "yarn prebuild && vite build && jampack ./dist --cleancache",
       "preview": "vite preview",
       "win": "tauri dev",
       "ad": "cargo tauri android init && cargo tauri android dev",
@@ -76,7 +76,7 @@
     },
     "packageManager": "yarn@3.5.0",
     "hooks": {
-      "pre-commit": "yarn version && git add ."
+      "pre-commit__test-example": "yarn node any.js exit 1"
     }
   }
 }
