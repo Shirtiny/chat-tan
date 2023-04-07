@@ -4,15 +4,15 @@ import { Outlet, useNavigation } from "react-router-dom";
 import { IconContext } from "react-icons/lib";
 import reactiveX from "@shirtiny/utils/lib/reactiveX";
 import dev from "@shirtiny/utils/lib/dev";
-import theme, { ColorThemes } from "@/styles/theme";
+import Loading from "@/components/Loading";
 import component from "@/hoc/component";
 import layout from "@/utils/layout";
 import logger, { logVersion } from "@/utils/logger";
-import "modern-normalize/modern-normalize.css";
-import Loading from "@/components/Loading";
+import theme, { ColorThemes } from "@/styles/theme";
 import AppLayout from "../App";
 // import "@fontsource/jetbrains-mono";
 
+import "modern-normalize/modern-normalize.css";
 import "./index.scss";
 
 interface IProps {}

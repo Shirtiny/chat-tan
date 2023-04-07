@@ -1,6 +1,7 @@
 import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { VitePWA } from "vite-plugin-pwa";
 import { internalIpV4 } from "internal-ip";
 
 // https://vitejs.dev/config/
@@ -9,6 +10,15 @@ export default defineConfig(async () => {
 
   /** @type {import('vite').UserConfig} */
   const config: import("vite").UserConfig = {
+    plugins: [
+      react(),
+      VitePWA({
+        registerType: "autoUpdate",
+        devOptions: {
+          enabled: true,
+        },
+      }),
+    ],
     server: {
       host: "0.0.0.0", // listen on all addresses
       port: 2023,
@@ -28,7 +38,7 @@ export default defineConfig(async () => {
       target: ["es2015"],
       minify: "terser",
     },
-    base: "./"
+    base: "./",
   };
   return config;
 });
