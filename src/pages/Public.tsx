@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
-import reactLogo from "../assets/react.svg";
 import { invoke } from "@tauri-apps/api/tauri";
+import reactLogo from "../assets/react.svg";
 
 const Component = () => {
   const [greetMsg, setGreetMsg] = useState("");

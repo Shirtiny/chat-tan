@@ -6,7 +6,7 @@
   "scripts": {
     "prebuild": "yarn node ./.scripts/init.cjs && yarn run tsc ",
     "dev": "vite",
-    "build": "yarn prebuild && vite build && jampack ./dist --cleancache",
+    "build": "yarn prebuild && vite build && yarn build-worker && jampack ./dist --cleancache",
     "preview": "vite preview",
     "win": "tauri dev",
     "ad": "cargo tauri android init && cargo tauri android dev",
@@ -34,6 +34,7 @@
     "snappyjs": "^0.7.0"
   },
   "devDependencies": {
+    "@divriots/jampack": "^0.9.4",
     "@tauri-apps/cli": "next",
     "@types/jest": "^29.5.0",
     "@types/node": "^18.7.10",
