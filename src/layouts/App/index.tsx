@@ -70,7 +70,7 @@ const AppLayout: FC<IProps> = ({
             {navItems.map((item, index) => {
               return (
                 <Button
-                  className="app-layout__body__sidebar__nav__button"
+                  className="app-layout__body__sidebar__nav__item"
                   key={item.path}
                   onClick={() => handleNavItemClick(item)}
                   shape="rect"
@@ -89,9 +89,16 @@ const AppLayout: FC<IProps> = ({
             />
           </nav>
           <div className="flex-space"></div>
-          <Button type="text" withIcon onClick={toggleTheme}>
-            {theme === ColorThemes.LIGHT ? <HiMoon /> : <HiSun />}
-          </Button>
+          <div className="app-layout__body__sidebar__options">
+            <Button
+              className="app-layout__body__sidebar__options__theme"
+              type="text"
+              withIcon
+              onClick={toggleTheme}
+            >
+              {theme === ColorThemes.LIGHT ? <HiMoon /> : <HiSun />}
+            </Button>
+          </div>
         </aside>
         <main className="app-layout__body__main">{children}</main>
       </div>
