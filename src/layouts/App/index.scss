@@ -23,6 +23,7 @@
         &__sidebar {
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             background-color: var(--color-primary-background-dark);
             padding: 0.1rem 0;
 
