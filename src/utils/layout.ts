@@ -67,7 +67,7 @@ function vhMobile() {
     // We execute the same script as before
     let vh = window.innerHeight * 0.01;
     console.log(vh);
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
+    document.documentElement.style.setProperty("--vh", `${vh.toFixed(3)}px`);
   });
 }
 
