@@ -61,7 +61,7 @@ const AppLayout: FC<IProps> = ({
         <a href="/" target="_blank">
           <Image height="100%" src="/logo.svg" name="logo.svg" alt="logo" />
         </a>
-        <div className="flex-space"></div>
+        {/* <div className="flex-space"></div> */}
         {/* <Notice /> */}
       </header>
       <div className="app-layout__body">
@@ -88,7 +88,7 @@ const AppLayout: FC<IProps> = ({
               scale={0.5}
             />
           </nav>
-          <div className="flex-space"></div>
+          {/* <div className="flex-space"></div> */}
           <div className="app-layout__body__sidebar__options">
             <Button
               className="app-layout__body__sidebar__options__theme"
