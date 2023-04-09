@@ -29,6 +29,7 @@ const RootLayout: FC<IProps> = ({}) => {
 
   useLayoutEffect(() => {
     if (!window) return;
+    layout.vhMobile();
     layout.remFlexible(window, 1920, 100, 900);
   }, []);
 
@@ -50,7 +51,7 @@ const RootLayout: FC<IProps> = ({}) => {
   return (
     <IconContext.Provider value={{ className: "react-icon", style: {} }}>
       {navigation.state === "loading" && <Loading />}
-      <AppLayout theme={theme} toggleTheme={toggleTheme} >
+      <AppLayout theme={theme} toggleTheme={toggleTheme}>
         <Outlet />
       </AppLayout>
     </IconContext.Provider>
