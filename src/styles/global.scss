@@ -27,6 +27,7 @@ a {
 
 .flex-space {
   flex: 1;
+  overflow: hidden;
 }
 
 html[data-theme="dark"]:root {
