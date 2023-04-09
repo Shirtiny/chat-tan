@@ -7,7 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Image from "@/components/Image";
 import Button from "@/components/Button";
 import ActiveBar from "@/components/ActiveBar";
-import Notice from "@/components/Notice";
+// import Notice from "@/components/Notice";
 import { HiMoon, HiSun } from "react-icons/hi2";
 
 import component from "@/hoc/component";
@@ -62,7 +62,7 @@ const AppLayout: FC<IProps> = ({
           <Image height="100%" src="/logo.svg" name="logo.svg" alt="logo" />
         </a>
         <div className="flex-space"></div>
-        <Notice />
+        {/* <Notice /> */}
       </header>
       <div className="app-layout__body">
         <aside className="app-layout__body__sidebar">
