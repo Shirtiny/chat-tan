@@ -1,0 +1,50 @@
+.button {
+    appearance: none;
+    border: none;
+    outline: 0;
+    background: none;
+
+    cursor: pointer;
+    font-size: 0.12rem;
+    background-color: var(--color-primary-background);
+    color: var(--color-primary-text-light);
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0.05rem;
+
+    transition: background-color .15s ease-out, color .15s ease-out;
+
+    &:hover {
+        background-color: var(--color-primary);
+        color: var(--color-primary-background);
+    }
+
+    &--active {
+        color: var(--color-primary);
+    }
+
+    &--with-icon {
+        &>svg {
+            height: 1em;
+        }
+    }
+
+    &.type-text {
+        background: none;
+
+        &:hover {
+            color: var(--color-primary);
+        }
+    }
+
+    &.shape-circle {
+        border-radius: 50%;
+    }
+
+    &.shape-rect {
+        border-radius: 0.03rem;
+    }
+}

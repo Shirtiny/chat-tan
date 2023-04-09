@@ -19,7 +19,7 @@ const Image: FC<IProps> = ({
   width,
   height,
   className,
-  style,
+  style = {},
   ...rest
 }) => {
   return (

@@ -5,8 +5,10 @@ import { VitePWA } from "vite-plugin-pwa";
 import { internalIpV4 } from "internal-ip";
 
 // https://vitejs.dev/config/
-export default defineConfig(async () => {
-  const host = await internalIpV4();
+export default defineConfig(async ({ command, mode }) => {
+  console.log({ command, mode });
+  const isAndroid = mode === "ad";
+  const host = isAndroid ? await internalIpV4() : "localhost";
 
   /** @type {import('vite').UserConfig} */
   const config: import("vite").UserConfig = {

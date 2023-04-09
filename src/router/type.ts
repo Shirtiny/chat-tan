@@ -1,12 +1,10 @@
-import { ReactNode, LazyExoticComponent } from "react";
+import type { ReactNode } from "react";
+import type { RouteObject, LazyRouteFunction } from "react-router-dom";
 
-export interface IRoute {
-  key: string;
+export interface INavItem {
   path: string;
-  label: string;
-  to?: string;
+  label?: string;
   desc?: string;
-  routes?: IRoute[];
   icon?: ReactNode;
-  Component?: LazyExoticComponent<any>;
+  lazy?: LazyRouteFunction<RouteObject>;
 }

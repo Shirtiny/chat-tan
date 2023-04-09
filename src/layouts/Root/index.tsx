@@ -7,11 +7,12 @@ import dev from "@shirtiny/utils/lib/dev";
 import Loading from "@/components/Loading";
 import component from "@/hoc/component";
 import layout from "@/utils/layout";
-import logger, { logVersion } from "@/utils/logger";
-import theme, { ColorThemes } from "@/styles/theme";
 import AppLayout from "../App";
-// import "@fontsource/jetbrains-mono";
 
+import logger, { logVersion } from "@/utils/logger";
+import useTheme from "@/hooks/useTheme";
+
+// import "@fontsource/jetbrains-mono";
 import "modern-normalize/modern-normalize.css";
 import "./index.scss";
 
@@ -24,6 +25,8 @@ logger.log("dev key taskMap");
 const RootLayout: FC<IProps> = ({}) => {
   const navigation = useNavigation();
 
+  const { theme, toggleTheme } = useTheme();
+
   useLayoutEffect(() => {
     if (!window) return;
     layout.remFlexible(window, 1920, 100, 900);
@@ -35,9 +38,9 @@ const RootLayout: FC<IProps> = ({}) => {
       sec: 5,
       request: async (index: number) => {
         logger.log("themeSwitchTimer", index);
-        theme.switchTheme(
-          index % 2 === 0 ? ColorThemes.FASHION : ColorThemes.MIKU
-        );
+        // theme.switchTheme(
+        //   index % 2 === 0 ? ColorThemes.DARK : ColorThemes.LIGHT
+        // );
         return true;
       },
     });
@@ -47,7 +50,7 @@ const RootLayout: FC<IProps> = ({}) => {
   return (
     <IconContext.Provider value={{ className: "react-icon", style: {} }}>
       {navigation.state === "loading" && <Loading />}
-      <AppLayout>
+      <AppLayout theme={theme} toggleTheme={toggleTheme} >
         <Outlet />
       </AppLayout>
     </IconContext.Provider>

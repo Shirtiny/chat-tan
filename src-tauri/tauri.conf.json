@@ -1,6 +1,6 @@
 {
   "build": {
-    "beforeDevCommand": "yarn dev",
+    "beforeDevCommand": "yarn dev:ad",
     "beforeBuildCommand": "yarn build",
     "devPath": "http://localhost:2023",
     "distDir": "../dist",

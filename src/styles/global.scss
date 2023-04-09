@@ -29,28 +29,33 @@ a {
   flex: 1;
 }
 
-html[data-theme="fashion"]:root {
-  --color-primary: #ff7576;
+html[data-theme="dark"]:root {
+  --color-primary: #fff;
   --color-primary-light: #ff9b9c;
   --color-primary-dark: #ff4e4f;
-  --color-primary-background-color: #fdfdfd;
-  --color-primary-background-color-dark: #f6f6f6;
-  --color-primary-text: #8b8b8b;
-  --color-primary-text-light: #fff;
+  
+  --color-primary-background: #222;
+  --color-primary-background-dark: #3a3a3a;
+  
+  --color-primary-border: #888;
+  
+  --color-primary-text: #fff;
   --color-primary-text-dark: #848484;
-  --color-primary-text-lighter: #fff;
-  --color-primary-text-darker: #fff;
 }
 
-html[data-theme="miku"]:root {
+html[data-theme="light"]:root {
   --color-primary: #00b7c3;
   --color-primary-light: #00d9e6;
   --color-primary-dark: #0097a3;
-  --color-primary-background-color: #fdfdfd;
-  --color-primary-background-color-dark: #f6f6f6;
-  --color-primary-text: #8b8b8b;
-  --color-primary-text-light: #fff;
-  --color-primary-text-dark: #848484;
+  
+  --color-primary-background: #fff;
+  --color-primary-background-dark: #f6f6f6;
+  
+  --color-primary-border: #eeee;
+  
+  --color-primary-text: #222;
+  --color-primary-text-light: #8b8b8b;
+  --color-primary-text-dark: #000;
   --color-primary-text-lighter: #fff;
   --color-primary-text-darker: #fff;
 }

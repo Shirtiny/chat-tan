@@ -1,6 +1,6 @@
 export enum ColorThemes {
-  FASHION = "fashion",
-  MIKU = "miku",
+  DARK = "dark",
+  LIGHT = "light",
 }
 
 const switchTheme = (themeColor: ColorThemes) => {
