@@ -1,34 +1,30 @@
 import type { ICommonProps } from "@/types";
 import type { INavItem } from "@/router/type";
-import { ColorThemes } from "@/styles/theme";
-import { FC, useEffect } from "react";
+import { FC, useLayoutEffect } from "react";
 import { useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Image from "@/components/Image";
 import Button from "@/components/Button";
 import ActiveBar from "@/components/ActiveBar";
 // import Notice from "@/components/Notice";
-import { HiMoon, HiSun } from "react-icons/hi2";
 
+import GlobalContextStore from "@/store/global";
 import component from "@/hoc/component";
 import routerConfig from "@/router/config";
+import theme, { ColorThemes } from "@/styles/theme";
 import logger from "@/utils/logger";
 
+import { HiMoon, HiSun } from "react-icons/hi2";
 import "./index.scss";
 
-interface IProps extends ICommonProps {
-  theme?: ColorThemes;
-  toggleTheme?: () => void;
-}
+interface IProps extends ICommonProps {}
 
-const AppLayout: FC<IProps> = ({
-  className,
-  children,
-  theme,
-  toggleTheme,
-  ...rest
-}) => {
+const AppLayout: FC<IProps> = ({ className, children, ...rest }) => {
   const navItems = routerConfig.navItems;
+
+  const { state, toggleTheme } = GlobalContextStore.use();
+  console.log("global state: ", state);
+
   const currentLocation = useLocation();
   const navigate = useNavigate();
 
@@ -51,8 +47,8 @@ const AppLayout: FC<IProps> = ({
     navigate(item.path, { replace: true });
   };
 
-  useEffect(() => {
-    navigate(navItems[0].path);
+  useLayoutEffect(() => {
+    theme.setTheme(state.theme);
   }, []);
 
   return (
@@ -96,7 +92,7 @@ const AppLayout: FC<IProps> = ({
               withIcon
               onClick={toggleTheme}
             >
-              {theme === ColorThemes.LIGHT ? <HiMoon /> : <HiSun />}
+              {state.theme === ColorThemes.LIGHT ? <HiMoon /> : <HiSun />}
             </Button>
           </div>
         </aside>

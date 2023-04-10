@@ -56,7 +56,7 @@ function remFlexible(
   once.remFlexible = true;
 }
 
-function vhMobile() {
+function vhProperty() {
   // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
   let vh = window.innerHeight * 0.01;
   // Then we set the value in the --vh custom property to the root of the document
@@ -73,7 +73,7 @@ function vhMobile() {
 
 const layout = {
   remFlexible,
-  vhMobile
+  vhProperty
 };
 
 export default layout;
