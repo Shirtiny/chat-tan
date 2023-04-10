@@ -52,6 +52,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:16.0.3"],\
             ["git-repo-info", "npm:2.1.1"],\
             ["husky", "npm:8.0.3"],\
+            ["immer", "npm:9.0.21"],\
             ["internal-ip", "npm:7.0.0"],\
             ["jest", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:29.5.0"],\
             ["lodash", "npm:4.17.21"],\
@@ -5893,6 +5894,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:16.0.3"],\
             ["git-repo-info", "npm:2.1.1"],\
             ["husky", "npm:8.0.3"],\
+            ["immer", "npm:9.0.21"],\
             ["internal-ip", "npm:7.0.0"],\
             ["jest", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:29.5.0"],\
             ["lodash", "npm:4.17.21"],\
@@ -7684,6 +7686,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/ignore-npm-5.2.4-fbe6e989e5-3d4c309c60.zip/node_modules/ignore/",\
           "packageDependencies": [\
             ["ignore", "npm:5.2.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["immer", [\
+        ["npm:9.0.21", {\
+          "packageLocation": "./.yarn/cache/immer-npm-9.0.21-03c48c58ea-70e3c27416.zip/node_modules/immer/",\
+          "packageDependencies": [\
+            ["immer", "npm:9.0.21"]\
           ],\
           "linkType": "HARD"\
         }]\

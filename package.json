@@ -27,6 +27,7 @@
     "@shirtiny/logger": "^3.3.0",
     "@shirtiny/utils": "^1.1.0",
     "@tauri-apps/api": "next",
+    "immer": "^9.0.21",
     "lodash": "^4.17.21",
     "modern-normalize": "^1.1.0",
     "nprogress": "^0.2.0",
