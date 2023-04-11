@@ -2635,10 +2635,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shirtiny/logger@npm:^3.3.0":
-  version: 3.3.0
-  resolution: "@shirtiny/logger@npm:3.3.0"
-  checksum: 356431a31195a67cc0bedaf9ffb18fbfdbfdeb49af645caee6245a1c3e0a3f9b4b0aad449a95b06fa305cb4f607f80bc047dcbb742e111abc3895f7237600f5b
+"@shirtiny/logger@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "@shirtiny/logger@npm:4.1.0"
+  checksum: d556644a689db2910f522460fb74585fa65bad44cfea6ad3391a135e54b100dabe2bd3e4234b5dac46e8183939191435917d8cc0f349a8dae71c065bc9d5bfbd
   languageName: node
   linkType: hard
 
@@ -3863,7 +3863,7 @@ __metadata:
     "@fontsource/jetbrains-mono": ^4.5.12
     "@novu/notification-center": ^0.13.0
     "@react-spring/web": ^9.7.2
-    "@shirtiny/logger": ^3.3.0
+    "@shirtiny/logger": ^4.1.0
     "@shirtiny/utils": ^1.1.0
     "@tauri-apps/api": next
     "@tauri-apps/cli": next
@@ -3876,6 +3876,7 @@ __metadata:
     "@types/react-dom": ^18.0.6
     "@vitejs/plugin-react": ^3.1.0
     ci-info: ^3.8.0
+    deep-object-diff: ^1.1.9
     dotenv: ^16.0.3
     git-repo-info: ^2.1.1
     husky: ^8.0.3
@@ -4363,6 +4364,13 @@ __metadata:
   version: 0.6.0
   resolution: "deep-extend@npm:0.6.0"
   checksum: 7be7e5a8d468d6b10e6a67c3de828f55001b6eb515d014f7aeb9066ce36bd5717161eb47d6a0f7bed8a9083935b465bc163ee2581c8b128d29bf61092fdf57a7
+  languageName: node
+  linkType: hard
+
+"deep-object-diff@npm:^1.1.9":
+  version: 1.1.9
+  resolution: "deep-object-diff@npm:1.1.9"
+  checksum: ecd42455e4773f653595d28070295e7aaa8402db5f8ab21d0bec115a7cb4de5e207a5665514767da5f025c96597f1d3a0a4888aeb4dd49e03c996871a3aa05ef
   languageName: node
   linkType: hard
 

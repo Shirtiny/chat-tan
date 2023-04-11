@@ -1,13 +1,18 @@
 import type { Draft, Immutable } from "immer";
 import { useCallback, useReducer } from "react";
 import produce from "immer";
+import { updatedDiff } from "deep-object-diff";
 import createContextStore from "@/store/contextStore";
 import theme, { ColorThemes } from "@/styles/theme";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
+import env from "@/utils/env";
+import logger from "@/utils/logger";
 
 type State = Immutable<{
   theme: ColorThemes;
 }>;
+
+type StateIndexed = State & { [index: string]: any };
 
 type Action = { type: string; name: string; payload: string };
 
@@ -15,7 +20,7 @@ export const globalInitialState: State = {
   theme: theme.getTheme() || ColorThemes.LIGHT,
 };
 
-const reducer = produce<State & { [index: string]: any }, [Action]>(
+const reducerWithImmer = produce<StateIndexed, [Action]>(
   (draft, { type, name, payload }) => {
     switch (type) {
       case "set": {
@@ -27,6 +32,28 @@ const reducer = produce<State & { [index: string]: any }, [Action]>(
     }
   }
 );
+
+const reducer = env.isDev()
+  ? (state: StateIndexed, action: Action) => {
+      const nextState = reducerWithImmer(state, action);
+
+      logger.setLoggerOption({
+        isCollapsed: false,
+      });
+      const now = new Date();
+      logger.group(
+        `global state action @${now.toLocaleTimeString()}.${now.getMilliseconds()}`,
+        () => {
+          logger.globalState.pre(state);
+          logger.globalState.action(action);
+          logger.globalState.next(nextState);
+          logger.globalState.changes(updatedDiff(state, nextState));
+        }
+      );
+
+      return nextState;
+    }
+  : reducerWithImmer;
 
 const useGlobalState = (initialState = globalInitialState) => {
   const [state, dispatch] = useReducer(reducer, initialState);

@@ -23,7 +23,6 @@ const AppLayout: FC<IProps> = ({ className, children, ...rest }) => {
   const navItems = routerConfig.navItems;
 
   const { state, toggleTheme } = GlobalContextStore.use();
-  console.log("global state: ", state);
 
   const currentLocation = useLocation();
   const navigate = useNavigate();

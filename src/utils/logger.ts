@@ -1,8 +1,67 @@
-import { ShLogger, LEVELS } from "@shirtiny/logger";
+import { ShLogger, LEVELS, css } from "@shirtiny/logger";
 
 const miku = "https://i.giphy.com/media/11lxCeKo6cHkJy/giphy.webp";
 
-class CustomLogger extends ShLogger {}
+class CustomLogger extends ShLogger {
+  globalState = {
+    pre: (...data: any[]) => {
+      this.customFormat(
+        LEVELS.group,
+        [
+          {
+            str: " pre ",
+            style: css`
+              color: #C8C2BC;
+            `,
+          },
+        ],
+        ...data
+      );
+    },
+    action: (...data: any[]) => {
+      this.customFormat(
+        LEVELS.group,
+        [
+          {
+            str: " action ",
+            style: css`
+              color: #A084CF;
+            `,
+          },
+        ],
+        ...data
+      );
+    },
+    next: (...data: any[]) => {
+      this.customFormat(
+        LEVELS.group,
+        [
+          {
+            str: " next ",
+            style: css`
+              color: #A0D995;
+            `,
+          },
+        ],
+        ...data
+      );
+    },
+    changes: (...data: any[]) => {
+      this.customFormat(
+        LEVELS.group,
+        [
+          {
+            str: " changes ",
+            style: css`
+              color: #ECB390;
+            `,
+          },
+        ],
+        ...data
+      );
+    },
+  };
+}
 
 const logger = new CustomLogger({
   level: LEVELS.debug,

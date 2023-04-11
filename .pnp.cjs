@@ -36,7 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@fontsource/jetbrains-mono", "npm:4.5.12"],\
             ["@novu/notification-center", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:0.13.0"],\
             ["@react-spring/web", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:9.7.2"],\
-            ["@shirtiny/logger", "npm:3.3.0"],\
+            ["@shirtiny/logger", "npm:4.1.0"],\
             ["@shirtiny/utils", "npm:1.1.0"],\
             ["@tauri-apps/api", "npm:2.0.0-alpha.1"],\
             ["@tauri-apps/cli", "npm:2.0.0-alpha.4"],\
@@ -49,6 +49,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.0.11"],\
             ["@vitejs/plugin-react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.1.0"],\
             ["ci-info", "npm:3.8.0"],\
+            ["deep-object-diff", "npm:1.1.9"],\
             ["dotenv", "npm:16.0.3"],\
             ["git-repo-info", "npm:2.1.1"],\
             ["husky", "npm:8.0.3"],\
@@ -4388,10 +4389,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@shirtiny/logger", [\
-        ["npm:3.3.0", {\
-          "packageLocation": "./.yarn/cache/@shirtiny-logger-npm-3.3.0-ae28ffa924-356431a311.zip/node_modules/@shirtiny/logger/",\
+        ["npm:4.1.0", {\
+          "packageLocation": "./.yarn/cache/@shirtiny-logger-npm-4.1.0-176338dff9-d556644a68.zip/node_modules/@shirtiny/logger/",\
           "packageDependencies": [\
-            ["@shirtiny/logger", "npm:3.3.0"]\
+            ["@shirtiny/logger", "npm:4.1.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5878,7 +5879,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@fontsource/jetbrains-mono", "npm:4.5.12"],\
             ["@novu/notification-center", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:0.13.0"],\
             ["@react-spring/web", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:9.7.2"],\
-            ["@shirtiny/logger", "npm:3.3.0"],\
+            ["@shirtiny/logger", "npm:4.1.0"],\
             ["@shirtiny/utils", "npm:1.1.0"],\
             ["@tauri-apps/api", "npm:2.0.0-alpha.1"],\
             ["@tauri-apps/cli", "npm:2.0.0-alpha.4"],\
@@ -5891,6 +5892,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.0.11"],\
             ["@vitejs/plugin-react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.1.0"],\
             ["ci-info", "npm:3.8.0"],\
+            ["deep-object-diff", "npm:1.1.9"],\
             ["dotenv", "npm:16.0.3"],\
             ["git-repo-info", "npm:2.1.1"],\
             ["husky", "npm:8.0.3"],\
@@ -6445,6 +6447,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/deep-extend-npm-0.6.0-e182924219-7be7e5a8d4.zip/node_modules/deep-extend/",\
           "packageDependencies": [\
             ["deep-extend", "npm:0.6.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["deep-object-diff", [\
+        ["npm:1.1.9", {\
+          "packageLocation": "./.yarn/cache/deep-object-diff-npm-1.1.9-b3c323e343-ecd42455e4.zip/node_modules/deep-object-diff/",\
+          "packageDependencies": [\
+            ["deep-object-diff", "npm:1.1.9"]\
           ],\
           "linkType": "HARD"\
         }]\
