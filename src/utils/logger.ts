@@ -1,4 +1,5 @@
 import { ShLogger, LEVELS, css } from "@shirtiny/logger";
+import env from "./env";
 
 const miku = "https://i.giphy.com/media/11lxCeKo6cHkJy/giphy.webp";
 
@@ -64,7 +65,7 @@ class CustomLogger extends ShLogger {
 }
 
 const logger = new CustomLogger({
-  level: LEVELS.debug,
+  level: env.isDev() ? LEVELS.debug : LEVELS.log,
 });
 
 export const logVersion = async () => {

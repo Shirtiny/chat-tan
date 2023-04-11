@@ -2635,10 +2635,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shirtiny/logger@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "@shirtiny/logger@npm:4.1.0"
-  checksum: d556644a689db2910f522460fb74585fa65bad44cfea6ad3391a135e54b100dabe2bd3e4234b5dac46e8183939191435917d8cc0f349a8dae71c065bc9d5bfbd
+"@shirtiny/logger@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "@shirtiny/logger@npm:4.2.0"
+  checksum: 4032330532241bbbe61a38dceaf7b7b5a0cc5810ccd9edb6a15e9348a103777eb1f234017b2a21c478df6024f061a557344fdb90d74d072048dbcd4aa8647688
   languageName: node
   linkType: hard
 
@@ -3863,7 +3863,7 @@ __metadata:
     "@fontsource/jetbrains-mono": ^4.5.12
     "@novu/notification-center": ^0.13.0
     "@react-spring/web": ^9.7.2
-    "@shirtiny/logger": ^4.1.0
+    "@shirtiny/logger": ^4.2.0
     "@shirtiny/utils": ^1.1.0
     "@tauri-apps/api": next
     "@tauri-apps/cli": next

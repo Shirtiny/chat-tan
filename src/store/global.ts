@@ -36,10 +36,7 @@ const reducerWithImmer = produce<StateIndexed, [Action]>(
 const reducer = env.isDev()
   ? (state: StateIndexed, action: Action) => {
       const nextState = reducerWithImmer(state, action);
-
-      logger.setLoggerOption({
-        isCollapsed: false,
-      });
+      
       const now = new Date();
       logger.group(
         `global state action @${now.toLocaleTimeString()}.${now.getMilliseconds()}`,
