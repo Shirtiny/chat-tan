@@ -27,7 +27,7 @@ const RootLayout: FC<IProps> = ({}) => {
   useLayoutEffect(() => {
     if (!window) return;
     layout.vhProperty();
-    layout.remFlexible(window, 1920, 100, 900);
+    layout.remFlexible(window, 1920, 100, 910);
   }, []);
 
   return (

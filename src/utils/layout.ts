@@ -9,7 +9,7 @@ function remFlexible(
   // 以某个fontSize的值为基准
   baseFontSize: number = 100,
   // baseWidth减小至minWidth
-  minWidth: number = 1000
+  minWidth?: number
 ) {
   if (once.remFlexible || !win) return;
   const { document } = win;
@@ -17,11 +17,11 @@ function remFlexible(
   const dpr = win.devicePixelRatio || 1;
 
   // 对整体基准值进行缩放
-  const scale = minWidth / baseWidth;
+  const scale = minWidth ? minWidth / baseWidth : 1;
   const baseRemRate = (baseWidth * scale) / baseFontSize;
 
   function setRemUnit() {
-    const rem = Math.max(docEl.clientWidth, minWidth) / baseRemRate;
+    const rem = Math.max(docEl.clientWidth, minWidth || baseWidth) / baseRemRate;
     docEl.style.fontSize = rem + "px";
   }
 

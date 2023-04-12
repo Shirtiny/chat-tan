@@ -6,63 +6,12 @@
     display: flex;
     flex-direction: column;
 
-    &__header {
-        padding: 0.08rem 0.16rem;
-
-        display: flex;
-        justify-content: space-between;
-        height: 0.3rem;
-
-        border-bottom: 1px solid var(--color-primary-border);
-    }
-
     &__body {
         flex: 1;
         overflow: hidden;
         display: flex;
 
-        &__sidebar {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background-color: var(--color-primary-background-dark);
-            padding: 0.1rem 0;
 
-            &__nav {
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                row-gap: 0.04rem;
-                padding-left: 0.03rem;
-
-
-                .button {
-                    padding: 0.06rem 0.08rem;
-                    border-radius: 0.03rem 0 0 0.03rem !important;
-
-                    &.button--active {
-                        background-color: var(--color-primary-background);
-                    }
-                }
-
-                &__active-bar {
-                    left: 0rem;
-                }
-            }
-
-            &__options {
-                padding: 0.1rem 0.03rem;
-
-                .button {
-                    width: 100%;
-                }
-
-                &__theme {
-                    color: var(--color-primary-text);
-                }
-            }
-
-        }
 
         &__main {
             flex: 1;
