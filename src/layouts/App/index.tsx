@@ -19,6 +19,11 @@ const AppLayout: FC<IProps> = ({ className, children, ...rest }) => {
 
   useLayoutEffect(() => {
     theme.setTheme(state.theme);
+    // document.addEventListener("visibilitychange", function logData() {
+    //   if (document.visibilityState === "hidden") {
+    //     navigator.sendBeacon("/log", analyticsData);
+    //   }
+    // });
   }, []);
 
   return (

@@ -21,7 +21,10 @@ function remFlexible(
   const baseRemRate = (baseWidth * scale) / baseFontSize;
 
   function setRemUnit() {
-    const rem = Math.max(docEl.clientWidth, minWidth || baseWidth) / baseRemRate;
+    let rem = Math.max(docEl.clientWidth, minWidth || baseWidth) / baseRemRate;
+    if (docEl.clientWidth <= 550) {
+      rem *= 2;
+    }
     docEl.style.fontSize = rem + "px";
   }
 
@@ -35,24 +38,6 @@ function remFlexible(
     }
   });
 
-  // document.addEventListener("visibilitychange", function logData() {
-  //   if (document.visibilityState === "hidden") {
-  //     navigator.sendBeacon("/log", analyticsData);
-  //   }
-  // });
-
-  // detect 0.5px supports
-  if (dpr >= 2) {
-    const fakeBody = document.createElement("body");
-    const testElement = document.createElement("div");
-    testElement.style.border = ".5px solid transparent";
-    fakeBody.appendChild(testElement);
-    docEl.appendChild(fakeBody);
-    if (testElement.offsetHeight === 1) {
-      docEl.classList.add("hairlines");
-    }
-    docEl.removeChild(fakeBody);
-  }
   once.remFlexible = true;
 }
 
@@ -73,7 +58,7 @@ function vhProperty() {
 
 const layout = {
   remFlexible,
-  vhProperty
+  vhProperty,
 };
 
 export default layout;
