@@ -11,6 +11,21 @@ import component from "@/hoc/component";
 
 import "./index.scss";
 
+type OffsetDirection = "vertical" | "horizon";
+
+interface IProps extends ICommonProps {
+  activeKeyDataSetName?: string;
+  currentActiveIndex?: string | number;
+  auto?: boolean;
+  direction?: OffsetDirection;
+  onActiveEnd?: Function;
+}
+
+interface ISpringApiProperties {
+  y: number;
+  height: number;
+}
+
 const ATTRIBUTE_SUFFIX = "item";
 
 const formateActiveIndex = (index?: number | string): string => {
@@ -35,27 +50,34 @@ const createBarItemSelector = (
   return `[${activeKeyAttributeName}${value}]`;
 };
 
-const calcBarStyle = (el: HTMLElement, scale = 0.5) => {
+const calcBarStyle = (
+  el: HTMLElement,
+  scale = 0.5,
+  direction: OffsetDirection
+) => {
   const height = el.offsetHeight * scale;
+  const width = el.offsetWidth * scale;
+  const isVertical = direction === "vertical";
+  const offsetKey = isVertical ? "y" : "x";
+  const offset = isVertical
+    ? el.offsetTop + (el.offsetHeight - height) / 2
+    : el.offsetLeft + (el.offsetWidth - width) / 2;
   return {
-    y: el.offsetTop + (el.offsetHeight - height) / 2,
+    [offsetKey]: offset,
     height,
   };
 };
-
-interface ISpringApiProperties {
-  y: number;
-  height: number;
-}
 
 const useActiveBarListener = (arg: {
   elRef: MutableRefObject<HTMLDivElement | null>;
   springApi: SpringRef<ISpringApiProperties>;
   activeKeyAttributeName: string;
-  scale: number,
+  direction: OffsetDirection;
+  scale: number;
   enable: boolean;
 }) => {
-  const { elRef, springApi, enable, activeKeyAttributeName, scale } = arg;
+  const { elRef, springApi, enable, activeKeyAttributeName, scale, direction } =
+    arg;
 
   const containerClickListener = useCallback(
     (e: Event) => {
@@ -66,7 +88,7 @@ const useActiveBarListener = (arg: {
       );
       logger.doms("bar container", e.target, e.currentTarget, barItemEl);
       if (!barItemEl) return;
-      springApi.start(calcBarStyle(el, scale));
+      springApi.start(calcBarStyle(el, scale, direction));
     },
     [activeKeyAttributeName, springApi]
   );
@@ -85,7 +107,7 @@ const useActiveBarListener = (arg: {
     logger.log("add activeBar listener");
     container.addEventListener("click", containerClickListener);
     // update spring
-    springApi.set(calcBarStyle(firstChild, scale));
+    springApi.set(calcBarStyle(firstChild, scale, direction));
     return () => {
       logger.log("remove activeBar listener");
       container.removeEventListener("click", containerClickListener);
@@ -93,19 +115,13 @@ const useActiveBarListener = (arg: {
   }, [springApi, containerClickListener, elRef, enable]);
 };
 
-interface IProps extends ICommonProps {
-  activeKeyDataSetName?: string;
-  currentActiveIndex?: string | number;
-  auto?: boolean;
-  onActiveEnd?: Function;
-}
-
 const ActiveBar: FC<IProps> = ({
   className,
   activeKeyDataSetName = "active-bar-key",
   currentActiveIndex,
   auto = false,
   scale = 0.5,
+  direction = "vertical",
   onActiveEnd,
 }) => {
   const elRef = useRef<HTMLDivElement | null>(null);
@@ -160,10 +176,14 @@ const ActiveBar: FC<IProps> = ({
       // update spring
 
       immediately
-        ? springApi.set(calcBarStyle(currentActiveNode as HTMLElement, scale))
-        : springApi.start(calcBarStyle(currentActiveNode as HTMLElement, scale));
+        ? springApi.set(
+            calcBarStyle(currentActiveNode as HTMLElement, scale, direction)
+          )
+        : springApi.start(
+            calcBarStyle(currentActiveNode as HTMLElement, scale, direction)
+          );
     },
-    [activeKeyAttributeName, springApi]
+    [activeKeyAttributeName, springApi, direction]
   );
 
   useActiveBarListener({
@@ -172,6 +192,7 @@ const ActiveBar: FC<IProps> = ({
     activeKeyAttributeName,
     scale,
     enable: auto,
+    direction,
   });
 
   // current active

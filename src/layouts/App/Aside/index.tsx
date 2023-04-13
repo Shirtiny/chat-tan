@@ -71,6 +71,7 @@ const AppAside: FC<IProps> = ({ className, style = {}, navItems, ...rest }) => {
           className="app-aside__nav__active-bar"
           currentActiveIndex={currentActiveIndex}
           scale={0.5}
+          direction="vertical"
         />
       </nav>
       <div className="flex-space"></div>
