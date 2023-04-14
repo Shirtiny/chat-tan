@@ -8,27 +8,26 @@ interface IRemFlexibleParams {
   // 720p: 1280*720   unit = 1280/16px = 80
   // 1080p: 1920*1080   unit = 1920/16px = 120
   // 以某个分辨率宽度为基准 通过baseWidth计算remRate 且低于baseWidth时不进行缩放
-  baseWidth?: number;
+  baseWidth: number;
   // 以某个fontSize的值为基准
-  baseFontSize?: number;
+  baseFontSize: number;
   // baseWidth减小至minWidth
-  minWidth?: number;
+  minWidth: number;
+  // 移动端临界
   mobileWidth?: number;
-  baseParamsCompute?: (clientWidth: number) => {
-    baseWidth: number;
-    baseFontSize: number;
-    minWidth?: number;
-  };
+  // 移动端基准
+  mobileBaseWidth?: number;
   // 只进行执行一次设置
   useOnce?: boolean;
 }
 
 function remFlexible({
   win,
-  baseWidth = 1920,
-  baseFontSize = 100,
-  minWidth,
-  baseParamsCompute,
+  baseWidth: baseWidthParam = 1920,
+  baseFontSize: baseFontSizeParam = 100,
+  minWidth: minWidthParam,
+  mobileWidth,
+  mobileBaseWidth,
   useOnce,
 }: IRemFlexibleParams) {
   if (!win || (useOnce && once.remFlexible)) return;
@@ -38,26 +37,41 @@ function remFlexible({
   const { document } = win;
   const docEl = document.documentElement;
 
+  function baseParamsCompute(clientWidth: number) {
+    const flag = clientWidth <= mobileWidth!;
+    const newBaseWidth = flag ? mobileBaseWidth! : baseWidthParam;
+    const newBaseFontSize = (baseWidthParam / newBaseWidth) * baseFontSizeParam;
+    const newMinWidth = flag ? 0 : minWidthParam;
+    logger.debug("rem baseParamsCompute:", {
+      newBaseWidth,
+      newBaseFontSize,
+      newMinWidth,
+    });
+    return { newBaseWidth, newBaseFontSize, newMinWidth };
+  }
+
   function onResize() {
-    if (isFn(baseParamsCompute)) {
-      const {
-        baseWidth: newBaseWidth,
-        baseFontSize: newBaseFontSize,
-        minWidth: newMinWidth,
-      } = baseParamsCompute(docEl.clientWidth);
+    let baseWidth = baseWidthParam;
+    let baseFontSize = baseFontSizeParam;
+    let minWidth = minWidthParam;
+
+    if (mobileWidth && mobileBaseWidth) {
+      const { newBaseWidth, newBaseFontSize, newMinWidth } = baseParamsCompute(
+        docEl.clientWidth
+      );
       baseWidth = newBaseWidth;
       baseFontSize = newBaseFontSize;
       minWidth = newMinWidth;
     }
 
-    // 对整体基准值进行缩放
-    const scale = minWidth ? minWidth / baseWidth : 1;
-    const baseRemRate = (baseWidth * scale) / baseFontSize;
-
+    const baseRemRate = baseWidth / baseFontSize;
+    
     const rem =
-      Math.max(docEl.clientWidth, minWidth || baseWidth) / baseRemRate;
-
-    docEl.style.fontSize = rem + "px";
+    Math.max(docEl.clientWidth, minWidth || baseWidth) / baseRemRate;
+    
+    // 对整体进行二次缩放
+    const scale = minWidth ? baseWidth / minWidth : 1;
+    docEl.style.fontSize = scale * rem + "px";
   }
 
   function onPageshow(e: PageTransitionEvent) {

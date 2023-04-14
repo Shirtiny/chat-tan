@@ -3,19 +3,20 @@
     flex-direction: column;
     // justify-content: space-between;
     background-color: var(--color-primary-background-dark);
-    padding: 0.1rem 0;
+    padding: 0.2rem 0;
 
     &__nav {
         position: relative;
         display: flex;
         flex-direction: column;
-        row-gap: 0.04rem;
-        padding-left: 0.03rem;
+        row-gap: 0.08rem;
+        padding-left: 0.06rem;
 
 
         .button {
-            padding: 0.06rem 0.08rem;
-            border-radius: 0.03rem 0 0 0.03rem !important;
+            font-size: 0.16rem;
+            padding: 0.12rem 0.16rem;
+            border-radius: 0.06rem 0 0 0.06rem !important;
 
             &.button--active {
                 background-color: var(--color-primary-background);
@@ -28,7 +29,7 @@
     }
 
     &__options {
-        padding: 0.1rem 0.03rem;
+        padding: 0.2rem 0.06rem;
 
         .button {
             width: 100%;

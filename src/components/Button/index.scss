@@ -5,7 +5,6 @@
     background: none;
 
     cursor: pointer;
-    font-size: 0.12rem;
     background-color: var(--color-primary-background);
     color: var(--color-primary-text-light);
 
@@ -13,7 +12,7 @@
     justify-content: center;
     align-items: center;
 
-    padding: 0.05rem;
+    padding: 0.1rem;
 
     transition: background-color .15s ease-out, color .15s ease-out;
 
@@ -45,6 +44,6 @@
     }
 
     &.shape-rect {
-        border-radius: 0.03rem;
+        border-radius: 0.06rem;
     }
 }
