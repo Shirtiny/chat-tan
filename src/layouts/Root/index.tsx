@@ -34,8 +34,8 @@ const RootLayout: FC<IProps> = ({}) => {
       win: window,
       baseParamsCompute: (clientWidth) => {
         const flag = clientWidth <= 550;
-        const baseWidth = flag ? 750 : 1920;
-        const baseFontSize = (1920 / baseWidth) * 100;
+        const baseWidth = flag ? 750 : 910;
+        const baseFontSize = (910 / baseWidth) * 100;
         const minWidth = flag ? undefined : 910;
         return { baseWidth, baseFontSize, minWidth };
       },

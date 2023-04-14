@@ -13,6 +13,7 @@ interface IRemFlexibleParams {
   baseFontSize?: number;
   // baseWidth减小至minWidth
   minWidth?: number;
+  mobileWidth?: number;
   baseParamsCompute?: (clientWidth: number) => {
     baseWidth: number;
     baseFontSize: number;
@@ -53,13 +54,8 @@ function remFlexible({
     const scale = minWidth ? minWidth / baseWidth : 1;
     const baseRemRate = (baseWidth * scale) / baseFontSize;
 
-    
     const rem =
-    Math.max(docEl.clientWidth, minWidth || baseWidth) / baseRemRate;
-    
-    console.log(baseWidth);
-    console.log(baseRemRate);
-    console.log(rem);
+      Math.max(docEl.clientWidth, minWidth || baseWidth) / baseRemRate;
 
     docEl.style.fontSize = rem + "px";
   }
