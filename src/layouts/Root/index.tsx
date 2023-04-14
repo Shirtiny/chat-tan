@@ -10,6 +10,7 @@ import AppLayout from "../App";
 import GlobalContextStore from "@/store/global";
 import layout from "@/utils/layout";
 import logger, { logVersion } from "@/utils/logger";
+import env from "@/utils/env";
 
 // import "@fontsource/jetbrains-mono";
 import "modern-normalize/modern-normalize.css";
@@ -26,8 +27,23 @@ const RootLayout: FC<IProps> = ({}) => {
 
   useLayoutEffect(() => {
     if (!window) return;
-    layout.vhProperty();
-    layout.remFlexible(window, 1920, 100, 910);
+    const isMobile = env.isMobile(window, 550);
+    isMobile && layout.vhProperty();
+
+    const clean = layout.remFlexible({
+      win: window,
+      baseParamsCompute: (clientWidth) => {
+        const flag = clientWidth <= 550;
+        const baseWidth = flag ? 750 : 1920;
+        const baseFontSize = (1920 / baseWidth) * 100;
+        const minWidth = flag ? undefined : 910;
+        return { baseWidth, baseFontSize, minWidth };
+      },
+    })!;
+
+    return () => {
+      clean();
+    };
   }, []);
 
   return (
