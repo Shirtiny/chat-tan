@@ -32,24 +32,25 @@ const AppLayout: FC<IProps> = ({ className, children, ...rest }) => {
     // });
 
     if (!window) return;
-    const isMobile = env.isMobile(window, 750);
-    isMobile && layout.vhProperty();
+    const { isMobile } = state;
+    logger.debug("isMobile", isMobile);
 
-    const clean = layout.remFlexible({
+    let cleanVh: Function | undefined;
+    isMobile && (cleanVh = layout.vhProperty(window));
+
+    const baseWidth = isMobile ? 750 : 1920;
+    const cleanRem = layout.remFlexible({
       win: window,
-      baseWidth: 1920,
-      minWidth: 960,
+      baseWidth: baseWidth,
+      minWidth: isMobile ? 375 : 960,
       baseFontSize: 100,
-      mobileWidth: 750,
-      mobileBaseWidth: 750,
     })!;
 
     return () => {
-      clean();
+      cleanVh && cleanVh();
+      cleanRem && cleanRem();
     };
-  }, []);
-
-  logger.debug("global state", state);
+  }, [state.isMobile]);
 
   return (
     <div className="app-layout" {...rest}>

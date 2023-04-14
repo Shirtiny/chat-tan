@@ -13,10 +13,6 @@ interface IRemFlexibleParams {
   baseFontSize: number;
   // baseWidth减小至minWidth
   minWidth: number;
-  // 移动端临界
-  mobileWidth?: number;
-  // 移动端基准
-  mobileBaseWidth?: number;
   // 只进行执行一次设置
   useOnce?: boolean;
   handleResize?: (clientWidth: number) => void;
@@ -24,11 +20,9 @@ interface IRemFlexibleParams {
 
 function remFlexible({
   win,
-  baseWidth: baseWidthParam = 1920,
-  baseFontSize: baseFontSizeParam = 100,
-  minWidth: minWidthParam,
-  mobileWidth,
-  mobileBaseWidth,
+  baseWidth = 1920,
+  baseFontSize = 100,
+  minWidth,
   useOnce,
 }: IRemFlexibleParams) {
   if (!win || (useOnce && once.remFlexible)) return;
@@ -38,33 +32,7 @@ function remFlexible({
   const { document } = win;
   const docEl = document.documentElement;
 
-  function baseParamsCompute(clientWidth: number) {
-    const flag = clientWidth <= mobileWidth!;
-    const newBaseWidth = flag ? mobileBaseWidth! : baseWidthParam;
-    const newBaseFontSize = (baseWidthParam / newBaseWidth) * baseFontSizeParam;
-    const newMinWidth = flag ? 0 : minWidthParam;
-    logger.debug("rem baseParamsCompute:", {
-      newBaseWidth,
-      newBaseFontSize,
-      newMinWidth,
-    });
-    return { newBaseWidth, newBaseFontSize, newMinWidth };
-  }
-
   function onResize() {
-    let baseWidth = baseWidthParam;
-    let baseFontSize = baseFontSizeParam;
-    let minWidth = minWidthParam;
-
-    if (mobileWidth && mobileBaseWidth) {
-      const { newBaseWidth, newBaseFontSize, newMinWidth } = baseParamsCompute(
-        docEl.clientWidth
-      );
-      baseWidth = newBaseWidth;
-      baseFontSize = newBaseFontSize;
-      minWidth = newMinWidth;
-    }
-
     const baseRemRate = baseWidth / baseFontSize;
 
     const rem =
@@ -97,18 +65,30 @@ function remFlexible({
   return clean;
 }
 
-function vhProperty() {
+function vhProperty(win: Window) {
   // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-  let vh = window.innerHeight * 0.01;
+  const vh = win.innerHeight * 0.01;
   // Then we set the value in the --vh custom property to the root of the document
-  document.documentElement.style.setProperty("--vh", `${vh.toFixed(3)}px`);
+  win.document.documentElement.style.setProperty("--vh", `${vh.toFixed(3)}px`);
 
-  // We listen to the resize event
-  window.addEventListener("resize", () => {
+  function onResize() {
     // We execute the same script as before
     let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh.toFixed(3)}px`);
-  });
+    win.document.documentElement.style.setProperty(
+      "--vh",
+      `${vh.toFixed(3)}px`
+    );
+  }
+
+  // We listen to the resize event
+  win.addEventListener("resize", onResize);
+
+  function clean() {
+    win.document.documentElement.style.removeProperty("--vh");
+    win.removeEventListener("resize", onResize);
+  }
+
+  return clean;
 }
 
 const layout = {
