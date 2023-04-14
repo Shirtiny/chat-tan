@@ -19,6 +19,7 @@ interface IRemFlexibleParams {
   mobileBaseWidth?: number;
   // 只进行执行一次设置
   useOnce?: boolean;
+  handleResize?: (clientWidth: number) => void;
 }
 
 function remFlexible({
@@ -65,10 +66,10 @@ function remFlexible({
     }
 
     const baseRemRate = baseWidth / baseFontSize;
-    
+
     const rem =
-    Math.max(docEl.clientWidth, minWidth || baseWidth) / baseRemRate;
-    
+      Math.max(docEl.clientWidth, minWidth || baseWidth) / baseRemRate;
+
     // 对整体进行二次缩放
     const scale = minWidth ? baseWidth / minWidth : 1;
     docEl.style.fontSize = scale * rem + "px";

@@ -1,10 +1,11 @@
 import type { Draft, Immutable } from "immer";
-import { useCallback, useReducer } from "react";
+import { useCallback, useMemo, useReducer } from "react";
 import produce from "immer";
 import { updatedDiff } from "deep-object-diff";
 import createContextStore from "@/store/contextStore";
+import useOnlineStatus from "@/hooks/useOnlineStatus";
+import useClientWidth from "@/hooks/useClientWidth";
 import theme, { ColorThemes } from "@/styles/theme";
-import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import env from "@/utils/env";
 import logger from "@/utils/logger";
 
@@ -36,7 +37,7 @@ const reducerWithImmer = produce<StateIndexed, [Action]>(
 const reducer = env.isDev()
   ? (state: StateIndexed, action: Action) => {
       const nextState = reducerWithImmer(state, action);
-      
+
       const now = new Date();
       logger.group(
         `global state action @${now.toLocaleTimeString()}.${now.getMilliseconds()}`,
@@ -56,13 +57,21 @@ const useGlobalState = (initialState = globalInitialState) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const online = useOnlineStatus();
+  const clientWidth = useClientWidth();
+
+  const isMobile = useMemo(() => {
+    return env.isMobile(window, 750);
+  }, [clientWidth]);
 
   const toggleTheme = useCallback(() => {
     const newTheme = theme.toggleTheme();
     dispatch({ type: "set", name: "theme", payload: newTheme });
   }, []);
 
-  return { state: { ...state, online }, toggleTheme };
+  return {
+    state: { ...state, online, isMobile },
+    toggleTheme,
+  };
 };
 
 const GlobalContextStore = createContextStore(useGlobalState);
