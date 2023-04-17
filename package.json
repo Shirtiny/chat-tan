@@ -66,5 +66,8 @@
   "packageManager": "yarn@3.5.0",
   "hooks": {
     "pre-commit__test-example": "yarn node any.js exit 1"
+  },
+  "volta": {
+    "node": "18.16.0"
   }
 }
