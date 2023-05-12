@@ -12,7 +12,7 @@ class CustomLogger extends ShLogger {
           {
             str: " pre ",
             style: css`
-              color: #C8C2BC;
+              color: #c8c2bc;
             `,
           },
         ],
@@ -26,7 +26,7 @@ class CustomLogger extends ShLogger {
           {
             str: " action ",
             style: css`
-              color: #A084CF;
+              color: #a084cf;
             `,
           },
         ],
@@ -40,7 +40,7 @@ class CustomLogger extends ShLogger {
           {
             str: " next ",
             style: css`
-              color: #A0D995;
+              color: #a0d995;
             `,
           },
         ],
@@ -54,7 +54,7 @@ class CustomLogger extends ShLogger {
           {
             str: " changes ",
             style: css`
-              color: #ECB390;
+              color: #ecb390;
             `,
           },
         ],
@@ -69,21 +69,25 @@ const logger = new CustomLogger({
 });
 
 export const logVersion = async () => {
-  const res = await fetch("/version.json");
-  const versionInfo: any = await res.json();
-  versionInfo &&
-    (await logger.unionVersion(
-      versionInfo.package.name,
-      "main",
-      versionInfo.git.abbreviatedSha,
-      { src: miku }
-    ));
-  logger.log(
-    "env:",
-    import.meta.env.PROD,
-    " log options:",
-    logger.getLoggerOption()
-  );
+  try {
+    const res = await fetch("/version.json");
+    const versionInfo: any = await res.json();
+    versionInfo &&
+      (await logger.unionVersion(
+        versionInfo.package.name,
+        "main",
+        versionInfo.git.abbreviatedSha,
+        { src: miku }
+      ));
+    logger.log(
+      "env:",
+      import.meta.env.PROD,
+      " log options:",
+      logger.getLoggerOption()
+    );
+  } catch (e) {
+    logger.error(e);
+  }
 };
 
 export default logger;

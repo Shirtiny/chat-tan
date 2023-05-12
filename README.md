@@ -3,9 +3,13 @@
 This template should help get you started developing with Tauri, React and Typescript in Vite.
 
 ## Install
+
 ```shell
-  # windows
-  scoop install volta
+  # support volta
+  # scoop install volta
+
+  make init
+  make start
 
 ```
 
@@ -23,7 +27,6 @@ cargo tauri android init
 cargo tauri android dev
 cargo tauri android build
 ```
-
 
 ```properties
 <!-- src-tauri/gen/android/tauri_app/key.properties -->
@@ -53,7 +56,7 @@ android {
     defaultConfig {
         ...
     }
-    
+
     signingConfigs {
         create("release") {
             if (keystorePropertiesFile.exists()) {
@@ -64,7 +67,7 @@ android {
             }
         }
     }
-    
+
     buildTypes {
         ...
         getByName("release") {
@@ -72,7 +75,7 @@ android {
             signingConfig = signingConfigs.getByName("release")
         }
     }
-    
+
 }
 
 ```
