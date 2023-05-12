@@ -18,11 +18,11 @@ a {
   /* will-change: background-color, color; */
 }
 
-#rc-anchor-container,
-.rc-anchor,
-.grecaptcha-badge {
-  display: none !important;
-}
+// #rc-anchor-container,
+// .rc-anchor,
+// .grecaptcha-badge {
+//   display: none !important;
+// }
 
 
 .flex-space {
@@ -39,6 +39,8 @@ html[data-theme="dark"]:root {
   --color-primary-background-dark: #3a3a3a;
   
   --color-primary-border: #888;
+  --color-input-border: hsl(217, 30%, 92%);
+  --color-input-border-dark: hsl(217, 30%, 80%);
   
   --color-primary-text: #fff;
   --color-primary-text-dark: #848484;
@@ -53,6 +55,8 @@ html[data-theme="light"]:root {
   --color-primary-background-dark: #f6f6f6;
   
   --color-primary-border: #eeee;
+  --color-input-border: hsl(217, 30%, 92%);
+  --color-input-border-dark: hsl(217, 30%, 80%);
   
   --color-primary-text: #222;
   --color-primary-text-light: #8b8b8b;

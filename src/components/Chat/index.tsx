@@ -17,7 +17,14 @@ const Chat: FC<IProps> = ({ className, style = {}, ...rest }) => {
       }}
       {...rest}
     >
-      <TextArea />
+      <TextArea
+        className="chat__input"
+        resize="vertical"
+        wrap="off"
+        autocomplete="off"
+        maxLength={2000}
+        min
+      />
     </div>
   );
 };

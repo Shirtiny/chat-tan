@@ -1,4 +1,14 @@
 .textarea {
     outline: none;
     overflow: auto;
+
+    width: 100%;
+    background: transparent;
+    border-color: var(--color-input-border, hsl(217, 30%, 92%));
+    font-size: inherit;
+    transition: border-color 0.3s;
+
+    &:focus {
+        border-color: var(--color-input-border-dark, hsl(217, 30%, 80%));
+    }
 }
