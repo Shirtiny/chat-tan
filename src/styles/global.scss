@@ -35,15 +35,15 @@ html[data-theme="dark"]:root {
   --color-primary-light: #ff9b9c;
   --color-primary-dark: #ff4e4f;
   
-  --color-primary-background: #222;
-  --color-primary-background-dark: #3a3a3a;
+  --color-primary-background: #141414;
+  --color-primary-background-dark: #000000;
   
-  --color-primary-border: #888;
-  --color-input-border: hsl(217, 30%, 92%);
-  --color-input-border-dark: hsl(217, 30%, 80%);
+  --color-primary-border: #303030;
+  --color-input-border: hsl(0, 0%, 26%);
+  --color-input-border-dark: hsl(0, 0%, 35%);
   
-  --color-primary-text: #fff;
-  --color-primary-text-dark: #848484;
+  --color-primary-text: rgba(255, 255, 255, 0.85);
+  --color-primary-text-dark: rgba(255, 255, 255, 0.4);
 }
 
 html[data-theme="light"]:root {

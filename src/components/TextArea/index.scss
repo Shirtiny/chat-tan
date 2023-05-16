@@ -4,9 +4,18 @@
 
     width: 100%;
     background: transparent;
-    border-color: var(--color-input-border, hsl(217, 30%, 92%));
     font-size: inherit;
+    color: inherit;
+    padding: 0.4em;
+    border-radius: 3px;
+    border-color: var(--color-input-border, hsl(217, 30%, 92%));
     transition: border-color 0.3s;
+
+    &::placeholder {
+        color: inherit;
+        opacity: 0.4;
+    }
+
 
     &:focus {
         border-color: var(--color-input-border-dark, hsl(217, 30%, 80%));

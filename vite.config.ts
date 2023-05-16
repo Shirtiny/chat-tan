@@ -6,7 +6,7 @@ import { internalIpV4 } from "internal-ip";
 
 // https://vitejs.dev/config/
 export default defineConfig(async ({ command, mode }) => {
-  console.log({ command, mode });
+  console.log({ command, mode, nodeEnv: process.env.NODE_ENV });
   const isAndroid = mode === "ad";
   const host = isAndroid ? await internalIpV4() : "localhost";
 

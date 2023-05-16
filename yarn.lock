@@ -2948,6 +2948,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tolgee/core@npm:5.8.2":
+  version: 5.8.2
+  resolution: "@tolgee/core@npm:5.8.2"
+  checksum: e89a3e0add215f8973888ccb033a6658355a1523e01643119245e2f5fe1fbc07f2b88d05e6f7cd84fb0b359f93f9ca296e3712e200b420c92fa79095a768f7f8
+  languageName: node
+  linkType: hard
+
+"@tolgee/react@npm:^5.8.3":
+  version: 5.8.3
+  resolution: "@tolgee/react@npm:5.8.3"
+  dependencies:
+    "@tolgee/web": 5.8.3
+  peerDependencies:
+    react: ^16.14.0 || ^17.0.1 || ^18.1.0
+  checksum: a8d91eba2f0b1506d171d2ec2abc196686b2e3d00fa82f94c4552461d34e1ad92ccda344e5243e06c713d3567ff8f13432fe1e62900034c66efb6e3db7634cfb
+  languageName: node
+  linkType: hard
+
+"@tolgee/web@npm:5.8.3":
+  version: 5.8.3
+  resolution: "@tolgee/web@npm:5.8.3"
+  dependencies:
+    "@tolgee/core": 5.8.2
+  checksum: d4ad2edb1a69f99c8bd4df0060925ad941f0c3e9b753900b0f7da0d40282916abb536654031c3e0620ee875d8be24e354cd3da117262df72438cfaaa9bbf8997
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -3867,6 +3894,7 @@ __metadata:
     "@shirtiny/utils": ^1.1.0
     "@tauri-apps/api": next
     "@tauri-apps/cli": next
+    "@tolgee/react": ^5.8.3
     "@types/jest": ^29.5.0
     "@types/lodash": ^4.14.192
     "@types/node": ^18.7.10

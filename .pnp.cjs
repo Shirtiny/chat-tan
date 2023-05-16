@@ -40,6 +40,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@shirtiny/utils", "npm:1.1.0"],\
             ["@tauri-apps/api", "npm:2.0.0-alpha.1"],\
             ["@tauri-apps/cli", "npm:2.0.0-alpha.4"],\
+            ["@tolgee/react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:5.8.3"],\
             ["@types/jest", "npm:29.5.0"],\
             ["@types/lodash", "npm:4.14.192"],\
             ["@types/node", "npm:18.15.7"],\
@@ -4740,6 +4741,48 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@tolgee/core", [\
+        ["npm:5.8.2", {\
+          "packageLocation": "./.yarn/cache/@tolgee-core-npm-5.8.2-a173762a46-e89a3e0add.zip/node_modules/@tolgee/core/",\
+          "packageDependencies": [\
+            ["@tolgee/core", "npm:5.8.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@tolgee/react", [\
+        ["npm:5.8.3", {\
+          "packageLocation": "./.yarn/cache/@tolgee-react-npm-5.8.3-68159d552b-a8d91eba2f.zip/node_modules/@tolgee/react/",\
+          "packageDependencies": [\
+            ["@tolgee/react", "npm:5.8.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:5.8.3", {\
+          "packageLocation": "./.yarn/__virtual__/@tolgee-react-virtual-989f2069f8/0/cache/@tolgee-react-npm-5.8.3-68159d552b-a8d91eba2f.zip/node_modules/@tolgee/react/",\
+          "packageDependencies": [\
+            ["@tolgee/react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:5.8.3"],\
+            ["@tolgee/web", "npm:5.8.3"],\
+            ["@types/react", "npm:18.0.29"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@tolgee/web", [\
+        ["npm:5.8.3", {\
+          "packageLocation": "./.yarn/cache/@tolgee-web-npm-5.8.3-2ee3f82c37-d4ad2edb1a.zip/node_modules/@tolgee/web/",\
+          "packageDependencies": [\
+            ["@tolgee/web", "npm:5.8.3"],\
+            ["@tolgee/core", "npm:5.8.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@tootallnate/once", [\
         ["npm:2.0.0", {\
           "packageLocation": "./.yarn/cache/@tootallnate-once-npm-2.0.0-e36cf4f140-ad87447820.zip/node_modules/@tootallnate/once/",\
@@ -5884,6 +5927,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@shirtiny/utils", "npm:1.1.0"],\
             ["@tauri-apps/api", "npm:2.0.0-alpha.1"],\
             ["@tauri-apps/cli", "npm:2.0.0-alpha.4"],\
+            ["@tolgee/react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:5.8.3"],\
             ["@types/jest", "npm:29.5.0"],\
             ["@types/lodash", "npm:4.14.192"],\
             ["@types/node", "npm:18.15.7"],\

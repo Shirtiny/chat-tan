@@ -12,7 +12,6 @@ import component from "@/hoc/component";
 import theme from "@/styles/theme";
 import layout from "@/utils/layout";
 import logger from "@/utils/logger";
-import env from "@/utils/env";
 
 import "./index.scss";
 

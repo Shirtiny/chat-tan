@@ -2,6 +2,8 @@ import type { Draft, Immutable } from "immer";
 import { useCallback, useMemo, useReducer } from "react";
 import produce from "immer";
 import { updatedDiff } from "deep-object-diff";
+import { useTranslate } from "@tolgee/react";
+
 import createContextStore from "@/store/contextStore";
 import useOnlineStatus from "@/hooks/useOnlineStatus";
 import useClientWidth from "@/hooks/useClientWidth";
@@ -58,6 +60,7 @@ const useGlobalState = (initialState = globalInitialState) => {
 
   const online = useOnlineStatus();
   const clientWidth = useClientWidth();
+  const { t } = useTranslate();
 
   const isMobile = useMemo(() => {
     return env.isMobile(window, 750);
@@ -71,6 +74,7 @@ const useGlobalState = (initialState = globalInitialState) => {
   return {
     state: { ...state, online, isMobile },
     toggleTheme,
+    t,
   };
 };
 

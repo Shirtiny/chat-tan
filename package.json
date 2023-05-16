@@ -27,6 +27,7 @@
     "@shirtiny/logger": "^4.2.0",
     "@shirtiny/utils": "^1.1.0",
     "@tauri-apps/api": "next",
+    "@tolgee/react": "^5.8.3",
     "deep-object-diff": "^1.1.9",
     "immer": "^9.0.21",
     "lodash": "^4.17.21",

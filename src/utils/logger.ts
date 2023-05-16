@@ -70,6 +70,9 @@ const logger = new CustomLogger({
 
 export const logVersion = async () => {
   try {
+    env.isDev() && logger.log("env: ", import.meta.env);
+    logger.log(" log options:", logger.getLoggerOption());
+
     const res = await fetch("/version.json");
     const versionInfo: any = await res.json();
     versionInfo &&
@@ -79,12 +82,6 @@ export const logVersion = async () => {
         versionInfo.git.abbreviatedSha,
         { src: miku }
       ));
-    logger.log(
-      "env:",
-      import.meta.env.PROD,
-      " log options:",
-      logger.getLoggerOption()
-    );
   } catch (e) {
     logger.error(e);
   }
