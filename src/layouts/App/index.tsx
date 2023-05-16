@@ -2,7 +2,7 @@ import type { ICommonProps } from "@/types";
 import { FC, useLayoutEffect } from "react";
 import { useNavigation } from "react-router-dom";
 
-import Loading from "@/components/Loading";
+import RouterLoading from "@/components/Loading/Router";
 import Aside from "./Aside";
 import Header from "./Header";
 
@@ -53,7 +53,7 @@ const AppLayout: FC<IProps> = ({ className, children, ...rest }) => {
 
   return (
     <div className="app-layout" {...rest}>
-      {navigation.state === "loading" && <Loading />}
+      {navigation.state === "loading" && <RouterLoading />}
       <Header />
       <div className="app-layout__body">
         <Aside navItems={navItems} />

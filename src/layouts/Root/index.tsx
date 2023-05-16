@@ -6,14 +6,15 @@ import {
   TolgeeProvider,
   FormatSimple,
   LanguageStorage,
-  LanguageDetector
+  LanguageDetector,
 } from "@tolgee/react";
 import { IconContext } from "react-icons/lib";
 import dev from "@shirtiny/utils/lib/dev";
 
-import component from "@/hoc/component";
+import Loading from "@/components/Loading";
 import AppLayout from "../App";
 
+import component from "@/hoc/component";
 import GlobalContextStore from "@/store/global";
 import logger, { logVersion } from "@/utils/logger";
 import env from "@/utils/env";
@@ -53,7 +54,7 @@ const RootLayout: FC<IProps> = ({}) => {
   return (
     <TolgeeProvider
       tolgee={tolgee}
-      fallback="Loading..." // loading fallback
+      fallback={<Loading />} // loading fallback
     >
       <IconContext.Provider value={{ className: "react-icon", style: {} }}>
         <GlobalContextStore.Provider>
