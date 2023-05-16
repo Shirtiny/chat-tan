@@ -1,6 +1,13 @@
 import type { FC } from "react";
 import { Outlet } from "react-router-dom";
-import { Tolgee, DevTools, TolgeeProvider, FormatSimple } from "@tolgee/react";
+import {
+  Tolgee,
+  DevTools,
+  TolgeeProvider,
+  FormatSimple,
+  LanguageStorage,
+  LanguageDetector
+} from "@tolgee/react";
 import { IconContext } from "react-icons/lib";
 import dev from "@shirtiny/utils/lib/dev";
 
@@ -17,8 +24,6 @@ import "./index.scss";
 
 interface IProps {}
 
-const isDev = env.isDev();
-
 logVersion();
 (window as any).dev = dev;
 logger.log("dev key taskMap");
@@ -27,8 +32,11 @@ logger.log("dev key taskMap");
 const tolgee = Tolgee()
   .use(DevTools())
   .use(FormatSimple())
+  .use(LanguageStorage())
+  .use(LanguageDetector())
   .init({
-    language: "zh-Hans",
+    defaultLanguage: "en",
+    fallbackLanguage: "en",
 
     // for development
     apiUrl: import.meta.env.VITE_TOLGEE_API_URL,
