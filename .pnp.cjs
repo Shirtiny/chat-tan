@@ -50,9 +50,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.0.11"],\
             ["@vitejs/plugin-react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.1.0"],\
             ["ci-info", "npm:3.8.0"],\
+            ["comlink", "npm:4.4.1"],\
             ["csstype", "npm:3.1.2"],\
             ["deep-object-diff", "npm:1.1.9"],\
             ["dotenv", "npm:16.0.3"],\
+            ["eruda", "npm:3.0.0"],\
             ["git-repo-info", "npm:2.1.1"],\
             ["husky", "npm:8.0.3"],\
             ["immer", "npm:9.0.21"],\
@@ -5937,9 +5939,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.0.11"],\
             ["@vitejs/plugin-react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.1.0"],\
             ["ci-info", "npm:3.8.0"],\
+            ["comlink", "npm:4.4.1"],\
             ["csstype", "npm:3.1.2"],\
             ["deep-object-diff", "npm:1.1.9"],\
             ["dotenv", "npm:16.0.3"],\
+            ["eruda", "npm:3.0.0"],\
             ["git-repo-info", "npm:2.1.1"],\
             ["husky", "npm:8.0.3"],\
             ["immer", "npm:9.0.21"],\
@@ -6227,6 +6231,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["combined-stream", "npm:1.0.8"],\
             ["delayed-stream", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["comlink", [\
+        ["npm:4.4.1", {\
+          "packageLocation": "./.yarn/cache/comlink-npm-4.4.1-b05bb2527d-16d58a8f59.zip/node_modules/comlink/",\
+          "packageDependencies": [\
+            ["comlink", "npm:4.4.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6865,6 +6878,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["error-ex", "npm:1.3.2"],\
             ["is-arrayish", "npm:0.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["eruda", [\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/eruda-npm-3.0.0-03f2863088-ba4aaff82e.zip/node_modules/eruda/",\
+          "packageDependencies": [\
+            ["eruda", "npm:3.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\

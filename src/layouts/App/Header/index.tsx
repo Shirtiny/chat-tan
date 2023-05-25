@@ -20,7 +20,7 @@ const AppHeader: FC<IProps> = ({ className, style = {}, ...rest }) => {
       {...rest}
     >
       <a href="/" target="_blank">
-        {/* <Image height="100%" src="/logo.svg" name="logo.svg" alt="logo" /> */}
+        <Image className="brand" height="100%" src="/logo.svg" name="logo.svg" alt="logo" />
       </a>
       <div className="flex-space"></div>
     </div>

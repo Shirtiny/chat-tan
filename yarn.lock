@@ -3904,9 +3904,11 @@ __metadata:
     "@types/react-dom": ^18.0.6
     "@vitejs/plugin-react": ^3.1.0
     ci-info: ^3.8.0
+    comlink: ^4.4.1
     csstype: ^3.1.2
     deep-object-diff: ^1.1.9
     dotenv: ^16.0.3
+    eruda: ^3.0.0
     git-repo-info: ^2.1.1
     husky: ^8.0.3
     immer: ^9.0.21
@@ -4164,6 +4166,13 @@ __metadata:
   dependencies:
     delayed-stream: ~1.0.0
   checksum: 49fa4aeb4916567e33ea81d088f6584749fc90c7abec76fd516bf1c5aa5c79f3584b5ba3de6b86d26ddd64bae5329c4c7479343250cfe71c75bb366eae53bb7c
+  languageName: node
+  linkType: hard
+
+"comlink@npm:^4.4.1":
+  version: 4.4.1
+  resolution: "comlink@npm:4.4.1"
+  checksum: 16d58a8f590087fc45432e31d6c138308dfd4b75b89aec0b7f7bb97ad33d810381bd2b1e608a1fb2cf05979af9cbfcdcaf1715996d5fcf77aeb013b6da3260af
   languageName: node
   linkType: hard
 
@@ -4727,6 +4736,13 @@ __metadata:
   dependencies:
     is-arrayish: ^0.2.1
   checksum: c1c2b8b65f9c91b0f9d75f0debaa7ec5b35c266c2cac5de412c1a6de86d4cbae04ae44e510378cb14d032d0645a36925d0186f8bb7367bcc629db256b743a001
+  languageName: node
+  linkType: hard
+
+"eruda@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "eruda@npm:3.0.0"
+  checksum: ba4aaff82ef5b68548235692f3cc3df4c4b2c029d2852e85b36e8d10981e887fbcfbc9161831ac3bdb678d2f6a53986079b43798661fc19833228c875919d0e7
   languageName: node
   linkType: hard
 

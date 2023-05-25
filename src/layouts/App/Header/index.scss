@@ -6,4 +6,12 @@
     height: 0.35rem;
 
     border-bottom: 1px solid var(--color-primary-border);
+
+    @at-root {
+        html[data-theme="dark"] & {
+            .brand {
+                filter: grayscale(1);
+            }
+        }
+    }
 }
