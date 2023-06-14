@@ -3924,6 +3924,7 @@ __metadata:
     react-router-dom: ^6.9.0
     sass: ^1.60.0
     shelljs: ^0.8.5
+    smooth-scrollbar: ^8.8.4
     snappyjs: ^0.7.0
     terser: ^5.16.8
     typescript: ^4.9.3
@@ -4238,6 +4239,13 @@ __metadata:
   dependencies:
     browserslist: ^4.21.5
   checksum: 51a34d8a292de51f52ac2d72b18ee94743a905d4570a42214262426ebf8f026c853fee22cf4d6c61c2d95f861749421c4de48e9389f551745c5ac1477a5f929f
+  languageName: node
+  linkType: hard
+
+"core-js@npm:^3.6.4":
+  version: 3.31.0
+  resolution: "core-js@npm:3.31.0"
+  checksum: f7cf9b3010f7ca99c026d95b61743baca1a85512742ed2b67e8f65a72ac4f4fe0b90b00057783e886bdd39d3a295f42f845d33e7cba3973ed263df978343ab79
   languageName: node
   linkType: hard
 
@@ -8330,6 +8338,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"smooth-scrollbar@npm:^8.8.4":
+  version: 8.8.4
+  resolution: "smooth-scrollbar@npm:8.8.4"
+  dependencies:
+    core-js: ^3.6.4
+    tslib: ^1.10.0
+  checksum: c3b7ebc1283d975869f2a4cf4f7248af1be5ab3a6c1b9aa06107e2cbc7af0e1705788e1ef6569c19782c28012d4bccf472208101058f32c28e3be98c6a804e57
+  languageName: node
+  linkType: hard
+
 "snappyjs@npm:^0.7.0":
   version: 0.7.0
   resolution: "snappyjs@npm:0.7.0"
@@ -8838,6 +8856,13 @@ __metadata:
   dependencies:
     punycode: ^2.1.0
   checksum: 96d4ed46bc161db75dbf9247a236ea0bfcaf5758baae6749e92afab0bc5a09cb59af21788ede7e55080f2bf02dce3e4a8f2a484cc45164e29f4b5e68f7cbcc1a
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^1.10.0":
+  version: 1.14.1
+  resolution: "tslib@npm:1.14.1"
+  checksum: dbe628ef87f66691d5d2959b3e41b9ca0045c3ee3c7c7b906cc1e328b39f199bb1ad9e671c39025bd56122ac57dfbf7385a94843b1cc07c60a4db74795829acd
   languageName: node
   linkType: hard
 

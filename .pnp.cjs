@@ -70,6 +70,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-router-dom", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:6.9.0"],\
             ["sass", "npm:1.60.0"],\
             ["shelljs", "npm:0.8.5"],\
+            ["smooth-scrollbar", "npm:8.8.4"],\
             ["snappyjs", "npm:0.7.0"],\
             ["terser", "npm:5.16.8"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
@@ -5959,6 +5960,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-router-dom", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:6.9.0"],\
             ["sass", "npm:1.60.0"],\
             ["shelljs", "npm:0.8.5"],\
+            ["smooth-scrollbar", "npm:8.8.4"],\
             ["snappyjs", "npm:0.7.0"],\
             ["terser", "npm:5.16.8"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
@@ -6306,6 +6308,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/convert-source-map-npm-2.0.0-7ab664dc4e-63ae9933be.zip/node_modules/convert-source-map/",\
           "packageDependencies": [\
             ["convert-source-map", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["core-js", [\
+        ["npm:3.31.0", {\
+          "packageLocation": "./.yarn/unplugged/core-js-npm-3.31.0-6aa43450d7/node_modules/core-js/",\
+          "packageDependencies": [\
+            ["core-js", "npm:3.31.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -10962,6 +10973,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["smooth-scrollbar", [\
+        ["npm:8.8.4", {\
+          "packageLocation": "./.yarn/cache/smooth-scrollbar-npm-8.8.4-65d56adf42-c3b7ebc128.zip/node_modules/smooth-scrollbar/",\
+          "packageDependencies": [\
+            ["smooth-scrollbar", "npm:8.8.4"],\
+            ["core-js", "npm:3.31.0"],\
+            ["tslib", "npm:1.14.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["snappyjs", [\
         ["npm:0.7.0", {\
           "packageLocation": "./.yarn/cache/snappyjs-npm-0.7.0-71a4782584-d0baa6197e.zip/node_modules/snappyjs/",\
@@ -11529,6 +11551,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["tslib", [\
+        ["npm:1.14.1", {\
+          "packageLocation": "./.yarn/cache/tslib-npm-1.14.1-102499115e-dbe628ef87.zip/node_modules/tslib/",\
+          "packageDependencies": [\
+            ["tslib", "npm:1.14.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:2.5.0", {\
           "packageLocation": "./.yarn/cache/tslib-npm-2.5.0-bb364efebd-ae3ed5f9ce.zip/node_modules/tslib/",\
           "packageDependencies": [\

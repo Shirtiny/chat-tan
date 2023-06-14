@@ -1,23 +1,13 @@
 .textarea {
-    outline: none;
-    overflow: auto;
-
     width: 100%;
-    background: transparent;
-    font-size: inherit;
-    color: inherit;
-    padding: 0.4em;
+    overflow: hidden;
+
+    border-style: solid;
     border-width: 1px;
     border-radius: 3px;
     border-color: var(--color-input-border);
     transition-property: var(--transition-property);
     transition-duration: 0.2s;
-
-    &::placeholder {
-        color: inherit;
-        opacity: 0.4;
-    }
-
 
     &:hover {
         border-color: var(--color-input-border-dark);
@@ -27,4 +17,22 @@
         border-color: var(--color-primary);
         box-shadow: var(--color-primary) 0px 0px 0px 1px;
     }
+
+    textarea {
+        width: 100%;
+        appearance: none;
+        outline: none;
+        border: none;
+        background: transparent;
+        font-size: inherit;
+        color: inherit;
+        padding: 0.4em;
+
+
+        &::placeholder {
+            color: inherit;
+            opacity: 0.4;
+        }
+    }
+
 }
