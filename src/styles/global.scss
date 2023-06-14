@@ -30,18 +30,22 @@ a {
   overflow: hidden;
 }
 
+:root {
+  --transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+}
+
 html[data-theme="dark"]:root {
   --color-primary: #e6e6e6;
   --color-primary-light: #ff9b9c;
   --color-primary-dark: #ff4e4f;
-  
+
   --color-primary-background: #141414;
   --color-primary-background-dark: #000000;
-  
+
   --color-primary-border: #303030;
   --color-input-border: hsl(0, 0%, 26%);
   --color-input-border-dark: hsl(0, 0%, 35%);
-  
+
   --color-primary-text: rgba(255, 255, 255, 0.85);
   --color-primary-text-dark: rgba(255, 255, 255, 0.4);
 }
@@ -50,14 +54,14 @@ html[data-theme="light"]:root {
   --color-primary: #00b7c3;
   --color-primary-light: #00d9e6;
   --color-primary-dark: #0097a3;
-  
+
   --color-primary-background: #fff;
   --color-primary-background-dark: #f6f6f6;
-  
+
   --color-primary-border: #eeee;
   --color-input-border: hsl(217, 30%, 92%);
   --color-input-border-dark: hsl(217, 30%, 80%);
-  
+
   --color-primary-text: #222;
   --color-primary-text-light: #8b8b8b;
   --color-primary-text-dark: #000;

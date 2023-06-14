@@ -7,9 +7,11 @@
     font-size: inherit;
     color: inherit;
     padding: 0.4em;
+    border-width: 1px;
     border-radius: 3px;
-    border-color: var(--color-input-border, hsl(217, 30%, 92%));
-    transition: border-color 0.3s;
+    border-color: var(--color-input-border);
+    transition-property: var(--transition-property);
+    transition-duration: 0.2s;
 
     &::placeholder {
         color: inherit;
@@ -17,7 +19,12 @@
     }
 
 
-    &:focus {
-        border-color: var(--color-input-border-dark, hsl(217, 30%, 80%));
+    &:hover {
+        border-color: var(--color-input-border-dark);
+    }
+
+    &:focus-visible {
+        border-color: var(--color-primary);
+        box-shadow: var(--color-primary) 0px 0px 0px 1px;
     }
 }
