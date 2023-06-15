@@ -70,7 +70,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-router-dom", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:6.9.0"],\
             ["sass", "npm:1.60.0"],\
             ["shelljs", "npm:0.8.5"],\
-            ["smooth-scrollbar", "npm:8.8.4"],\
+            ["simplebar-react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.2.4"],\
             ["snappyjs", "npm:0.7.0"],\
             ["terser", "npm:5.16.8"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
@@ -4960,6 +4960,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/lodash", "npm:4.14.192"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:4.14.195", {\
+          "packageLocation": "./.yarn/cache/@types-lodash-npm-4.14.195-a2a8254638-39b75ca635.zip/node_modules/@types/lodash/",\
+          "packageDependencies": [\
+            ["@types/lodash", "npm:4.14.195"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/lodash-es", [\
+        ["npm:4.17.7", {\
+          "packageLocation": "./.yarn/cache/@types-lodash-es-npm-4.17.7-7322f70ff2-4b1f39fd1d.zip/node_modules/@types/lodash-es/",\
+          "packageDependencies": [\
+            ["@types/lodash-es", "npm:4.17.7"],\
+            ["@types/lodash", "npm:4.14.195"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@types/node", [\
@@ -5867,6 +5884,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["can-use-dom", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/can-use-dom-npm-0.1.0-48c60a9052-488fc94c40.zip/node_modules/can-use-dom/",\
+          "packageDependencies": [\
+            ["can-use-dom", "npm:0.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["caniuse-lite", [\
         ["npm:1.0.30001469", {\
           "packageLocation": "./.yarn/cache/caniuse-lite-npm-1.0.30001469-14058b3844-8e496509d7.zip/node_modules/caniuse-lite/",\
@@ -5960,7 +5986,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-router-dom", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:6.9.0"],\
             ["sass", "npm:1.60.0"],\
             ["shelljs", "npm:0.8.5"],\
-            ["smooth-scrollbar", "npm:8.8.4"],\
+            ["simplebar-react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.2.4"],\
             ["snappyjs", "npm:0.7.0"],\
             ["terser", "npm:5.16.8"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
@@ -6308,15 +6334,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/convert-source-map-npm-2.0.0-7ab664dc4e-63ae9933be.zip/node_modules/convert-source-map/",\
           "packageDependencies": [\
             ["convert-source-map", "npm:2.0.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["core-js", [\
-        ["npm:3.31.0", {\
-          "packageLocation": "./.yarn/unplugged/core-js-npm-3.31.0-6aa43450d7/node_modules/core-js/",\
-          "packageDependencies": [\
-            ["core-js", "npm:3.31.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -9101,6 +9118,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["lodash-es", [\
+        ["npm:4.17.21", {\
+          "packageLocation": "./.yarn/cache/lodash-es-npm-4.17.21-b45832dfce-05cbffad6e.zip/node_modules/lodash-es/",\
+          "packageDependencies": [\
+            ["lodash-es", "npm:4.17.21"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["lodash.assignin", [\
         ["npm:4.2.0", {\
           "packageLocation": "./.yarn/cache/lodash.assignin-npm-4.2.0-f45fed9160-4b55bc1d65.zip/node_modules/lodash.assignin/",\
@@ -10927,6 +10953,42 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["simplebar-core", [\
+        ["npm:1.2.4", {\
+          "packageLocation": "./.yarn/cache/simplebar-core-npm-1.2.4-2dd1c4c362-9bef0a29cc.zip/node_modules/simplebar-core/",\
+          "packageDependencies": [\
+            ["simplebar-core", "npm:1.2.4"],\
+            ["@types/lodash-es", "npm:4.17.7"],\
+            ["can-use-dom", "npm:0.1.0"],\
+            ["lodash", "npm:4.17.21"],\
+            ["lodash-es", "npm:4.17.21"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["simplebar-react", [\
+        ["npm:3.2.4", {\
+          "packageLocation": "./.yarn/cache/simplebar-react-npm-3.2.4-bd9abdfe55-0355a7ccb9.zip/node_modules/simplebar-react/",\
+          "packageDependencies": [\
+            ["simplebar-react", "npm:3.2.4"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.2.4", {\
+          "packageLocation": "./.yarn/__virtual__/simplebar-react-virtual-865c3a2c6a/0/cache/simplebar-react-npm-3.2.4-bd9abdfe55-0355a7ccb9.zip/node_modules/simplebar-react/",\
+          "packageDependencies": [\
+            ["simplebar-react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.2.4"],\
+            ["@types/react", "npm:18.0.29"],\
+            ["react", "npm:18.2.0"],\
+            ["simplebar-core", "npm:1.2.4"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["sisteransi", [\
         ["npm:1.0.5", {\
           "packageLocation": "./.yarn/cache/sisteransi-npm-1.0.5-af60cc0cfa-aba6438f46.zip/node_modules/sisteransi/",\
@@ -10969,17 +11031,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/smart-buffer-npm-4.2.0-5ac3f668bb-b5167a7142.zip/node_modules/smart-buffer/",\
           "packageDependencies": [\
             ["smart-buffer", "npm:4.2.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["smooth-scrollbar", [\
-        ["npm:8.8.4", {\
-          "packageLocation": "./.yarn/cache/smooth-scrollbar-npm-8.8.4-65d56adf42-c3b7ebc128.zip/node_modules/smooth-scrollbar/",\
-          "packageDependencies": [\
-            ["smooth-scrollbar", "npm:8.8.4"],\
-            ["core-js", "npm:3.31.0"],\
-            ["tslib", "npm:1.14.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -11551,13 +11602,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["tslib", [\
-        ["npm:1.14.1", {\
-          "packageLocation": "./.yarn/cache/tslib-npm-1.14.1-102499115e-dbe628ef87.zip/node_modules/tslib/",\
-          "packageDependencies": [\
-            ["tslib", "npm:1.14.1"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:2.5.0", {\
           "packageLocation": "./.yarn/cache/tslib-npm-2.5.0-bb364efebd-ae3ed5f9ce.zip/node_modules/tslib/",\
           "packageDependencies": [\

@@ -1,10 +1,11 @@
-import type { FC } from "react";
+import { FC, FocusEventHandler, FocusEvent, useCallback, useRef } from "react";
 import type { Property } from "csstype";
 import type { ICommonProps } from "@/types";
 import component from "@/hoc/component";
 import { cls } from "@shirtiny/utils/lib/style";
+import logger from "@/utils/logger";
 
-import SmoothScrollbar from "../SmoothScrollbar";
+import Scrollbar from "../Scrollbar";
 
 import "./index.scss";
 
@@ -23,6 +24,8 @@ interface IProps extends ICommonProps {
   rows?: number;
   height?: number;
   tabindex?: number;
+
+  onFocus?: FocusEventHandler<HTMLTextAreaElement>;
 }
 
 const TextArea: FC<IProps> = ({
@@ -35,22 +38,34 @@ const TextArea: FC<IProps> = ({
   resize = "none",
   wrap = "soft",
   cols = 20,
-  height = 300,
-  tabindex = 0,
   rows,
+
+  height = 300,
+  tabIndex = 0,
+  onFocus,
   ...rest
 }) => {
+  const scrollbarRef = useRef(null);
+
+  const handleFocus = useCallback(
+    (e: FocusEvent<HTMLTextAreaElement, Element>) => {
+      const scrollbarEl = (scrollbarRef.current as any)?.el;
+      scrollbarEl?.focus();
+      logger.debug("focus", scrollbarEl);
+    },
+    []
+  );
+
   return (
-    <SmoothScrollbar
-      className={cls("textarea", className)}
-      style={{
-        ...style,
-        height,
-      }}
-      continuousScrolling={false}
-      tabindex={tabindex}
+    <Scrollbar
+      className="textarea-container"
+      tabIndex={tabIndex}
+      maxHeight={height}
+      ref={scrollbarRef}
     >
       <textarea
+        onFocus={handleFocus}
+        className={cls("textarea", className)}
         style={{
           resize,
         }}
@@ -63,7 +78,7 @@ const TextArea: FC<IProps> = ({
         rows={rows}
         {...rest}
       ></textarea>
-    </SmoothScrollbar>
+    </Scrollbar>
   );
 };
 
