@@ -1,4 +1,12 @@
-import { FC, FocusEventHandler, FocusEvent, useCallback, useRef } from "react";
+import {
+  FC,
+  FocusEventHandler,
+  FocusEvent,
+  useCallback,
+  useRef,
+  useState,
+  ChangeEvent,
+} from "react";
 import type { Property } from "csstype";
 import type { ICommonProps } from "@/types";
 import component from "@/hoc/component";
@@ -23,7 +31,6 @@ interface IProps extends ICommonProps {
   cols?: number;
   rows?: number;
   height?: number;
-  tabindex?: number;
 
   onFocus?: FocusEventHandler<HTMLTextAreaElement>;
 }
@@ -41,30 +48,41 @@ const TextArea: FC<IProps> = ({
   rows,
 
   height = 300,
-  tabIndex = 0,
   onFocus,
   ...rest
 }) => {
+  const [focus, setFocus] = useState(false);
   const scrollbarRef = useRef(null);
+  const textareaRef = useRef(null);
 
   const handleFocus = useCallback(
     (e: FocusEvent<HTMLTextAreaElement, Element>) => {
-      const scrollbarEl = (scrollbarRef.current as any)?.el;
-      scrollbarEl?.focus();
-      logger.debug("focus", scrollbarEl);
+      setFocus(true);
     },
     []
   );
 
+  const handleBlur = useCallback(
+    (e: FocusEvent<HTMLTextAreaElement, Element>) => {
+      setFocus(false);
+    },
+    []
+  );
+
+  const handleChange = useCallback((e: ChangeEvent<HTMLTextAreaElement>) => {
+    const el = e.target;
+    el.style.height = "auto";
+    el.style.height = String(el.scrollHeight) + "px";
+  }, []);
+
   return (
     <Scrollbar
-      className="textarea-container"
-      tabIndex={tabIndex}
+      className={cls("textarea-container", { focus })}
       maxHeight={height}
       ref={scrollbarRef}
     >
       <textarea
-        onFocus={handleFocus}
+        ref={textareaRef}
         className={cls("textarea", className)}
         style={{
           resize,
@@ -76,6 +94,9 @@ const TextArea: FC<IProps> = ({
         placeholder={placeholder}
         cols={cols}
         rows={rows}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        onChange={handleChange}
         {...rest}
       ></textarea>
     </Scrollbar>

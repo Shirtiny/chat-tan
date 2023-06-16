@@ -1,5 +1,5 @@
 .textarea-container {
-    margin: 0.08rem;
+    margin: 0.4em;
     border: solid 1px var(--color-input-border);
     border-radius: 3px;
     transition-property: var(--transition-property);
@@ -9,12 +9,13 @@
         border-color: var(--color-input-border-dark);
     }
 
-    &:focus {
+    &.focus {
         border-color: var(--color-primary);
         box-shadow: var(--color-primary) 0px 0px 0px 1px;
     }
 
     .textarea {
+        box-sizing: border-box;
         width: 100%;
         overflow: hidden;
         appearance: none;
@@ -22,7 +23,7 @@
         border: none;
         background: transparent;
         color: inherit;
-        padding: 0.4em;
+        padding: 0;
 
 
         &::placeholder {

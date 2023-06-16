@@ -23,7 +23,7 @@ const Chat: FC<IProps> = ({ className, style = {}, ...rest }) => {
       <TextArea
         className="chat__input"
         placeholder={t("CHAT_INPUT_PLACEHOLDER")}
-        resize="vertical"
+        // resize="vertical"
         wrap="off"
         autoComplete="off"
         maxLength={2000}

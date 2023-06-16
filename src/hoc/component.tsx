@@ -31,8 +31,8 @@ export default function component<P>(
 
     const finalProps = {
       ...props,
-      ref,
     };
+    ref && (finalProps.ref = ref);
 
     return (
       <Component {...finalProps} data-comp={`${NAME_PREFIX}${componentName}`} />

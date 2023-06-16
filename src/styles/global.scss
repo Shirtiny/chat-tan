@@ -42,6 +42,9 @@ html[data-theme="dark"]:root {
   --color-primary-background: #141414;
   --color-primary-background-dark: #000000;
 
+  --color-scrollbar: #b1b0b0;
+  --color-scrollbar-dark: #6b6b6b;
+
   --color-primary-border: #303030;
   --color-input-border: hsl(0, 0%, 26%);
   --color-input-border-dark: hsl(0, 0%, 35%);
@@ -57,6 +60,9 @@ html[data-theme="light"]:root {
 
   --color-primary-background: #fff;
   --color-primary-background-dark: #f6f6f6;
+
+  --color-scrollbar: #b1b0b0;
+  --color-scrollbar-dark: #6b6b6b;
 
   --color-primary-border: #eeee;
   --color-input-border: hsl(217, 30%, 92%);

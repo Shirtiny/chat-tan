@@ -11,10 +11,11 @@ import "./index.scss";
 
 interface IProps extends ICommonProps {
   maxHeight?: number;
+  autoHide?: boolean;
 }
 
 const Scrollbar: FC<IProps> = forwardRef(
-  ({ className, style = {}, maxHeight, children, ...rest }, ref) => {
+  ({ className, style = {}, maxHeight,autoHide, children, ...rest }, ref) => {
     const scrollRef = useRef(null);
 
     useImperativeHandle(ref, () => {
@@ -26,6 +27,7 @@ const Scrollbar: FC<IProps> = forwardRef(
     return (
       <SimpleBar
         {...rest}
+        autoHide={autoHide}
         className={cls("scrollbar", className)}
         style={{
           ...style,
@@ -38,5 +40,6 @@ const Scrollbar: FC<IProps> = forwardRef(
     );
   }
 );
+Scrollbar.displayName = "Scrollbar";
 
 export default component(Scrollbar, { useForwardRef: true });
