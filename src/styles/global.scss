@@ -13,6 +13,14 @@ a {
   text-decoration: none;
 }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+  line-height: 1.3;
+}
+
 * {
   box-sizing: border-box;
   /* will-change: background-color, color; */
