@@ -5,8 +5,11 @@ This template should help get you started developing with Tauri, React and Types
 ## Install
 
 ```shell
-  # support volta
-  # scoop install volta
+  # windows
+  scoop install volta
+  # || linux
+  # curl https://get.volta.sh | bash
+  # source /etc/profile
 
   make init
   make start
