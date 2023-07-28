@@ -20,6 +20,7 @@ const Chat: FC<IProps> = ({ className, style = {}, ...rest }) => {
       }}
       {...rest}
     >
+      <div className="chat__panel"></div>
       <TextArea
         className="chat__input"
         placeholder={t("CHAT_INPUT_PLACEHOLDER")}

@@ -1,4 +1,12 @@
 .chat {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &__panel {
+        height: 100%;
+    }
+
     &__input {
         font-size: 0.08rem;
         line-height: 1.5;

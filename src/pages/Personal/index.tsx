@@ -1,6 +1,6 @@
 const Component = () => {
   return (
-    <div>
+    <div className="page page-personal">
       <div>personal page test</div>
     </div>
   );
