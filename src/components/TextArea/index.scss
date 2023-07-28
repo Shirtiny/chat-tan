@@ -1,5 +1,5 @@
 .textarea-container {
-    margin: 0.4em;
+    font-size: inherit;
     border: solid 1px var(--color-input-border);
     border-radius: 3px;
     transition-property: var(--transition-property);
@@ -16,6 +16,8 @@
 
     .textarea {
         box-sizing: border-box;
+        padding: 0.4em;
+        line-height: 1.2em;
         width: 100%;
         overflow: hidden;
         appearance: none;
@@ -23,7 +25,6 @@
         border: none;
         background: transparent;
         color: inherit;
-        padding: 0;
 
 
         &::placeholder {
