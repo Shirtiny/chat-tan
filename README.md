@@ -7,7 +7,9 @@ This template should help get you started developing with Tauri, React and Types
 ```shell
   # windows
   scoop install volta
-  # || linux
+  # || linux  (node18 required ubuntu-20) 
+  # sudo apt install build-essential
+  # sudo apt-get install libvips libvips-dev libvips-tools
   # curl https://get.volta.sh | bash
   # source /etc/profile
   # sudo chmod -R 777 ./

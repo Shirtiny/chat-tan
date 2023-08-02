@@ -23,10 +23,16 @@ export default function component<P>(
   const Func = (props: any, ref: any) => {
     useLayoutEffect(() => {
       logger.component(componentName, "useLayoutEffect");
+      return () => {
+        logger.component(componentName, "useLayoutEffect clear")
+      }
     }, []);
 
     useEffect(() => {
       logger.component(componentName, "useEffect");
+      return () => {
+        logger.component(componentName, "useEffect clear")
+      }
     }, []);
 
     const finalProps = {

@@ -96,6 +96,7 @@ const TextArea: FC<IProps> = ({
   useEffect(() => {
     if (!scrollbarRef.current?.el || !textareaRef.current) return;
     domEventStore.observeResize(
+      "textarea-resize",
       scrollbarRef.current.el,
       (entries) => {
         logger.debug("textarea observeResize", entries);
@@ -104,7 +105,7 @@ const TextArea: FC<IProps> = ({
       "border-box"
     );
     return () => {
-      domEventStore.clearObservers();
+      domEventStore.removeObserver("textarea-resize");
     };
   }, [scrollbarRef.current, textareaRef.current]);
 
