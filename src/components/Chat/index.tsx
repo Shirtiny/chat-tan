@@ -27,6 +27,7 @@ const Chat: FC<IProps> = ({ className, style = {}, ...rest }) => {
         // resize="vertical"
         wrap="off"
         autoComplete="off"
+        maxHeight={200}
         maxLength={2000}
       />
     </div>

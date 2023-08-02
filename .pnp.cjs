@@ -37,7 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@novu/notification-center", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:0.13.0"],\
             ["@react-spring/web", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:9.7.2"],\
             ["@shirtiny/logger", "npm:4.2.0"],\
-            ["@shirtiny/utils", "npm:1.1.0"],\
+            ["@shirtiny/utils", "npm:1.2.0"],\
             ["@tauri-apps/api", "npm:2.0.0-alpha.1"],\
             ["@tauri-apps/cli", "npm:2.0.0-alpha.4"],\
             ["@tolgee/react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:5.8.3"],\
@@ -4403,10 +4403,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@shirtiny/utils", [\
-        ["npm:1.1.0", {\
-          "packageLocation": "./.yarn/cache/@shirtiny-utils-npm-1.1.0-e9a65fdd80-155bdfb465.zip/node_modules/@shirtiny/utils/",\
+        ["npm:1.2.0", {\
+          "packageLocation": "./.yarn/cache/@shirtiny-utils-npm-1.2.0-93697fe594-de36e810f2.zip/node_modules/@shirtiny/utils/",\
           "packageDependencies": [\
-            ["@shirtiny/utils", "npm:1.1.0"],\
+            ["@shirtiny/utils", "npm:1.2.0"],\
             ["date-fns", "npm:2.29.3"],\
             ["rxjs", "npm:7.8.0"]\
           ],\
@@ -5953,7 +5953,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@novu/notification-center", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:0.13.0"],\
             ["@react-spring/web", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:9.7.2"],\
             ["@shirtiny/logger", "npm:4.2.0"],\
-            ["@shirtiny/utils", "npm:1.1.0"],\
+            ["@shirtiny/utils", "npm:1.2.0"],\
             ["@tauri-apps/api", "npm:2.0.0-alpha.1"],\
             ["@tauri-apps/cli", "npm:2.0.0-alpha.4"],\
             ["@tolgee/react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:5.8.3"],\

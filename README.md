@@ -10,6 +10,8 @@ This template should help get you started developing with Tauri, React and Types
   # || linux
   # curl https://get.volta.sh | bash
   # source /etc/profile
+  # sudo chmod -R 777 ./
+  # git config --global core.autocrlf false
 
   make init
   make start

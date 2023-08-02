@@ -6,16 +6,21 @@ import {
   useRef,
   useState,
   ChangeEvent,
+  ChangeEventHandler,
+  useEffect,
 } from "react";
 import type { Property } from "csstype";
 import type { ICommonProps } from "@/types";
 import component from "@/hoc/component";
 import { cls } from "@shirtiny/utils/lib/style";
+import { DomEventStore } from "@shirtiny/utils/lib/events";
 import logger from "@/utils/logger";
 
-import Scrollbar from "../Scrollbar";
+import Scrollbar, { IScrollbarRef } from "../Scrollbar";
 
 import "./index.scss";
+
+const domEventStore = new DomEventStore();
 
 interface IProps extends ICommonProps {
   resize?: Property.Resize;
@@ -30,9 +35,10 @@ interface IProps extends ICommonProps {
   placeholder?: string;
   cols?: number;
   rows?: number;
-  height?: number;
+  maxHeight?: number;
 
   onFocus?: FocusEventHandler<HTMLTextAreaElement>;
+  onChange?: ChangeEventHandler<HTMLTextAreaElement>;
 }
 
 const TextArea: FC<IProps> = ({
@@ -47,16 +53,18 @@ const TextArea: FC<IProps> = ({
   cols = 20,
   rows,
 
-  height = 300,
+  maxHeight = 300,
   onFocus,
+  onChange,
   ...rest
 }) => {
   const [focus, setFocus] = useState(false);
-  const scrollbarRef = useRef(null);
-  const textareaRef = useRef(null);
+  const scrollbarRef = useRef<IScrollbarRef>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const handleFocus = useCallback(
     (e: FocusEvent<HTMLTextAreaElement, Element>) => {
+      textareaRef.current?.focus();
       setFocus(true);
     },
     []
@@ -64,26 +72,53 @@ const TextArea: FC<IProps> = ({
 
   const handleBlur = useCallback(
     (e: FocusEvent<HTMLTextAreaElement, Element>) => {
+      textareaRef.current?.blur();
       setFocus(false);
     },
     []
   );
 
-  const handleChange = useCallback((e: ChangeEvent<HTMLTextAreaElement>) => {
-    const el = e.target;
+  const fitTextareaHeight = useCallback(() => {
+    logger.debug("fit textarea height");
+    const el = textareaRef.current!;
     el.style.height = "auto";
     el.style.height = String(el.scrollHeight) + "px";
   }, []);
 
+  const handleChange = useCallback(
+    (e: ChangeEvent<HTMLTextAreaElement>) => {
+      fitTextareaHeight();
+      onChange && onChange(e);
+    },
+    [fitTextareaHeight]
+  );
+
+  useEffect(() => {
+    if (!scrollbarRef.current?.el || !textareaRef.current) return;
+    domEventStore.observeResize(
+      scrollbarRef.current.el,
+      (entries) => {
+        logger.debug("textarea observeResize", entries);
+        fitTextareaHeight();
+      },
+      "border-box"
+    );
+    return () => {
+      domEventStore.clearObservers();
+    };
+  }, [scrollbarRef.current, textareaRef.current]);
+
   return (
     <Scrollbar
-      className={cls("textarea-container", { focus })}
-      maxHeight={height}
       ref={scrollbarRef}
+      className={cls("textarea-container", className, { focus })}
+      maxHeight={maxHeight}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
     >
       <textarea
         ref={textareaRef}
-        className={cls("textarea", className)}
+        className="textarea"
         style={{
           resize,
         }}
@@ -94,8 +129,6 @@ const TextArea: FC<IProps> = ({
         placeholder={placeholder}
         cols={cols}
         rows={rows}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
         onChange={handleChange}
         {...rest}
       ></textarea>

@@ -14,8 +14,12 @@ interface IProps extends ICommonProps {
   autoHide?: boolean;
 }
 
+export interface IScrollbarRef {
+  el: HTMLDivElement;
+}
+
 const Scrollbar: FC<IProps> = forwardRef(
-  ({ className, style = {}, maxHeight,autoHide, children, ...rest }, ref) => {
+  ({ className, style = {}, maxHeight, autoHide, children, ...rest }, ref) => {
     const scrollRef = useRef(null);
 
     useImperativeHandle(ref, () => {

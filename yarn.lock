@@ -2642,13 +2642,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shirtiny/utils@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@shirtiny/utils@npm:1.1.0"
+"@shirtiny/utils@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@shirtiny/utils@npm:1.2.0"
   dependencies:
     date-fns: ^2.25.0
     rxjs: ^7.3.0
-  checksum: 155bdfb4652061ffce17a9e6bc13e4c4be32d0d8ea3bbf7f0527c32ef3f29319587c37d7632952d45c696201d01beffd1827edf5247390dc6d4107e87a0134b3
+  checksum: de36e810f23b4514c498506abecfa3f3a21be71b8d8ad97bc831b85912226c6591b7dd1af35ae411fa4a3281b43518f3b2ee52b8687accd19cba1f4191826813
   languageName: node
   linkType: hard
 
@@ -3914,7 +3914,7 @@ __metadata:
     "@novu/notification-center": ^0.13.0
     "@react-spring/web": ^9.7.2
     "@shirtiny/logger": ^4.2.0
-    "@shirtiny/utils": ^1.1.0
+    "@shirtiny/utils": ^1.2.0
     "@tauri-apps/api": next
     "@tauri-apps/cli": next
     "@tolgee/react": ^5.8.3

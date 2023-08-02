@@ -4,6 +4,7 @@
     border-radius: 3px;
     transition-property: var(--transition-property);
     transition-duration: 0.2s;
+    cursor: text;
 
     &:hover {
         border-color: var(--color-input-border-dark);
