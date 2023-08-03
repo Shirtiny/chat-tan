@@ -69,10 +69,13 @@ const logger = new CustomLogger({
 });
 
 export const logVersion = async () => {
-  try {
+  
+  logger.group("info: ", async () => {
     env.isDev() && logger.log("env: ", import.meta.env);
-    logger.log(" log options:", logger.getLoggerOption());
-
+    logger.log("log options:", logger.getLoggerOption());
+  });
+  
+  try {
     const res = await fetch("/version.json");
     const versionInfo: any = await res.json();
     versionInfo &&

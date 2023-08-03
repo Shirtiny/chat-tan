@@ -65,7 +65,7 @@ const run = async () => {
   } catch (e) {
     isExist = false;
   }
-  console.log("is version file all exist", isExist);
+  console.log("is version file all exist: ", isExist);
 };
 
 run();

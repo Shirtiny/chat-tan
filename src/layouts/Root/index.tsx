@@ -27,7 +27,6 @@ interface IProps {}
 
 logVersion();
 (window as any).dev = dev;
-logger.log("dev key taskMap");
 
 // i18n
 const tolgee = Tolgee()
