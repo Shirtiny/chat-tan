@@ -43,6 +43,7 @@ const AppLayout: FC<IProps> = ({ className, children, ...rest }) => {
       baseWidth: baseWidth,
       minWidth: isMobile ? 375 : 960,
       baseFontSize: 100,
+      maxWidth: 1920
     })!;
 
     return () => {

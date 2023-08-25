@@ -1,4 +1,4 @@
-import { isFn } from "@shirtiny/utils/lib/lang";
+import { restrict } from "@shirtiny/utils/lib/math";
 import logger from "./logger";
 
 const once = { remFlexible: false };
@@ -13,6 +13,7 @@ interface IRemFlexibleParams {
   baseFontSize: number;
   // baseWidth减小至minWidth
   minWidth: number;
+  maxWidth?: number;
   // 只进行执行一次设置
   useOnce?: boolean;
   handleResize?: (clientWidth: number) => void;
@@ -23,6 +24,7 @@ function remFlexible({
   baseWidth = 1920,
   baseFontSize = 100,
   minWidth,
+  maxWidth = Infinity,
   useOnce,
 }: IRemFlexibleParams) {
   if (!win || (useOnce && once.remFlexible)) return;
@@ -36,7 +38,10 @@ function remFlexible({
     const baseRemRate = baseWidth / baseFontSize;
 
     const rem =
-      Math.max(docEl.clientWidth, minWidth || baseWidth) / baseRemRate;
+      restrict(docEl.clientWidth, minWidth || baseWidth, maxWidth) /
+      baseRemRate;
+    // const rem =
+    //   Math.max(docEl.clientWidth, minWidth || baseWidth) / baseRemRate;
 
     // 对整体进行二次缩放
     const scale = minWidth ? baseWidth / minWidth : 1;
