@@ -20,7 +20,7 @@ import logger, { logVersion } from "@/utils/logger";
 import env from "@/utils/env";
 
 // import "@fontsource/jetbrains-mono";
-import "modern-normalize/modern-normalize.css";
+// import "modern-normalize/modern-normalize.css";
 import "./index.scss";
 
 interface IProps {}
@@ -50,6 +50,7 @@ const tolgee = Tolgee()
   });
 
 const RootLayout: FC<IProps> = ({}) => {
+  // return <Loading />
   return (
     <TolgeeProvider
       tolgee={tolgee}

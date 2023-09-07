@@ -1,7 +1,7 @@
 const Component = () => {
   return (
     <div className="page page-personal">
-      <div>personal page test</div>
+      <div>coming soon</div>
     </div>
   );
 };

@@ -40,10 +40,10 @@ const AppLayout: FC<IProps> = ({ className, children, ...rest }) => {
     const baseWidth = isMobile ? 750 : 1920;
     const cleanRem = layout.remFlexible({
       win: window,
-      baseWidth: baseWidth,
-      minWidth: isMobile ? 375 : 960,
+      baseWidth,
+      minWidth: isMobile ? 750 : 1920,
       baseFontSize: 100,
-      maxWidth: 1920
+      // maxWidth: 1920,
     })!;
 
     return () => {

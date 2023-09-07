@@ -16,11 +16,11 @@ const navItems: INavItem[] = [
     lazy: async () => import("@/pages/Public"),
     icon: <HiOutlineChatBubbleLeftEllipsis />,
   },
-  // {
-  //   path: "adilraid",
-  //   lazy: async () => import("@/pages/Personal"),
-  //   icon: <HiOutlineUser />,
-  // },
+  {
+    path: "adilraid",
+    lazy: async () => import("@/pages/Personal"),
+    icon: <HiOutlineUser />,
+  },
 ];
 
 const v1: RouteObject[] = [

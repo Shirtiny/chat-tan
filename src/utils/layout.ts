@@ -1,3 +1,4 @@
+import { isNumber } from "@shirtiny/utils/lib/lang";
 import { restrict } from "@shirtiny/utils/lib/math";
 import logger from "./logger";
 
@@ -12,7 +13,7 @@ interface IRemFlexibleParams {
   // 以某个fontSize的值为基准
   baseFontSize: number;
   // baseWidth减小至minWidth
-  minWidth: number;
+  minWidth?: number;
   maxWidth?: number;
   // 只进行执行一次设置
   useOnce?: boolean;
@@ -37,15 +38,14 @@ function remFlexible({
   function onResize() {
     const baseRemRate = baseWidth / baseFontSize;
 
-    const rem =
-      restrict(docEl.clientWidth, minWidth || baseWidth, maxWidth) /
-      baseRemRate;
-    // const rem =
-    //   Math.max(docEl.clientWidth, minWidth || baseWidth) / baseRemRate;
-
+    const fontSize =
+      restrict(
+        docEl.clientWidth,
+        isNumber(minWidth) ? minWidth : baseWidth,
+        maxWidth
+      ) / baseRemRate;
     // 对整体进行二次缩放
-    const scale = minWidth ? baseWidth / minWidth : 1;
-    docEl.style.fontSize = scale * rem + "px";
+    docEl.style.fontSize = fontSize + "px";
   }
 
   function onPageshow(e: PageTransitionEvent) {

@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 import { internalIpV4 } from "internal-ip";
+import pxToRemOrVwPlugin from "./plugin/vite-plugin-css-px2rem";
 
 // https://vitejs.dev/config/
 export default defineConfig(async ({ command, mode }) => {
@@ -18,6 +19,17 @@ export default defineConfig(async ({ command, mode }) => {
         registerType: "autoUpdate",
         devOptions: {
           enabled: true,
+        },
+      }),
+      pxToRemOrVwPlugin({
+        options: {
+          rootValue: 100,
+          propList: ["*", "!letter-spacing"],
+          exclude: (path) => {
+            console.log(path);
+            if (path.indexOf("/styles/lib.scss")) return true;
+            return false;
+          },
         },
       }),
     ],

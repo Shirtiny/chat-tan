@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
 import nprogress from "nprogress";
 import component from "@/hoc/component";
-import "nprogress/nprogress.css";
+// import "nprogress/nprogress.css";
 import "./index.scss";
 
 nprogress.configure({ showSpinner: false });

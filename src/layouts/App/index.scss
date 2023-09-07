@@ -2,7 +2,7 @@
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     overflow: hidden;
-    font-size: .16rem;
+    font-size: 16px;
     display: flex;
     flex-direction: column;
 
@@ -17,7 +17,7 @@
             flex: 1;
             overflow-x: hidden;
             overflow-y: auto;
-            padding: 0.2rem;
+            padding: 40px;
         }
     }
 
