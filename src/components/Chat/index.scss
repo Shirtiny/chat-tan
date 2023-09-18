@@ -2,9 +2,14 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding: 16px 50px;
+    justify-content: space-between;
 
     &__panel {
-        height: 100%;
+        flex: 1;
+        padding-right: 16px;
+        margin-bottom: 16px;
+        max-height: calc(100% - 32px - 16px - 100px);
     }
 
     &__input {
@@ -12,4 +17,44 @@
         font-size: 14px;
         line-height: 1.5;
     }
+
+    .chat-message {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+
+        &:not(:last-of-type) {
+            margin-bottom: 24px;
+        }
+
+        &__user {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-right: 8px;
+
+            &__space {
+                flex: 1;
+            }
+        }
+
+        &__content {
+            font-size: 15px;
+            line-height: 24px;
+            font-weight: 500;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        &.role-user {
+            .chat-message__content {
+                padding: 16px;
+                background: var(--color-primary);
+                color: var(--color-primary-background);
+                border-radius: 5px;
+            }
+        }
+    }
+
+
 }

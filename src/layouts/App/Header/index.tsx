@@ -27,4 +27,4 @@ const AppHeader: FC<IProps> = ({ className, style = {}, ...rest }) => {
   );
 };
 
-export default component(AppHeader);
+export default component<IProps>(AppHeader);

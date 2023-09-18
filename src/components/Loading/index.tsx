@@ -22,4 +22,4 @@ const Loading: FC<IProps> = ({ className, style = {}, ...rest }) => {
   );
 };
 
-export default component(Loading);
+export default component<IProps>(Loading);

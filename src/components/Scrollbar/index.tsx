@@ -10,7 +10,7 @@ import "simplebar-react/dist/simplebar.min.css";
 import "./index.scss";
 
 interface IProps extends ICommonProps {
-  maxHeight?: number;
+  maxHeight?: number | string;
   autoHide?: boolean;
 }
 
@@ -46,4 +46,4 @@ const Scrollbar: FC<IProps> = forwardRef(
 );
 Scrollbar.displayName = "Scrollbar";
 
-export default component(Scrollbar, { useForwardRef: true });
+export default component<IProps>(Scrollbar, { useForwardRef: true });

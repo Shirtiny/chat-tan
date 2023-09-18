@@ -1,0 +1,12 @@
+.avatar {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    border-radius: 3px;
+    color: var(--color-primary-text-light);
+
+    .react-icon {
+        height: 100%;
+        width: 100%;
+    }
+}

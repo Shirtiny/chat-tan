@@ -33,4 +33,4 @@ const Notice: FC<IProps> = ({ className, style = {}, ...rest }) => {
   );
 };
 
-export default component(Notice);
+export default component<IProps>(Notice);

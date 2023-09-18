@@ -89,4 +89,4 @@ const AppAside: FC<IProps> = ({ className, style = {}, navItems, ...rest }) => {
   );
 };
 
-export default component(AppAside);
+export default component<IProps>(AppAside);

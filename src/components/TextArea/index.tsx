@@ -137,4 +137,4 @@ const TextArea: FC<IProps> = ({
   );
 };
 
-export default component(TextArea);
+export default component<IProps>(TextArea);

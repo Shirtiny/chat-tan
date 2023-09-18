@@ -40,4 +40,4 @@ const Button: FC<IProps> = ({
   );
 };
 
-export default component(Button);
+export default component<IProps>(Button);
