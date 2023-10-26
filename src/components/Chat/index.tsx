@@ -1,7 +1,7 @@
 import { FC, memo } from "react";
 import type { ICommonProps } from "@/types";
 import component from "@/hoc/component";
-import { cls } from "@shirtiny/utils/lib/style";
+import { cls, clsPainPattern } from "@shirtiny/utils/lib/style";
 import { HiOutlineUserCircle, HiOutlineCommandLine } from "react-icons/hi2";
 import TextArea from "../TextArea";
 import Avatar from "../Avatar";
@@ -70,8 +70,8 @@ interface IChatMessageProps extends ICommonProps {
 const ChatMessage: FC<IChatMessageProps> = memo(({ role, content }) => {
   const isUser = role === "user";
   return (
-    <div className={cls("chat-message", `role-${role}`)}>
-      <div className="chat-message__user">
+    <div className={cls("chat-message", clsPainPattern({ role }))}>
+      <div className="chat-message__side">
         {isUser ? (
           <Avatar Icon={<HiOutlineUserCircle />} />
         ) : (

@@ -27,7 +27,16 @@ export default defineConfig(async ({ command, mode }) => {
           propList: ["*", "!letter-spacing"],
           exclude: (path) => {
             console.log(path);
-            if (path.indexOf("/styles/lib.scss")) return true;
+            const isExclude = [
+              ".yarn",
+              "node_modules",
+              "src/styles/lib.scss",
+            ].some((p) => path.includes(p));
+            if (isExclude) {
+              console.log("exclude:", path);
+              return true;
+            }
+
             return false;
           },
         },

@@ -22,12 +22,14 @@
         display: grid;
         grid-template-columns: auto 1fr;
         align-items: center;
+        justify-items: start;
+
 
         &:not(:last-of-type) {
             margin-bottom: 24px;
         }
 
-        &__user {
+        &__side {
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -52,6 +54,12 @@
                 background: var(--color-primary);
                 color: var(--color-primary-background);
                 border-radius: 5px;
+            }
+        }
+        
+        &.role-system {
+            .chat-message__content {
+              width: 100%;
             }
         }
     }
