@@ -9,13 +9,14 @@ import pxToRemOrVwPlugin from "./plugin/vite-plugin-css-px2rem";
 export default defineConfig(async ({ command, mode }) => {
   console.log({ command, mode, nodeEnv: process.env.NODE_ENV });
   const isAndroid = mode === "ad";
+  const isDev = mode === "development";
   const host = isAndroid ? await internalIpV4() : "localhost";
 
   /** @type {import('vite').UserConfig} */
   const config: import("vite").UserConfig = {
     plugins: [
       react(),
-      VitePWA({
+      !isDev && VitePWA({
         registerType: "autoUpdate",
         devOptions: {
           enabled: true,

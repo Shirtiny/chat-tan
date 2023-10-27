@@ -23,6 +23,7 @@ import "./index.scss";
 const domEventStore = new DomEventStore();
 
 interface IProps extends ICommonProps {
+  value?: string;
   resize?: Property.Resize;
 
   // hard: 在文本到达元素最大宽度的时候，浏览器自动插入换行符 (CR+LF) 。比如指定 cols值。
@@ -44,6 +45,7 @@ interface IProps extends ICommonProps {
 const TextArea: FC<IProps> = ({
   className,
   style = {},
+  value,
   disabled = false,
   minLength,
   maxLength,
@@ -130,6 +132,7 @@ const TextArea: FC<IProps> = ({
         placeholder={placeholder}
         cols={cols}
         rows={rows}
+        value={value}
         onChange={handleChange}
         {...rest}
       ></textarea>

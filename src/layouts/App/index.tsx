@@ -1,5 +1,5 @@
 import type { ICommonProps } from "@/types";
-import { FC, useLayoutEffect } from "react";
+import { FC, useEffect, useLayoutEffect } from "react";
 import { useNavigation } from "react-router-dom";
 
 import RouterLoading from "@/components/Loading/Router";

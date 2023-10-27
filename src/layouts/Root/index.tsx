@@ -16,6 +16,7 @@ import AppLayout from "../App";
 
 import component from "@/hoc/component";
 import GlobalContextStore from "@/store/global";
+import db from "@/database";
 import logger, { logVersion } from "@/utils/logger";
 import env from "@/utils/env";
 
@@ -25,29 +26,37 @@ import "./index.scss";
 
 interface IProps {}
 
-logVersion();
-(window as any).dev = dev;
+let tolgee: any = null;
 
-// i18n
-const tolgee = Tolgee()
-  .use(DevTools())
-  .use(FormatSimple())
-  .use(LanguageStorage())
-  .use(LanguageDetector())
-  .init({
-    defaultLanguage: "en",
-    fallbackLanguage: "en",
+const init = async () => {
+  logVersion();
+  (window as any).dev = dev;
 
-    // for development
-    apiUrl: import.meta.env.VITE_TOLGEE_API_URL,
-    apiKey: import.meta.env.VITE_TOLGEE_API_KEY,
+  await db.init();
 
-    // for production
-    staticData: {
-      en: () => import("../../i18n/en.json"),
-      "zh-Hans": () => import("../../i18n/zh-Hans.json"),
-    },
-  });
+  // i18n
+  tolgee = Tolgee()
+    .use(DevTools())
+    .use(FormatSimple())
+    .use(LanguageStorage())
+    .use(LanguageDetector())
+    .init({
+      defaultLanguage: "en",
+      fallbackLanguage: "en",
+
+      // for development
+      apiUrl: import.meta.env.VITE_TOLGEE_API_URL,
+      apiKey: import.meta.env.VITE_TOLGEE_API_KEY,
+
+      // for production
+      staticData: {
+        en: () => import("../../i18n/en.json"),
+        "zh-Hans": () => import("../../i18n/zh-Hans.json"),
+      },
+    });
+};
+
+init();
 
 const RootLayout: FC<IProps> = ({}) => {
   // return <Loading />

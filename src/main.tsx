@@ -16,7 +16,7 @@ async function beforeRender() {
 
   // `worker.start()` returns a Promise that resolves
   // once the Service Worker is up and ready to intercept requests.
-  // return worker.start();
+  return worker.start();
 }
 
 beforeRender().then(() => {

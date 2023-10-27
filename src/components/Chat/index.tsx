@@ -1,4 +1,4 @@
-import { FC, memo } from "react";
+import { ChangeEvent, FC, memo, useCallback, useEffect, useState } from "react";
 import type { ICommonProps } from "@/types";
 import component from "@/hoc/component";
 import { cls, clsPainPattern } from "@shirtiny/utils/lib/style";
@@ -8,12 +8,40 @@ import Avatar from "../Avatar";
 import Scrollbar from "../Scrollbar";
 
 import GlobalContextStore from "@/store/global";
+import db from "@/database";
+import logger from "@/utils/logger";
 import "./index.scss";
 
-interface IProps extends ICommonProps {}
+interface IProps extends ICommonProps {
+  dbName: string;
+}
 
-const Chat: FC<IProps> = ({ className, style = {}, ...rest }) => {
+const Chat: FC<IProps> = ({ className, style = {}, dbName, ...rest }) => {
   const { t } = GlobalContextStore.use();
+  const [v, setV] = useState("");
+  const [messages, setMessages] = useState<any[]>([]);
+
+  const handleInputChange = useCallback(
+    (e: ChangeEvent<HTMLTextAreaElement>) => {
+      setV(e.target.value);
+    },
+    []
+  );
+
+  const handleSubmit = useCallback(() => {
+    setMessages((arr) => [...arr, { role: "user", content: v }]);
+  }, [v]);
+
+  useEffect(() => {
+    const database = db.i(dbName);
+    const messageCollections = database.collections.message;
+    const sub = messageCollections.find().$.subscribe((results) => {
+      logger.debug("results", results);
+    });
+    return () => {
+      sub.unsubscribe();
+    };
+  }, [dbName]);
 
   return (
     <div
@@ -50,6 +78,8 @@ const Chat: FC<IProps> = ({ className, style = {}, ...rest }) => {
         />
       </Scrollbar>
       <TextArea
+        value={v}
+        onChange={handleInputChange}
         className="chat__input"
         placeholder={t("CHAT_INPUT_PLACEHOLDER")}
         // resize="vertical"

@@ -137,6 +137,7 @@ const ActiveBar: FC<IProps> = ({
   const loadRef = useCallback(
     (el: HTMLDivElement) => {
       elRef.current = el;
+      if (!el) return;
       const container = el.parentElement;
       if (!container) return;
       Array.from(container.children).forEach((node, index) => {
