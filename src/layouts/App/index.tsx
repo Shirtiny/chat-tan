@@ -12,6 +12,7 @@ import component from "@/hoc/component";
 import theme from "@/styles/theme";
 import layout from "@/utils/layout";
 import logger from "@/utils/logger";
+import captcha from "@/utils/captcha";
 
 import "./index.scss";
 
@@ -32,12 +33,8 @@ const AppLayout: FC<IProps> = ({ className, children, ...rest }) => {
 
     if (!window) return;
     
-    const token = await window.grecaptcha.execute(
-      "6Lf8ohclAAAAAInG1aKYnPBL4129L8vP6ENZtNo4",
-      { action: "homepage" }
-    );
-    logger.log("visit homepage token: ", token);
-    
+    const token = await captcha.genToken("homepage");
+
     const { isMobile } = state;
     logger.debug("isMobile", isMobile);
 
