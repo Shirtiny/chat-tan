@@ -61,6 +61,7 @@ export default defineConfig(async ({ command, mode }) => {
     build: {
       target: ["es2015"],
       minify: "terser",
+      sourcemap: true
     },
     base: "./",
   };
