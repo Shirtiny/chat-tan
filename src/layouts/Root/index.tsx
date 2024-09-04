@@ -26,34 +26,32 @@ import "./index.scss";
 
 interface IProps {}
 
-let tolgee: any = {};
+// i18n
+const tolgee: any = Tolgee()
+  .use(DevTools())
+  .use(FormatSimple())
+  .use(LanguageStorage())
+  .use(LanguageDetector())
+  .init({
+    defaultLanguage: "en",
+    fallbackLanguage: "en",
+
+    // for development
+    apiUrl: import.meta.env.VITE_TOLGEE_API_URL,
+    apiKey: import.meta.env.VITE_TOLGEE_API_KEY,
+
+    // for production
+    staticData: {
+      en: () => import("../../i18n/en.json"),
+      "zh-Hans": () => import("../../i18n/zh-Hans.json"),
+    },
+  });
 
 const init = async () => {
   logVersion();
   (window as any).dev = dev;
 
   await db.init();
-
-  // i18n
-  tolgee = Tolgee()
-    .use(DevTools())
-    .use(FormatSimple())
-    .use(LanguageStorage())
-    .use(LanguageDetector())
-    .init({
-      defaultLanguage: "en",
-      fallbackLanguage: "en",
-
-      // for development
-      apiUrl: import.meta.env.VITE_TOLGEE_API_URL,
-      apiKey: import.meta.env.VITE_TOLGEE_API_KEY,
-
-      // for production
-      staticData: {
-        en: () => import("../../i18n/en.json"),
-        "zh-Hans": () => import("../../i18n/zh-Hans.json"),
-      },
-    });
 };
 
 init();
