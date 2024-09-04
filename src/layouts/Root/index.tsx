@@ -26,7 +26,7 @@ import "./index.scss";
 
 interface IProps {}
 
-let tolgee: any = null;
+let tolgee: any = {};
 
 const init = async () => {
   logVersion();
