@@ -31,6 +31,13 @@ const AppLayout: FC<IProps> = ({ className, children, ...rest }) => {
     // });
 
     if (!window) return;
+    
+    const token = await grecaptcha.execute(
+      "6Lf8ohclAAAAAInG1aKYnPBL4129L8vP6ENZtNo4",
+      { action: "homepage" }
+    );
+    logger.log("visit homepage token: ", token);
+    
     const { isMobile } = state;
     logger.debug("isMobile", isMobile);
 
