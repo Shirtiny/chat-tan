@@ -17,6 +17,8 @@ This template should help get you started developing with Tauri, React and Types
 
   make init
   make start
+  
+  npx update-browserslist-db@latest
 
 ```
 

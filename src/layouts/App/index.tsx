@@ -32,7 +32,7 @@ const AppLayout: FC<IProps> = ({ className, children, ...rest }) => {
 
     if (!window) return;
     
-    const token = await grecaptcha.execute(
+    const token = await window.grecaptcha.execute(
       "6Lf8ohclAAAAAInG1aKYnPBL4129L8vP6ENZtNo4",
       { action: "homepage" }
     );
