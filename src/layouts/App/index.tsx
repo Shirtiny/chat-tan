@@ -33,7 +33,7 @@ const AppLayout: FC<IProps> = ({ className, children, ...rest }) => {
 
     if (!window) return;
     
-    const token = await captcha.genToken("homepage");
+    captcha.genToken("homepage");
 
     const { isMobile } = state;
     logger.debug("isMobile", isMobile);
