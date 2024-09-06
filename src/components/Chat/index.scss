@@ -1,9 +1,15 @@
+@use '@/styles/mixins/screen';
+
 .chat {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 16px 50px;
+    padding: 16px 8px;
     justify-content: space-between;
+
+    @include screen.pc() {
+        padding: 16px 50px;
+    }
 
     &__panel {
         flex: 1;
@@ -54,12 +60,16 @@
                 background: var(--color-primary);
                 color: var(--color-primary-background);
                 border-radius: 5px;
+
+                @include screen.wap() {
+                    padding: 8px;
+                }
             }
         }
-        
+
         &.role-system {
             .chat-message__content {
-              width: 100%;
+                width: 100%;
             }
         }
     }

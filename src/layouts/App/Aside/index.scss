@@ -1,9 +1,16 @@
+@use '@/styles/mixins/screen';
+
+
 .app-aside {
     display: flex;
     flex-direction: column;
     // justify-content: space-between;
     background-color: var(--color-primary-background-dark);
     padding: 40px 0;
+
+    @include screen.wap() {
+        display: none;
+    }
 
     &__nav {
         position: relative;
