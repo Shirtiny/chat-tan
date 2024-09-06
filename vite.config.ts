@@ -66,7 +66,7 @@ export default defineConfig(async ({ command, mode }) => {
       sourcemap: true,
       rollupOptions: {
         output: {
-          manualChunks: { lodash: ["lodash"] },
+          manualChunks: { someLib: ["lodash", "rxdb"] },
         },
       },
     },
