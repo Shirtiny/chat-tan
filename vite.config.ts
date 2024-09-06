@@ -32,6 +32,7 @@ export default defineConfig(async ({ command, mode }) => {
               ".yarn",
               "node_modules",
               "src/styles/lib.scss",
+              "src/styles/mixins/screen.scss",
             ].some((p) => path.includes(p));
             if (isExclude) {
               console.log("exclude:", path);
