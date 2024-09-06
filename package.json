@@ -4,7 +4,8 @@
   "version": "0.0.3",
   "type": "module",
   "scripts": {
-    "prebuild": "yarn node ./.scripts/init.cjs && yarn run tsc ",
+    "prepare": "node ./.scripts/init.cjs",
+    "prebuild": "yarn prepare && yarn run tsc ",
     "dev": "vite",
     "dev:ad": "vite -m ad",
     "build": "yarn prebuild && vite build && jampack ./dist --cleancache",
@@ -44,7 +45,8 @@
     "rxdb": "^14.17.1",
     "rxjs": "^7.8.1",
     "simplebar-react": "^3.2.4",
-    "snappyjs": "^0.7.0"
+    "snappyjs": "^0.7.0",
+    "use-immer": "^0.10.0"
   },
   "devDependencies": {
     "@divriots/jampack": "^0.9.4",

@@ -4,7 +4,7 @@ const isDev = () => {
 
 const isMobile = (win: Window, width?: number) => {
   const isMobileAgent =
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i.test(
       win.navigator.userAgent
     );
 
@@ -16,9 +16,15 @@ const isMobile = (win: Window, width?: number) => {
   return isMobileAgent;
 };
 
+function isScreenWap() {
+  if (typeof window === "undefined") return false;
+  return window.innerWidth <= 875;
+}
+
 const env = {
   isDev,
   isMobile,
+  isScreenWap,
 };
 
 export default env;
