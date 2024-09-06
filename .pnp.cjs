@@ -60,6 +60,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["immer", "npm:9.0.21"],\
             ["internal-ip", "npm:7.0.0"],\
             ["jest", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:29.5.0"],\
+            ["lightningcss", "npm:1.26.0"],\
             ["lodash", "npm:4.17.21"],\
             ["modern-normalize", "npm:1.1.0"],\
             ["msw", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:2.0.0"],\
@@ -8117,6 +8118,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["immer", "npm:9.0.21"],\
             ["internal-ip", "npm:7.0.0"],\
             ["jest", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:29.5.0"],\
+            ["lightningcss", "npm:1.26.0"],\
             ["lodash", "npm:4.17.21"],\
             ["modern-normalize", "npm:1.1.0"],\
             ["msw", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:2.0.0"],\
@@ -11783,6 +11785,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lightningcss-win32-x64-msvc", "npm:1.19.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:1.26.0", {\
+          "packageLocation": "./.yarn/cache/lightningcss-npm-1.26.0-3976589dbe-2b5452dc86.zip/node_modules/lightningcss/",\
+          "packageDependencies": [\
+            ["lightningcss", "npm:1.26.0"],\
+            ["detect-libc", "npm:1.0.3"],\
+            ["lightningcss-darwin-arm64", "npm:1.26.0"],\
+            ["lightningcss-darwin-x64", "npm:1.26.0"],\
+            ["lightningcss-freebsd-x64", "npm:1.26.0"],\
+            ["lightningcss-linux-arm-gnueabihf", "npm:1.26.0"],\
+            ["lightningcss-linux-arm64-gnu", "npm:1.26.0"],\
+            ["lightningcss-linux-arm64-musl", "npm:1.26.0"],\
+            ["lightningcss-linux-x64-gnu", "npm:1.26.0"],\
+            ["lightningcss-linux-x64-musl", "npm:1.26.0"],\
+            ["lightningcss-win32-arm64-msvc", "npm:1.26.0"],\
+            ["lightningcss-win32-x64-msvc", "npm:1.26.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["lightningcss-darwin-arm64", [\
@@ -11790,6 +11810,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/unplugged/lightningcss-darwin-arm64-npm-1.19.0-813d813102/node_modules/lightningcss-darwin-arm64/",\
           "packageDependencies": [\
             ["lightningcss-darwin-arm64", "npm:1.19.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:1.26.0", {\
+          "packageLocation": "./.yarn/unplugged/lightningcss-darwin-arm64-npm-1.26.0-6fa0d6808b/node_modules/lightningcss-darwin-arm64/",\
+          "packageDependencies": [\
+            ["lightningcss-darwin-arm64", "npm:1.26.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -11801,6 +11828,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lightningcss-darwin-x64", "npm:1.19.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:1.26.0", {\
+          "packageLocation": "./.yarn/unplugged/lightningcss-darwin-x64-npm-1.26.0-7836403a61/node_modules/lightningcss-darwin-x64/",\
+          "packageDependencies": [\
+            ["lightningcss-darwin-x64", "npm:1.26.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lightningcss-freebsd-x64", [\
+        ["npm:1.26.0", {\
+          "packageLocation": "./.yarn/unplugged/lightningcss-freebsd-x64-npm-1.26.0-eec154df08/node_modules/lightningcss-freebsd-x64/",\
+          "packageDependencies": [\
+            ["lightningcss-freebsd-x64", "npm:1.26.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["lightningcss-linux-arm-gnueabihf", [\
@@ -11808,6 +11851,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/unplugged/lightningcss-linux-arm-gnueabihf-npm-1.19.0-09f22f1128/node_modules/lightningcss-linux-arm-gnueabihf/",\
           "packageDependencies": [\
             ["lightningcss-linux-arm-gnueabihf", "npm:1.19.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:1.26.0", {\
+          "packageLocation": "./.yarn/unplugged/lightningcss-linux-arm-gnueabihf-npm-1.26.0-1098692cae/node_modules/lightningcss-linux-arm-gnueabihf/",\
+          "packageDependencies": [\
+            ["lightningcss-linux-arm-gnueabihf", "npm:1.26.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -11819,6 +11869,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lightningcss-linux-arm64-gnu", "npm:1.19.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:1.26.0", {\
+          "packageLocation": "./.yarn/unplugged/lightningcss-linux-arm64-gnu-npm-1.26.0-0371de3a3a/node_modules/lightningcss-linux-arm64-gnu/",\
+          "packageDependencies": [\
+            ["lightningcss-linux-arm64-gnu", "npm:1.26.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["lightningcss-linux-arm64-musl", [\
@@ -11826,6 +11883,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/unplugged/lightningcss-linux-arm64-musl-npm-1.19.0-f51c67fc7d/node_modules/lightningcss-linux-arm64-musl/",\
           "packageDependencies": [\
             ["lightningcss-linux-arm64-musl", "npm:1.19.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:1.26.0", {\
+          "packageLocation": "./.yarn/unplugged/lightningcss-linux-arm64-musl-npm-1.26.0-df47f962c6/node_modules/lightningcss-linux-arm64-musl/",\
+          "packageDependencies": [\
+            ["lightningcss-linux-arm64-musl", "npm:1.26.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -11837,6 +11901,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lightningcss-linux-x64-gnu", "npm:1.19.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:1.26.0", {\
+          "packageLocation": "./.yarn/unplugged/lightningcss-linux-x64-gnu-npm-1.26.0-dc01f3fc60/node_modules/lightningcss-linux-x64-gnu/",\
+          "packageDependencies": [\
+            ["lightningcss-linux-x64-gnu", "npm:1.26.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["lightningcss-linux-x64-musl", [\
@@ -11846,6 +11917,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lightningcss-linux-x64-musl", "npm:1.19.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:1.26.0", {\
+          "packageLocation": "./.yarn/unplugged/lightningcss-linux-x64-musl-npm-1.26.0-c8ceb97df1/node_modules/lightningcss-linux-x64-musl/",\
+          "packageDependencies": [\
+            ["lightningcss-linux-x64-musl", "npm:1.26.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lightningcss-win32-arm64-msvc", [\
+        ["npm:1.26.0", {\
+          "packageLocation": "./.yarn/unplugged/lightningcss-win32-arm64-msvc-npm-1.26.0-df00096844/node_modules/lightningcss-win32-arm64-msvc/",\
+          "packageDependencies": [\
+            ["lightningcss-win32-arm64-msvc", "npm:1.26.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["lightningcss-win32-x64-msvc", [\
@@ -11853,6 +11940,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/unplugged/lightningcss-win32-x64-msvc-npm-1.19.0-85a11fff1e/node_modules/lightningcss-win32-x64-msvc/",\
           "packageDependencies": [\
             ["lightningcss-win32-x64-msvc", "npm:1.19.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:1.26.0", {\
+          "packageLocation": "./.yarn/unplugged/lightningcss-win32-x64-msvc-npm-1.26.0-fe4cf3894c/node_modules/lightningcss-win32-x64-msvc/",\
+          "packageDependencies": [\
+            ["lightningcss-win32-x64-msvc", "npm:1.26.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -15581,7 +15675,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["esbuild", "npm:0.21.5"],\
             ["fsevents", "patch:fsevents@npm%3A2.3.3#~builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"],\
             ["less", null],\
-            ["lightningcss", null],\
+            ["lightningcss", "npm:1.26.0"],\
             ["postcss", "npm:8.4.45"],\
             ["rollup", "npm:4.21.2"],\
             ["sass", "npm:1.60.0"],\
