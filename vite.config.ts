@@ -63,6 +63,7 @@ export default defineConfig(async ({ command, mode }) => {
     build: {
       target: ["es2015"],
       minify: "terser",
+      cssMinify: false,
       sourcemap: true,
       rollupOptions: {
         output: {
