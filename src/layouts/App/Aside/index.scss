@@ -9,7 +9,7 @@
     padding: 40px 0;
 
     @include screen.wap() {
-        display: none;
+        display: none !important;
     }
 
     &__nav {
