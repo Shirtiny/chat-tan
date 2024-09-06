@@ -23,27 +23,27 @@ export default defineConfig(async ({ command, mode }) => {
             enabled: true,
           },
         }),
-      // pxToRemOrVwPlugin({
-      //   options: {
-      //     rootValue: 100,
-      //     propList: ["*", "!letter-spacing"],
-      //     exclude: (path) => {
-      //       console.log(path);
-      //       const isExclude = [
-      //         ".yarn",
-      //         "node_modules",
-      //         "src/styles/lib.scss",
-      //         "src/styles/mixins/screen.scss",
-      //       ].some((p) => path.includes(p));
-      //       if (isExclude) {
-      //         console.log("exclude:", path);
-      //         return true;
-      //       }
+      pxToRemOrVwPlugin({
+        options: {
+          rootValue: 100,
+          propList: ["*", "!letter-spacing"],
+          exclude: (path) => {
+            console.log(path);
+            const isExclude = [
+              ".yarn",
+              "node_modules",
+              "src/styles/lib.scss",
+              "src/styles/mixins/screen.scss",
+            ].some((p) => path.includes(p));
+            if (isExclude) {
+              console.log("exclude:", path);
+              return true;
+            }
 
-      //       return false;
-      //     },
-      //   },
-      // }),
+            return false;
+          },
+        },
+      }),
     ],
     server: {
       host: "0.0.0.0", // listen on all addresses

@@ -12,6 +12,12 @@
         display: none !important;
     }
 
+    @media only screen and (width <= 875px) {
+        .app-aside {
+            display: none;
+        }
+    }
+
     &__nav {
         position: relative;
         display: flex;
