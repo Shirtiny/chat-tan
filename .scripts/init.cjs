@@ -30,4 +30,6 @@ if (ci.isCI) {
   husky.install();
 }
 
+console.log("node version");
+shell.exec("yarn node --version");
 shell.exec("yarn node .scripts/version.cjs");
