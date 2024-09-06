@@ -16,12 +16,13 @@ export default defineConfig(async ({ command, mode }) => {
   const config: import("vite").UserConfig = {
     plugins: [
       react(),
-      !isDev && VitePWA({
-        registerType: "autoUpdate",
-        devOptions: {
-          enabled: true,
-        },
-      }),
+      !isDev &&
+        VitePWA({
+          registerType: "autoUpdate",
+          devOptions: {
+            enabled: true,
+          },
+        }),
       pxToRemOrVwPlugin({
         options: {
           rootValue: 100,
@@ -62,7 +63,12 @@ export default defineConfig(async ({ command, mode }) => {
     build: {
       target: ["es2015"],
       minify: "terser",
-      sourcemap: true
+      sourcemap: true,
+      rollupOptions: {
+        output: {
+          manualChunks: { lodash: ["lodash"] },
+        },
+      },
     },
     base: "./",
   };
