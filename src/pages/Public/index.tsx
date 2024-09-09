@@ -5,7 +5,7 @@ import "./index.scss";
 const Component = () => {
   return (
     <div className="page page-public">
-      <Chat dbName="public" />
+      <Chat className="public-chat" dbName="public" />
     </div>
   );
 };

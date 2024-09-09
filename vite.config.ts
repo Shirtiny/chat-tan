@@ -27,6 +27,7 @@ export default defineConfig(async ({ command, mode }) => {
         options: {
           rootValue: 100,
           propList: ["*", "!letter-spacing"],
+          mediaQuery: false,
           exclude: (path) => {
             console.log(path);
             const isExclude = [
