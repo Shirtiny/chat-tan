@@ -33,7 +33,7 @@ export default defineConfig(async ({ command, mode }) => {
             const isExclude = [
               ".yarn",
               "node_modules",
-              "src/styles/lib.scss"
+              "src/styles/lib.scss",
             ].some((p) => path.includes(p));
             if (isExclude) {
               console.log("exclude:", path);
@@ -63,7 +63,8 @@ export default defineConfig(async ({ command, mode }) => {
     build: {
       target: ["es2015"],
       minify: "terser",
-      cssMinify: "lightningcss",
+      // cssTarget: "chrome130",
+      // cssMinify: "lightningcss",
       sourcemap: true,
       rollupOptions: {
         output: {

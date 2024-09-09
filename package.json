@@ -90,11 +90,5 @@
   },
   "msw": {
     "workerDirectory": "public"
-  },
-  "browserslist": [
-    "last 1 version",
-    "> 2%",
-    "maintained node versions",
-    "not dead"
-  ]
+  }
 }
