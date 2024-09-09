@@ -1,7 +1,6 @@
 .app-layout {
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
-    max-height: -webkit-fill-available;
+    height: 100dvh;
+    max-height: 100vh;
     overflow: hidden;
     font-size: 16px;
     display: flex;
