@@ -27,14 +27,13 @@ export default defineConfig(async ({ command, mode }) => {
         options: {
           rootValue: 100,
           propList: ["*", "!letter-spacing"],
-          mediaQuery: false,
+          mediaQuery: true,
           exclude: (path) => {
             console.log(path);
             const isExclude = [
               ".yarn",
               "node_modules",
-              "src/styles/lib.scss",
-              "src/styles/mixins/screen.scss",
+              "src/styles/lib.scss"
             ].some((p) => path.includes(p));
             if (isExclude) {
               console.log("exclude:", path);
@@ -64,7 +63,7 @@ export default defineConfig(async ({ command, mode }) => {
     build: {
       target: ["es2015"],
       minify: "terser",
-      cssMinify: "lightningcss",
+      // cssMinify: "lightningcss",
       sourcemap: true,
       rollupOptions: {
         output: {
