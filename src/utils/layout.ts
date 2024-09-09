@@ -71,18 +71,17 @@ function remFlexible({
 }
 
 function vhProperty(win: Window) {
-  // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-  const vh = win.innerHeight * 0.01;
-  // Then we set the value in the --vh custom property to the root of the document
-  win.document.documentElement.style.setProperty("--vh", `${vh.toFixed(3)}px`);
-
-  function onResize() {
-    // We execute the same script as before
-    let vh = window.innerHeight * 0.01;
+  const setVhProperty = () => {
     win.document.documentElement.style.setProperty(
       "--vh",
-      `${vh.toFixed(3)}px`
+      `${window.innerHeight}px`
     );
+  };
+
+  setVhProperty();
+
+  function onResize() {
+    setVhProperty();
   }
 
   // We listen to the resize event
