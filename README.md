@@ -19,6 +19,8 @@ This template should help get you started developing with Tauri, React and Types
   make start
   
   npx update-browserslist-db@latest
+  
+  yarn dlx @yarnpkg/sdks vscode
 
 ```
 

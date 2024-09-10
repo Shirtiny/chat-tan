@@ -3,7 +3,7 @@ import { useImmer } from "use-immer";
 import type { ICommonProps } from "@/types";
 import component from "@/hoc/component";
 import { cls } from "@shirtiny/utils/lib/style";
-
+import { nanoid } from "nanoid";
 import TextArea from "../TextArea";
 import Button from "../Button";
 import Scrollbar from "../Scrollbar";
@@ -47,8 +47,15 @@ const Chat: FC<IProps> = ({ className, style = {}, dbName, ...rest }) => {
 
   useEffect(() => {
     const database = db.i(dbName);
+
     const messageCollections = database.collections.message;
-    const sub = messageCollections.find().$.subscribe((results) => {
+    messageCollections.insert({
+      id: "0",
+      role: "user",
+      content: "对度度保温杯进行波士顿7s分析，要求全面且详细",
+      timestamp: Date.now(),
+    });
+    const sub = messageCollections.find().$.subscribe((results: any) => {
       logger.debug("results", results);
     });
     return () => {

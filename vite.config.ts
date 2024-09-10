@@ -43,7 +43,7 @@ export default defineConfig(async ({ command, mode }) => {
       minify: "terser",
       // cssTarget: "chrome130",
       cssMinify: "lightningcss",
-      sourcemap: false,
+      sourcemap: isDev,
       rollupOptions: {
         output: {
           manualChunks: { exoskeleton: ["lodash", "rxdb"] },
