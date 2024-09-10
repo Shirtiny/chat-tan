@@ -42,7 +42,7 @@ export default defineConfig(async ({ command, mode }) => {
       target: ["es2015"],
       minify: "terser",
       // cssTarget: "chrome130",
-      // cssMinify: "lightningcss",
+      cssMinify: "lightningcss",
       sourcemap: false,
       rollupOptions: {
         output: {
