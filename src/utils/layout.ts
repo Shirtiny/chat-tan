@@ -44,7 +44,7 @@ function remFlexible({
         isNumber(minWidth) ? minWidth : baseWidth,
         maxWidth
       ) / baseRemRate;
-    // 对整体进行二次缩放
+
     docEl.style.fontSize = fontSize + "px";
   }
 

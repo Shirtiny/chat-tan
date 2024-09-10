@@ -3,7 +3,6 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 import { internalIpV4 } from "internal-ip";
-import pxToRemOrVwPlugin from "./plugin/vite-plugin-css-px2rem";
 
 // https://vitejs.dev/config/
 export default defineConfig(async ({ command, mode }) => {
@@ -23,27 +22,6 @@ export default defineConfig(async ({ command, mode }) => {
             enabled: true,
           },
         }),
-      pxToRemOrVwPlugin({
-        options: {
-          rootValue: 100,
-          propList: ["*", "!letter-spacing"],
-          mediaQuery: true,
-          exclude: (path) => {
-            console.log(path);
-            const isExclude = [
-              ".yarn",
-              "node_modules",
-              "src/styles/lib.scss",
-            ].some((p) => path.includes(p));
-            if (isExclude) {
-              console.log("exclude:", path);
-              return true;
-            }
-
-            return false;
-          },
-        },
-      }),
     ],
     server: {
       host: "0.0.0.0", // listen on all addresses
@@ -65,7 +43,7 @@ export default defineConfig(async ({ command, mode }) => {
       minify: "terser",
       // cssTarget: "chrome130",
       // cssMinify: "lightningcss",
-      sourcemap: true,
+      sourcemap: false,
       rollupOptions: {
         output: {
           manualChunks: { exoskeleton: ["lodash", "rxdb"] },

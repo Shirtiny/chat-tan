@@ -60,6 +60,7 @@
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^4.3.1",
     "ci-info": "^3.8.0",
+    "css-tree": "^2.3.1",
     "csstype": "^3.1.2",
     "dotenv": "^16.0.3",
     "git-repo-info": "^2.1.1",

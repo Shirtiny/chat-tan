@@ -5693,6 +5693,7 @@ __metadata:
     "@vitejs/plugin-react": ^4.3.1
     ci-info: ^3.8.0
     comlink: ^4.4.1
+    css-tree: ^2.3.1
     csstype: ^3.1.2
     deep-object-diff: ^1.1.9
     dotenv: ^16.0.3

@@ -32,7 +32,7 @@ const AppLayout: FC<IProps> = ({ className, children, ...rest }) => {
     // });
 
     if (!window) return;
-    
+
     captcha.genToken("homepage");
 
     const { isMobile } = state;

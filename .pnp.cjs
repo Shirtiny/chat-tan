@@ -51,6 +51,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vitejs/plugin-react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:4.3.1"],\
             ["ci-info", "npm:3.8.0"],\
             ["comlink", "npm:4.4.1"],\
+            ["css-tree", "npm:2.3.1"],\
             ["csstype", "npm:3.1.2"],\
             ["deep-object-diff", "npm:1.1.9"],\
             ["dotenv", "npm:16.0.3"],\
@@ -8506,6 +8507,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vitejs/plugin-react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:4.3.1"],\
             ["ci-info", "npm:3.8.0"],\
             ["comlink", "npm:4.4.1"],\
+            ["css-tree", "npm:2.3.1"],\
             ["csstype", "npm:3.1.2"],\
             ["deep-object-diff", "npm:1.1.9"],\
             ["dotenv", "npm:16.0.3"],\

@@ -56,6 +56,33 @@ export default function pxToRemOrVwPlugin(opts: IPluginOptions): Plugin {
         }
       }
     },
+    // transform(code, id) {
+    //   try {
+    //     test();
+    //     if (StyleFileSuffixRegex.test(id)) {
+    //       const tree = cssTree.parse(code) as cssTree.StyleSheet;
+
+    //       cssTree.walk(tree, {
+    //         enter(node: any) {
+    //           if (node.unit === "px") {
+    //             node.value = `${Number(node.value) / rootValue}`;
+    //             node.unit = "rem";
+    //           }
+    //         },
+    //       });
+
+    //       return {
+    //         code: cssTree.generate(tree),
+    //       };
+    //     }
+    //   } catch (ex) {
+    //     console.log(ex);
+    //   }
+
+    //   return {
+    //     code,
+    //   };
+    // },
     transformIndexHtml() {
       return;
     },
