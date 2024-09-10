@@ -42,7 +42,16 @@ const Chat: FC<IProps> = ({ className, style = {}, dbName, ...rest }) => {
   }, []);
 
   const handleSubmit = useCallback(() => {
-    setMessages((arr) => [...arr, { role: "user", content: v }]);
+    const database = db.i(dbName);
+
+    const messageCollections = database.collections.message;
+    messageCollections.insert({
+      id: nanoid(),
+      role: "user",
+      content: v,
+      timestamp: Date.now(),
+    });
+    setV("");
   }, [v]);
 
   useEffect(() => {
@@ -55,30 +64,10 @@ const Chat: FC<IProps> = ({ className, style = {}, dbName, ...rest }) => {
       content: "对度度保温杯进行波士顿7s分析，要求全面且详细",
       timestamp: Date.now(),
     });
-    const sub = messageCollections.find().$.subscribe((results: any) => {
-      logger.debug("results", results);
-    });
-    return () => {
-      sub.unsubscribe();
-    };
-  }, [dbName]);
-
-  return (
-    <div
-      className={cls(css.chat, className)}
-      style={{
-        ...style,
-      }}
-      {...rest}
-    >
-      <Scrollbar className={css.panel} autoHide>
-        <ChatMessage
-          role="user"
-          content="对度度保温杯进行波士顿7s分析，要求全面且详细"
-        />
-        <ChatMessage
-          role="system"
-          content={`Boston 7S 分析是一种用于组织分析的方法，它将一个组织视为一个系统，并将其分解为七个组成部分：结构（Structure）、战略（Strategy）、系统（Systems）、风格（Style）、员工（Staff）、技能（Skills）和文化（Culture）。以下是对于度度保温杯的 Boston 7S 分析：
+    messageCollections.insert({
+      id: "1",
+      role: "system",
+      content: `Boston 7S 分析是一种用于组织分析的方法，它将一个组织视为一个系统，并将其分解为七个组成部分：结构（Structure）、战略（Strategy）、系统（Systems）、风格（Style）、员工（Staff）、技能（Skills）和文化（Culture）。以下是对于度度保温杯的 Boston 7S 分析：
 
 结构（Structure）：
 度度保温杯的组织结构相对简单，遵循传统的垂直整合模式，生产、销售、营销等关键职能都由公司自身承担。在生产方面，它们具有完善的生产线和质量控制流程。在销售方面，它们拥有线上和线下的销售网络。
@@ -94,8 +83,30 @@ const Chat: FC<IProps> = ({ className, style = {}, dbName, ...rest }) => {
 度度保温杯的员工都具备出色的技术技能和管理能力。在生产方面，他们的技能体现在能够熟练掌握各种生产技术和设备。在销售和营销方面，他们的技能体现在能够准确把握市场动态，进行有效的品牌推广。
 文化（Culture）：
 度度保温杯的企业文化强调创新、质量和服务。这种文化反映在员工的行为中，也体现在公司的决策过程中。例如，公司鼓励员工提出新的想法和建议，只要这些想法有利于公司的创新和发展。
-综上所述，度度保温杯在 Boston 7S 分析中的各个要素都表现出色，这使得它们能够在竞争激烈的市场中保持领先地位。`}
-        />
+综上所述，度度保温杯在 Boston 7S 分析中的各个要素都表现出色，这使得它们能够在竞争激烈的市场中保持领先地位。`,
+      timestamp: Date.now(),
+    });
+    const sub = messageCollections.find().$.subscribe((results: any) => {
+      logger.debug("results", results);
+      setMessages(results);
+    });
+    return () => {
+      sub.unsubscribe();
+    };
+  }, [dbName]);
+
+  return (
+    <div
+      className={cls(css.chat, className)}
+      style={{
+        ...style,
+      }}
+      {...rest}
+    >
+      <Scrollbar className={css.panel} autoHide>
+        {messages.map((item) => {
+          return <ChatMessage role={item.role} content={item.content} />;
+        })}
       </Scrollbar>
       <div className={cls(css.inputArea, state.inputFocus && css.focus)}>
         <TextArea
@@ -114,7 +125,7 @@ const Chat: FC<IProps> = ({ className, style = {}, dbName, ...rest }) => {
         />
         <div className={css.bar}>
           <div className="flex-space"></div>
-          <Button type="text" withIcon>
+          <Button type="text" onClick={handleSubmit} withIcon>
             <HiPaperAirplane />
           </Button>
         </div>
