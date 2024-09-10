@@ -1,16 +1,20 @@
 import { ChangeEvent, FC, memo, useCallback, useEffect, useState } from "react";
+import { useImmer } from "use-immer";
 import type { ICommonProps } from "@/types";
 import component from "@/hoc/component";
-import { cls, clsPainPattern } from "@shirtiny/utils/lib/style";
-import { HiOutlineUserCircle, HiOutlineCommandLine } from "react-icons/hi2";
+import { cls } from "@shirtiny/utils/lib/style";
+
 import TextArea from "../TextArea";
-import Avatar from "../Avatar";
+import Button from "../Button";
 import Scrollbar from "../Scrollbar";
+import ChatMessage from "./Message";
 
 import GlobalContextStore from "@/store/global";
 import db from "@/database";
 import logger from "@/utils/logger";
-import "./index.scss";
+
+import css from "./index.module.scss";
+import { HiPaperAirplane } from "react-icons/hi2";
 
 interface IProps extends ICommonProps {
   dbName: string;
@@ -20,6 +24,9 @@ const Chat: FC<IProps> = ({ className, style = {}, dbName, ...rest }) => {
   const { t } = GlobalContextStore.use();
   const [v, setV] = useState("");
   const [messages, setMessages] = useState<any[]>([]);
+  const [state, update] = useImmer({
+    inputFocus: false,
+  });
 
   const handleInputChange = useCallback(
     (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -27,6 +34,12 @@ const Chat: FC<IProps> = ({ className, style = {}, dbName, ...rest }) => {
     },
     []
   );
+
+  const handleFocusChange = useCallback((focus?: boolean) => {
+    update((s) => {
+      s.inputFocus = !!focus;
+    });
+  }, []);
 
   const handleSubmit = useCallback(() => {
     setMessages((arr) => [...arr, { role: "user", content: v }]);
@@ -45,13 +58,13 @@ const Chat: FC<IProps> = ({ className, style = {}, dbName, ...rest }) => {
 
   return (
     <div
-      className={cls("chat", className)}
+      className={cls(css.chat, className)}
       style={{
         ...style,
       }}
       {...rest}
     >
-      <Scrollbar className="chat__panel" autoHide>
+      <Scrollbar className={css.panel} autoHide>
         <ChatMessage
           role="user"
           content="对度度保温杯进行波士顿7s分析，要求全面且详细"
@@ -77,41 +90,30 @@ const Chat: FC<IProps> = ({ className, style = {}, dbName, ...rest }) => {
 综上所述，度度保温杯在 Boston 7S 分析中的各个要素都表现出色，这使得它们能够在竞争激烈的市场中保持领先地位。`}
         />
       </Scrollbar>
-      <TextArea
-        value={v}
-        onChange={handleInputChange}
-        className="chat__input"
-        placeholder={t("CHAT_INPUT_PLACEHOLDER")}
-        // resize="vertical"
-        wrap="off"
-        autoComplete="off"
-        maxHeight={200}
-        maxLength={2000}
-      />
+      <div className={cls(css.inputArea, state.inputFocus && css.focus)}>
+        <TextArea
+          value={v}
+          onChange={handleInputChange}
+          onFocusChange={handleFocusChange}
+          className={css.textarea}
+          placeholder={t("CHAT_INPUT_PLACEHOLDER")}
+          // resize="vertical"
+          wrap="off"
+          autoComplete="off"
+          minHeight={50}
+          maxLength={2000}
+          autoSize
+          borderless
+        />
+        <div className={css.bar}>
+          <div className="flex-space"></div>
+          <Button type="text" withIcon>
+            <HiPaperAirplane />
+          </Button>
+        </div>
+      </div>
     </div>
   );
 };
-
-interface IChatMessageProps extends ICommonProps {
-  role: "user" | "system";
-  content?: string;
-}
-
-const ChatMessage: FC<IChatMessageProps> = memo(({ role, content }) => {
-  const isUser = role === "user";
-  return (
-    <div className={cls("chat-message", clsPainPattern({ role }))}>
-      <div className="chat-message__side">
-        {isUser ? (
-          <Avatar Icon={<HiOutlineUserCircle />} />
-        ) : (
-          <Avatar Icon={<HiOutlineCommandLine />} />
-        )}
-        <div className="chat-message__user__space"></div>
-      </div>
-      <div className="chat-message__content">{content}</div>
-    </div>
-  );
-});
 
 export default component<IProps>(Chat);

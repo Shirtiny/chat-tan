@@ -44,6 +44,6 @@
     }
 
     &.shape-rect {
-        border-radius: 6px;
+        border-radius: var(--border-radius);
     }
 }

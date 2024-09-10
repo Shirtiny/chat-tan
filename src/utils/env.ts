@@ -16,6 +16,9 @@ const isMobile = (win: Window, width?: number) => {
   return isMobileAgent;
 };
 
+export const isFirefox = (): boolean =>
+  /firefox/i.test(window.navigator.userAgent);
+
 function isScreenWap() {
   if (typeof window === "undefined") return false;
   return window.innerWidth <= 875;
@@ -24,6 +27,7 @@ function isScreenWap() {
 const env = {
   isDev,
   isMobile,
+  isFirefox,
   isScreenWap,
 };
 

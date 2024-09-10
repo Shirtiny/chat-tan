@@ -6,6 +6,7 @@ import env from "./utils/env";
 import "pepjs";
 import "./styles/lib.scss";
 import "./styles/global.scss";
+import "./styles/common.scss";
 
 async function beforeRender() {
   if (!env.isDev()) {

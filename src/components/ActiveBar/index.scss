@@ -1,6 +1,6 @@
 .active-bar {
     position: absolute;
     background-color: var(--color-primary);
-    border-radius: 6px;
+    border-radius: var(--border-radius);
     transition: background-color 0.3s ease-in-out;
 }

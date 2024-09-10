@@ -2,7 +2,7 @@
     width: 30px;
     height: 30px;
     vertical-align: middle;
-    border-radius: 3px;
+    border-radius: var(--border-radius);
     color: var(--color-primary-text-light);
 
     .react-icon {

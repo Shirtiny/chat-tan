@@ -1,37 +1,40 @@
 .textarea-container {
-    font-size: inherit;
-    border: solid 1px var(--color-input-border);
-    border-radius: 3px;
-    transition-property: var(--transition-property);
-    transition-duration: 0.2s;
-    cursor: text;
+  font-size: inherit;
+  border: solid 1px var(--color-input-border);
+  border-radius: var(--border-radius, 3px);
+  transition-property: var(--transition-property);
+  transition-duration: var(--transition-duration);
+  cursor: text;
 
-    &:hover {
-        border-color: var(--color-input-border-dark);
+  &:hover {
+    border-color: var(--color-input-border-dark);
+  }
+
+  &.focus {
+    border-color: var(--color-primary);
+    box-shadow: var(--color-primary) 0px 0px 0px 1px;
+  }
+
+  &.borderless {
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .textarea {
+    box-sizing: border-box;
+    padding: 0.4em;
+    width: 100%;
+    overflow: hidden;
+    appearance: none;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: inherit;
+    overflow: hidden;
+
+    &::placeholder {
+      color: inherit;
+      opacity: 0.4;
     }
-
-    &.focus {
-        border-color: var(--color-primary);
-        box-shadow: var(--color-primary) 0px 0px 0px 1px;
-    }
-
-    .textarea {
-        box-sizing: border-box;
-        padding: 0.4em;
-        width: 100%;
-        overflow: hidden;
-        appearance: none;
-        outline: none;
-        border: none;
-        background: transparent;
-        color: inherit;
-
-
-        &::placeholder {
-            color: inherit;
-            opacity: 0.4;
-        }
-
-    }
-
+  }
 }

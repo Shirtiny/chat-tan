@@ -9,7 +9,6 @@ export default {
       selectorBlackList: [],
       unitPrecision: 5,
       exclude: (path) => {
-        console.log(path);
         const isExclude = [".yarn", "node_modules", "src/styles/lib.scss"].some(
           (p) => path.includes(p)
         );

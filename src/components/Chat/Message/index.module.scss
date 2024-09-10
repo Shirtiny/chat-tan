@@ -1,0 +1,46 @@
+@use "@/styles/mixins/screen";
+
+.message {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  justify-items: start;
+
+  &:not(:last-of-type) {
+    margin-bottom: 24px;
+  }
+
+  .side {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 8px;
+  }
+
+  .content {
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 500;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+
+  &.role-user {
+    .content {
+      padding: 16px;
+      background: var(--color-primary);
+      color: var(--color-primary-background);
+      border-radius: var(--border-radius);
+
+      @include screen.wap() {
+        padding: 8px;
+      }
+    }
+  }
+
+  &.role-system {
+    .content {
+      width: 100%;
+    }
+  }
+}
