@@ -36,7 +36,7 @@ const RAW_RUNTIME_STATE =
           ["@novu/notification-center", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:0.13.0"],\
           ["@react-spring/web", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:9.7.2"],\
           ["@shirtiny/logger", "npm:4.2.1"],\
-          ["@shirtiny/utils", "npm:1.3.0"],\
+          ["@shirtiny/utils", "npm:2.0.1"],\
           ["@tauri-apps/api", "npm:2.0.0-alpha.1"],\
           ["@tauri-apps/cli", "npm:2.0.0-alpha.4"],\
           ["@tolgee/react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:5.8.3"],\
@@ -78,7 +78,7 @@ const RAW_RUNTIME_STATE =
           ["rxjs", "npm:7.8.1"],\
           ["sass", "npm:1.60.0"],\
           ["shelljs", "npm:0.8.5"],\
-          ["simplebar-react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.2.4"],\
+          ["simplebar-react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.2.6"],\
           ["snappyjs", "npm:0.7.0"],\
           ["terser", "npm:5.16.8"],\
           ["typescript", "patch:typescript@npm%3A5.6.2#optional!builtin<compat/typescript>::version=5.6.2&hash=8c6c40"],\
@@ -6690,10 +6690,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@shirtiny/utils", [\
-      ["npm:1.3.0", {\
-        "packageLocation": "./.yarn/cache/@shirtiny-utils-npm-1.3.0-2251d37002-eb5779413b.zip/node_modules/@shirtiny/utils/",\
+      ["npm:2.0.1", {\
+        "packageLocation": "./.yarn/cache/@shirtiny-utils-npm-2.0.1-2de0d87486-b3d8a2984a.zip/node_modules/@shirtiny/utils/",\
         "packageDependencies": [\
-          ["@shirtiny/utils", "npm:1.3.0"],\
+          ["@shirtiny/utils", "npm:2.0.1"],\
           ["date-fns", "npm:2.29.3"],\
           ["rxjs", "npm:7.8.0"]\
         ],\
@@ -8473,15 +8473,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["can-use-dom", [\
-      ["npm:0.1.0", {\
-        "packageLocation": "./.yarn/cache/can-use-dom-npm-0.1.0-48c60a9052-4b465d2d17.zip/node_modules/can-use-dom/",\
-        "packageDependencies": [\
-          ["can-use-dom", "npm:0.1.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["caniuse-lite", [\
       ["npm:1.0.30001655", {\
         "packageLocation": "./.yarn/cache/caniuse-lite-npm-1.0.30001655-a0517610a4-98e80bdb5a.zip/node_modules/caniuse-lite/",\
@@ -8549,7 +8540,7 @@ const RAW_RUNTIME_STATE =
           ["@novu/notification-center", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:0.13.0"],\
           ["@react-spring/web", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:9.7.2"],\
           ["@shirtiny/logger", "npm:4.2.1"],\
-          ["@shirtiny/utils", "npm:1.3.0"],\
+          ["@shirtiny/utils", "npm:2.0.1"],\
           ["@tauri-apps/api", "npm:2.0.0-alpha.1"],\
           ["@tauri-apps/cli", "npm:2.0.0-alpha.4"],\
           ["@tolgee/react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:5.8.3"],\
@@ -8591,7 +8582,7 @@ const RAW_RUNTIME_STATE =
           ["rxjs", "npm:7.8.1"],\
           ["sass", "npm:1.60.0"],\
           ["shelljs", "npm:0.8.5"],\
-          ["simplebar-react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.2.4"],\
+          ["simplebar-react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.2.6"],\
           ["snappyjs", "npm:0.7.0"],\
           ["terser", "npm:5.16.8"],\
           ["typescript", "patch:typescript@npm%3A5.6.2#optional!builtin<compat/typescript>::version=5.6.2&hash=8c6c40"],\
@@ -14420,12 +14411,11 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["simplebar-core", [\
-      ["npm:1.2.4", {\
-        "packageLocation": "./.yarn/cache/simplebar-core-npm-1.2.4-2dd1c4c362-d3716a37c5.zip/node_modules/simplebar-core/",\
+      ["npm:1.2.6", {\
+        "packageLocation": "./.yarn/cache/simplebar-core-npm-1.2.6-009f89e505-d90a9da100.zip/node_modules/simplebar-core/",\
         "packageDependencies": [\
-          ["simplebar-core", "npm:1.2.4"],\
+          ["simplebar-core", "npm:1.2.6"],\
           ["@types/lodash-es", "npm:4.17.7"],\
-          ["can-use-dom", "npm:0.1.0"],\
           ["lodash", "npm:4.17.21"],\
           ["lodash-es", "npm:4.17.21"]\
         ],\
@@ -14433,20 +14423,20 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["simplebar-react", [\
-      ["npm:3.2.4", {\
-        "packageLocation": "./.yarn/cache/simplebar-react-npm-3.2.4-bd9abdfe55-d31181ee92.zip/node_modules/simplebar-react/",\
+      ["npm:3.2.6", {\
+        "packageLocation": "./.yarn/cache/simplebar-react-npm-3.2.6-9396895ee7-6c1ccfe961.zip/node_modules/simplebar-react/",\
         "packageDependencies": [\
-          ["simplebar-react", "npm:3.2.4"]\
+          ["simplebar-react", "npm:3.2.6"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.2.4", {\
-        "packageLocation": "./.yarn/__virtual__/simplebar-react-virtual-865c3a2c6a/0/cache/simplebar-react-npm-3.2.4-bd9abdfe55-d31181ee92.zip/node_modules/simplebar-react/",\
+      ["virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.2.6", {\
+        "packageLocation": "./.yarn/__virtual__/simplebar-react-virtual-a2211203de/0/cache/simplebar-react-npm-3.2.6-9396895ee7-6c1ccfe961.zip/node_modules/simplebar-react/",\
         "packageDependencies": [\
-          ["simplebar-react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.2.4"],\
+          ["simplebar-react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:3.2.6"],\
           ["@types/react", "npm:18.0.29"],\
           ["react", "npm:18.2.0"],\
-          ["simplebar-core", "npm:1.2.4"]\
+          ["simplebar-core", "npm:1.2.6"]\
         ],\
         "packagePeers": [\
           "@types/react",\

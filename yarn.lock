@@ -4166,13 +4166,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shirtiny/utils@npm:^1.3.0":
-  version: 1.3.0
-  resolution: "@shirtiny/utils@npm:1.3.0"
+"@shirtiny/utils@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@shirtiny/utils@npm:2.0.1"
   dependencies:
     date-fns: "npm:^2.25.0"
     rxjs: "npm:^7.3.0"
-  checksum: 10/eb5779413bf6850bd78ff07a080791673f698d18f6f1951130bf46f931cfa1ace8a65015065dd96472f61848865cbd4c1e82a63a3b8b1718ae121d231a728c2a
+  checksum: 10/b3d8a2984a4a78c617561bc4fcb9fe59715aaf0d5f4e1a91c97a2f38feb2ae439d57b4f242a1d1c49e989cffee00f4c2bb2eb2b71b7867782d937b26cf550216
   languageName: node
   linkType: hard
 
@@ -5646,13 +5646,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"can-use-dom@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "can-use-dom@npm:0.1.0"
-  checksum: 10/4b465d2d176a3580428a7d406cb03dd0f05e068b1e1ac500c244eb7dd8c62613c87620c56b4a2c5c68c3d33dfd5a6fd56bde7bfb335dc5882f7489d68013600c
-  languageName: node
-  linkType: hard
-
 "caniuse-lite@npm:^1.0.30001449":
   version: 1.0.30001655
   resolution: "caniuse-lite@npm:1.0.30001655"
@@ -5715,7 +5708,7 @@ __metadata:
     "@novu/notification-center": "npm:^0.13.0"
     "@react-spring/web": "npm:^9.7.2"
     "@shirtiny/logger": "npm:^4.2.1"
-    "@shirtiny/utils": "npm:^1.3.0"
+    "@shirtiny/utils": "npm:^2.0.1"
     "@tauri-apps/api": "npm:next"
     "@tauri-apps/cli": "npm:next"
     "@tolgee/react": "npm:^5.8.3"
@@ -5757,7 +5750,7 @@ __metadata:
     rxjs: "npm:^7.8.1"
     sass: "npm:^1.60.0"
     shelljs: "npm:^0.8.5"
-    simplebar-react: "npm:^3.2.4"
+    simplebar-react: "npm:^3.2.6"
     snappyjs: "npm:^0.7.0"
     terser: "npm:^5.16.8"
     typescript: "npm:^5.6.2"
@@ -10973,26 +10966,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simplebar-core@npm:^1.2.4":
-  version: 1.2.4
-  resolution: "simplebar-core@npm:1.2.4"
+"simplebar-core@npm:^1.2.6":
+  version: 1.2.6
+  resolution: "simplebar-core@npm:1.2.6"
   dependencies:
     "@types/lodash-es": "npm:^4.17.6"
-    can-use-dom: "npm:^0.1.0"
     lodash: "npm:^4.17.21"
     lodash-es: "npm:^4.17.21"
-  checksum: 10/d3716a37c5e4279152bf79f034044d3e19221e819b337f8faf505fc40695292d62e1c2380b0e10b63bc5d626c05fd88d0d3fd22215c491a6888058cd72c033f2
+  checksum: 10/d90a9da10078eff7f8bff2b085a504ef9d6de3fc7f14952a8bfc72324e3a278704539b29aa126e46acac5d05a8f476c1724c53da8b892bc0dc60db0794c270fa
   languageName: node
   linkType: hard
 
-"simplebar-react@npm:^3.2.4":
-  version: 3.2.4
-  resolution: "simplebar-react@npm:3.2.4"
+"simplebar-react@npm:^3.2.6":
+  version: 3.2.6
+  resolution: "simplebar-react@npm:3.2.6"
   dependencies:
-    simplebar-core: "npm:^1.2.4"
+    simplebar-core: "npm:^1.2.6"
   peerDependencies:
     react: ">=16.8.0"
-  checksum: 10/d31181ee9282b5b7588c21c7c5e648fcba4ec8243145a6d31906b63644507f1f0ac9f4e4ac7cfdf82d533b46bb5cdda2d0cf1c826b48eca0aee022a09c4ef049
+  checksum: 10/6c1ccfe961299daf835fa17297c171c7ccd6f98abc9351a727d634572ac9e0ad60a2075a8c49de979fa71adca23b2686e744b3e9f7d6abbffaf98bc0a2fe8bbe
   languageName: node
   linkType: hard
 

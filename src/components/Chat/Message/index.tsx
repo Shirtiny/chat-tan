@@ -12,10 +12,13 @@ interface IProps extends ICommonProps {
   content?: string;
 }
 
-const ChatMessage: FC<IProps> = memo(({ role, content }) => {
+const ChatMessage: FC<IProps> = ({ className, style, role, content }) => {
   const isUser = role === "user";
   return (
-    <div className={cls(css.message, css[`role-${role}`])}>
+    <div
+      className={cls(css.message, className, css[`role-${role}`])}
+      style={style}
+    >
       <div className={css.side}>
         {isUser ? (
           <Avatar Icon={<HiOutlineUserCircle />} />
@@ -27,6 +30,6 @@ const ChatMessage: FC<IProps> = memo(({ role, content }) => {
       <div className={css.content}>{content}</div>
     </div>
   );
-});
+};
 
 export default component<IProps>(ChatMessage);

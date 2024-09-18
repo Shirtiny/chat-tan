@@ -30,7 +30,7 @@ class MessageStore {
       .find({
         sort: [
           {
-            timestamp: "asc",
+            timestamp: "desc",
           },
         ],
       })

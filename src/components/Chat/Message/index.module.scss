@@ -6,10 +6,6 @@
   align-items: center;
   justify-items: start;
 
-  &:not(:last-of-type) {
-    margin-bottom: 24px;
-  }
-
   .side {
     height: 100%;
     display: flex;

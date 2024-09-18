@@ -17,35 +17,16 @@
     padding-right: 16px;
     margin-bottom: 16px;
     max-height: calc(100% - 16px - 100px);
-  }
 
-  .inputArea {
-    height: 100px;
-    border-radius: var(--border-radius);
-    padding: 4px 10px;
-    background-color: var(--color-primary-background-light);
-    border: solid 1px var(--color-input-border);
-    @include common.transition(out);
-
-    &:hover {
-      border-color: var(--color-input-border-dark);
-      @include common.transition(in);
-    }
-
-    &.focus {
-      border-color: var(--color-primary);
-      box-shadow: var(--color-primary) 0px 0px 0px 1px;
-      @include common.transition(in);
-    }
-
-    .textarea {
-      height: 60px;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .bar {
+    .messageList {
       display: flex;
+      flex-direction: column-reverse;
+
+      .messageListItem {
+        &:not(:last-of-type) {
+          margin-top: 24px;
+        }
+      }
     }
   }
 }
