@@ -1,15 +1,18 @@
 import { FC, memo } from "react";
-import type { ICommonProps } from "@/types";
+import type { ICommonProps, Roles } from "@/types";
 import component from "@/hoc/component";
 import { cls } from "@shirtiny/utils/lib/style";
+import * as Prompts from "@/components/_Prompts";
 import Avatar from "@/components/Avatar";
 import { HiOutlineCommandLine, HiOutlineUserCircle } from "react-icons/hi2";
 
+import { lang } from "@shirtiny/utils";
+import render, { Component } from "@/utils/render";
 import css from "./index.module.scss";
 
 interface IProps extends ICommonProps {
-  role: "user" | "system";
-  content?: string;
+  role: Roles;
+  content?: string | Component;
 }
 
 const ChatMessage: FC<IProps> = ({ className, style, role, content }) => {
@@ -27,7 +30,9 @@ const ChatMessage: FC<IProps> = ({ className, style, role, content }) => {
         )}
         <div className="flex-space"></div>
       </div>
-      <div className={css.content}>{content}</div>
+      <div className={css.content}>
+        {lang.isText(content) ? content : render(Prompts, content)}
+      </div>
     </div>
   );
 };

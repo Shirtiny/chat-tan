@@ -1,6 +1,6 @@
 import { FC, useCallback, useEffect, useLayoutEffect, useRef } from "react";
 import { useImmer } from "use-immer";
-import type { ICommonProps } from "@/types";
+import { DataStatus, MessageTypes, Roles, type ICommonProps } from "@/types";
 import component from "@/hoc/component";
 import { cls } from "@shirtiny/utils/lib/style";
 
@@ -9,17 +9,25 @@ import ChatMessage from "./Message";
 import InputArea from "./InputArea";
 import GlobalContextStore from "@/store/global";
 import useMessageStore from "@/hooks/useMessageStore";
+import MessageStore from "@/hooks/useMessageStore/MessageStore";
 import logger from "@/utils/logger";
 import { DomEventStore } from "@shirtiny/utils";
 import css from "./index.module.scss";
 
 interface IProps extends ICommonProps {
   dbName: string;
+  onInit?: (store: MessageStore) => void;
 }
 
 const domEventStore = new DomEventStore();
 
-const Chat: FC<IProps> = ({ className, style = {}, dbName, ...rest }) => {
+const Chat: FC<IProps> = ({
+  className,
+  style = {},
+  dbName,
+  onInit,
+  ...rest
+}) => {
   // const { t } = GlobalContextStore.use();
 
   const scrollbarRef = useRef<IScrollbarRef>(null);
@@ -27,7 +35,7 @@ const Chat: FC<IProps> = ({ className, style = {}, dbName, ...rest }) => {
 
   const handleSubmit = useCallback(
     (v: string) => {
-      messageStore.addMessage(v);
+      messageStore.saveMessage(Roles.user, MessageTypes.text, v);
     },
     [messageStore]
   );
@@ -59,6 +67,12 @@ const Chat: FC<IProps> = ({ className, style = {}, dbName, ...rest }) => {
       domEventStore.removeObserver("message-list-resize");
     };
   }, [scrollbarRef.current, fitScrollPosition]);
+
+  useEffect(() => {
+    if (messageStore.status === DataStatus.done) {
+      onInit?.(messageStore);
+    }
+  }, [messageStore.status]);
 
   logger.debug("chat render", messages);
 

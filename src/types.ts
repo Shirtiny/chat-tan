@@ -6,3 +6,28 @@ export interface ICommonProps {
   children?: ReactNode;
   [key: string]: any;
 }
+
+export enum Roles {
+  user = "user",
+  system = "system",
+}
+
+export enum DataStatus {
+  initial,
+  pending,
+  done,
+  error,
+}
+
+export enum MessageTypes {
+  text = "text",
+  json = "json",
+}
+
+export interface Message {
+  id: string;
+  messageType: MessageTypes;
+  role: Roles;
+  content?: any;
+  timestamp: number;
+}

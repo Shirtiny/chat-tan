@@ -3,6 +3,7 @@ import { getRxStorageDexie } from "rxdb/plugins/storage-dexie";
 import { RxDBMigrationSchemaPlugin } from "rxdb/plugins/migration-schema";
 
 import env from "@/utils/env";
+import logger from "@/utils/logger";
 
 export const publicDbName = "garden";
 
@@ -16,25 +17,34 @@ const map: IDBMap = {
 };
 
 const messageSchema = {
-  version: 0,
+  version: 2,
   primaryKey: "id",
   type: "object",
   properties: {
     id: {
       type: "string",
       maxLength: 100, // <- the primary key must have set maxLength
+      final: true,
+    },
+    messageType: {
+      type: "string",
+      default: "text",
+      final: true,
     },
     role: {
       type: "string",
+      final: true,
     },
     content: {
       type: "string",
+      default: "",
     },
     timestamp: {
       type: "date-time",
+      final: true,
     },
   },
-  required: ["id", "role", "content", "timestamp"],
+  required: ["id", "role", "messageType", "timestamp"],
 };
 
 const init = async () => {
@@ -50,6 +60,16 @@ const init = async () => {
       message: {
         schema: messageSchema,
         autoMigrate: true,
+        migrationStrategies: {
+          // 1 means, this transforms data from version 0 to version 1
+          1: function (oldDoc) {
+            oldDoc.messageType = "text"; // string to unix
+            return oldDoc;
+          },
+          2: function (oldDoc) {
+            return oldDoc;
+          },
+        },
       },
     });
 
@@ -57,7 +77,7 @@ const init = async () => {
 
     // 'start' the observable
     migrationState.$.subscribe((allStates) => {
-      console.log(
+      logger.debug(
         "migration state of " +
           allStates.status +
           "," +
