@@ -4166,13 +4166,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shirtiny/utils@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@shirtiny/utils@npm:2.0.1"
+"@shirtiny/utils@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@shirtiny/utils@npm:3.1.0"
   dependencies:
     date-fns: "npm:^2.25.0"
     rxjs: "npm:^7.3.0"
-  checksum: 10/b3d8a2984a4a78c617561bc4fcb9fe59715aaf0d5f4e1a91c97a2f38feb2ae439d57b4f242a1d1c49e989cffee00f4c2bb2eb2b71b7867782d937b26cf550216
+  checksum: 10/c4d6bbe58b5aad163f84b20190a9efb6122d5c5285afcd30ad1d3748789dd97e26bfe625d07671bba074ecc48460a47018e8110f08e1d6240252ac194299fa82
   languageName: node
   linkType: hard
 
@@ -5708,7 +5708,7 @@ __metadata:
     "@novu/notification-center": "npm:^0.13.0"
     "@react-spring/web": "npm:^9.7.2"
     "@shirtiny/logger": "npm:^4.2.1"
-    "@shirtiny/utils": "npm:^2.0.1"
+    "@shirtiny/utils": "npm:^3.1.0"
     "@tauri-apps/api": "npm:next"
     "@tauri-apps/cli": "npm:next"
     "@tolgee/react": "npm:^5.8.3"
@@ -5742,6 +5742,7 @@ __metadata:
     postcss: "npm:^8.4.28"
     postcss-load-config: "npm:^6.0.1"
     postcss-pxtorem: "npm:^6.1.0"
+    prettier: "npm:^3.3.3"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-icons: "npm:^4.8.0"
@@ -10039,6 +10040,15 @@ __metadata:
     picocolors: "npm:^1.0.0"
     source-map-js: "npm:^1.0.2"
   checksum: 10/4fb058665f1a195fdff1ecb395491b88a8e989eb2888c4338ef366774269df29cd8893d042915aa5782faf1480137b6fd261f1d0f7cc4c883c5b1efbcf84e010
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^3.3.3":
+  version: 3.3.3
+  resolution: "prettier@npm:3.3.3"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10/5beac1f30b5b40162532b8e2f7c3a4eb650910a2695e9c8512a62ffdc09dae93190c29db9107fa7f26d1b6c71aad3628ecb9b5de1ecb0911191099be109434d7
   languageName: node
   linkType: hard
 

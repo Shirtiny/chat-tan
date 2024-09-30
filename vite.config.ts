@@ -16,12 +16,12 @@ export default defineConfig(async ({ command, mode }) => {
     plugins: [
       react(),
       !isDev &&
-        VitePWA({
-          registerType: "autoUpdate",
-          devOptions: {
-            enabled: true,
-          },
-        }),
+      VitePWA({
+        registerType: "autoUpdate",
+        devOptions: {
+          enabled: true,
+        },
+      }),
     ],
     server: {
       host: "0.0.0.0", // listen on all addresses

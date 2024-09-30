@@ -36,7 +36,7 @@ const RAW_RUNTIME_STATE =
           ["@novu/notification-center", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:0.13.0"],\
           ["@react-spring/web", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:9.7.2"],\
           ["@shirtiny/logger", "npm:4.2.1"],\
-          ["@shirtiny/utils", "npm:2.0.1"],\
+          ["@shirtiny/utils", "npm:3.1.0"],\
           ["@tauri-apps/api", "npm:2.0.0-alpha.1"],\
           ["@tauri-apps/cli", "npm:2.0.0-alpha.4"],\
           ["@tolgee/react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:5.8.3"],\
@@ -70,6 +70,7 @@ const RAW_RUNTIME_STATE =
           ["postcss", "npm:8.4.28"],\
           ["postcss-load-config", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:6.0.1"],\
           ["postcss-pxtorem", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:6.1.0"],\
+          ["prettier", "npm:3.3.3"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:18.2.0"],\
           ["react-icons", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:4.8.0"],\
@@ -6690,10 +6691,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@shirtiny/utils", [\
-      ["npm:2.0.1", {\
-        "packageLocation": "./.yarn/cache/@shirtiny-utils-npm-2.0.1-2de0d87486-b3d8a2984a.zip/node_modules/@shirtiny/utils/",\
+      ["npm:3.1.0", {\
+        "packageLocation": "./.yarn/cache/@shirtiny-utils-npm-3.1.0-d34eeed2f2-c4d6bbe58b.zip/node_modules/@shirtiny/utils/",\
         "packageDependencies": [\
-          ["@shirtiny/utils", "npm:2.0.1"],\
+          ["@shirtiny/utils", "npm:3.1.0"],\
           ["date-fns", "npm:2.29.3"],\
           ["rxjs", "npm:7.8.0"]\
         ],\
@@ -8540,7 +8541,7 @@ const RAW_RUNTIME_STATE =
           ["@novu/notification-center", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:0.13.0"],\
           ["@react-spring/web", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:9.7.2"],\
           ["@shirtiny/logger", "npm:4.2.1"],\
-          ["@shirtiny/utils", "npm:2.0.1"],\
+          ["@shirtiny/utils", "npm:3.1.0"],\
           ["@tauri-apps/api", "npm:2.0.0-alpha.1"],\
           ["@tauri-apps/cli", "npm:2.0.0-alpha.4"],\
           ["@tolgee/react", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:5.8.3"],\
@@ -8574,6 +8575,7 @@ const RAW_RUNTIME_STATE =
           ["postcss", "npm:8.4.28"],\
           ["postcss-load-config", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:6.0.1"],\
           ["postcss-pxtorem", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:6.1.0"],\
+          ["prettier", "npm:3.3.3"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:18.2.0"],\
           ["react-icons", "virtual:09b46d43cbb7362c42c7c34af35ae2b4ae4c1421cd0be9594215b882b08c43dc32746d884fbd0ed082a31d069141ee141061f6fc1af098657e0d315a9cdd83c0#npm:4.8.0"],\
@@ -13408,6 +13410,15 @@ const RAW_RUNTIME_STATE =
         "packagePeers": [\
           "@types/postcss",\
           "postcss"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["prettier", [\
+      ["npm:3.3.3", {\
+        "packageLocation": "./.yarn/unplugged/prettier-npm-3.3.3-e811f023f3/node_modules/prettier/",\
+        "packageDependencies": [\
+          ["prettier", "npm:3.3.3"]\
         ],\
         "linkType": "HARD"\
       }]\

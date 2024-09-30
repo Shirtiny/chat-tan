@@ -17,10 +17,9 @@ import { DomEventStore } from "@shirtiny/utils/lib/events";
 import logger from "@/utils/logger";
 
 import Scrollbar, { IScrollbarRef } from "../Scrollbar";
-
-import "./index.scss";
 import { calcTextareaHeight } from "./util";
-import { isObject } from "lodash";
+import { lang } from "@shirtiny/utils";
+import "./index.scss";
 
 const domEventStore = new DomEventStore();
 
@@ -82,7 +81,7 @@ const TextArea: FC<IProps> = ({
       onFocus && onFocus(e);
       onFocusChange && onFocusChange(true);
     },
-    []
+    [],
   );
 
   const handleBlur = useCallback(
@@ -92,7 +91,7 @@ const TextArea: FC<IProps> = ({
       onBlur && onBlur(e);
       onFocusChange && onFocusChange(false);
     },
-    []
+    [],
   );
 
   const fitTextareaHeight = useCallback(() => {
@@ -101,8 +100,8 @@ const TextArea: FC<IProps> = ({
     if (!autoSize) {
       el.style.minHeight = calcTextareaHeight(el).minHeight!;
     } else {
-      const minRows = isObject(autoSize) ? autoSize.minRows : undefined;
-      const maxRows = isObject(autoSize) ? autoSize.maxRows : undefined;
+      const minRows = lang.isObject(autoSize) ? autoSize.minRows : undefined;
+      const maxRows = lang.isObject(autoSize) ? autoSize.maxRows : undefined;
       const result = calcTextareaHeight(el, minRows, maxRows);
 
       // If the scrollbar is displayed, the height of the textarea needs more space than the calculated height.
@@ -124,7 +123,7 @@ const TextArea: FC<IProps> = ({
       fitTextareaHeight();
       onChange && onChange(e);
     },
-    [fitTextareaHeight]
+    [fitTextareaHeight],
   );
 
   useEffect(() => {
@@ -136,7 +135,7 @@ const TextArea: FC<IProps> = ({
         logger.debug("textarea observeResize", entries);
         fitTextareaHeight();
       },
-      "border-box"
+      "border-box",
     );
     return () => {
       domEventStore.removeObserver("textarea-resize");

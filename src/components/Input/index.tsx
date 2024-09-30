@@ -1,4 +1,6 @@
 import {
+  forwardRef,
+  memo,
   useCallback,
   type ChangeEvent,
   type FC,
@@ -21,49 +23,51 @@ interface IProps extends InputHTMLAttributes<HTMLInputElement>, ICommonProps {
   onChange?(e: ChangeEvent<HTMLInputElement>): void;
 }
 
-const Input: FC<IProps> = (
-  {
-    className,
-    style,
-    name,
-    status = "normal",
-    autoComplete = "off",
-    maxLength = 99,
-    disabled,
-    readOnly,
-    height,
-    onChange,
-    ...rest
+const Input = forwardRef<HTMLInputElement, IProps>(
+  (
+    {
+      className,
+      style,
+      name,
+      status = "normal",
+      autoComplete = "off",
+      maxLength = 99,
+      disabled,
+      readOnly,
+      height,
+      onChange,
+      ...rest
+    },
+    ref,
+  ) => {
+    const handleChange = useCallback(() => {
+      (e: ChangeEvent<HTMLInputElement>) => {
+        onChange && onChange(e);
+      };
+    }, []);
+
+    const statusCls = css[`status-${status}`];
+
+    return (
+      <input
+        ref={ref}
+        className={cls(
+          css.input,
+          className,
+          statusCls,
+          (readOnly || disabled) && css.disabled,
+        )}
+        style={style}
+        name={name}
+        disabled={disabled}
+        readOnly={readOnly}
+        autoComplete={autoComplete}
+        maxLength={maxLength}
+        onChange={handleChange}
+        {...rest}
+      />
+    );
   },
-  ref,
-) => {
-  const handleChange = useCallback(() => {
-    (e: ChangeEvent<HTMLInputElement>) => {
-      onChange && onChange(e);
-    };
-  }, []);
+);
 
-  const statusCls = css[`status-${status}`];
-
-  return (
-    <input
-      ref={ref}
-      className={cls(
-        css.input,
-        className,
-        statusCls,
-        (readOnly || disabled) && css.disabled,
-      )}
-      style={style}
-      name={name}
-      disabled={disabled}
-      readOnly={readOnly}
-      autoComplete={autoComplete}
-      maxLength={maxLength}
-      onChange={handleChange}
-      {...rest}
-    />
-  );
-};
-
-export default component<IProps>(Input, { useForwardRef: true });
+export default component<IProps>(memo(Input), { useForwardRef: true });

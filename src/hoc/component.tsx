@@ -38,6 +38,7 @@ export default function component<P>(
     const finalProps = {
       ...props,
     };
+
     ref && (finalProps.ref = ref);
 
     return (

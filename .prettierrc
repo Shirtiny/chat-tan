@@ -1,0 +1,24 @@
+{
+  "singleQuote": false,
+  "semi": true,
+  "trailingComma": "all",
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "bracketSpacing": true,
+  "importOrder": [
+    "^@/components(.*)$",
+    "^@/(.*)$",
+    "^../(.*)",
+    "^./((?!scss).)*$",
+    "^./(.*)"
+  ],
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
+}

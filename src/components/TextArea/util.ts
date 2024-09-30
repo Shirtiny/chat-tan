@@ -1,5 +1,5 @@
-import { isNumber } from "lodash";
 import env from "@/utils/env";
+import { lang } from "@shirtiny/utils";
 
 type NodeStyle = {
   contextStyle: string;
@@ -90,7 +90,7 @@ export function calcTextareaHeight(
   hiddenTextarea.value = "";
   const singleRowHeight = hiddenTextarea.scrollHeight - paddingSize;
 
-  if (isNumber(minRows)) {
+  if (lang.isNumber(minRows)) {
     let minHeight = singleRowHeight * minRows;
     if (boxSizing === "border-box") {
       minHeight = minHeight + paddingSize + borderSize;
@@ -98,7 +98,7 @@ export function calcTextareaHeight(
     height = Math.max(minHeight, height);
     result.minHeight = `${minHeight}px`;
   }
-  if (isNumber(maxRows)) {
+  if (lang.isNumber(maxRows)) {
     let maxHeight = singleRowHeight * maxRows;
     if (boxSizing === "border-box") {
       maxHeight = maxHeight + paddingSize + borderSize;
