@@ -1,49 +1,53 @@
+@use "@/styles/mixins/common";
+
 .button {
-    appearance: none;
-    border: none;
-    outline: 0;
+  appearance: none;
+  border: none;
+  outline: 0;
+  background: none;
+
+  cursor: pointer;
+  background-color: var(--color-primary-background);
+  color: var(--color-primary-text-light);
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+
+  // transition: background-color .15s ease-out, color .15s ease-out;
+//   cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: var(--color-primary-background);
+    @include common.transition(in);
+  }
+
+  &--active {
+    color: var(--color-primary);
+  }
+
+  &--with-icon {
+    & > svg {
+      height: 1em;
+    }
+  }
+
+  &.type-text {
     background: none;
 
-    cursor: pointer;
-    background-color: var(--color-primary-background);
-    color: var(--color-primary-text-light);
-
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 10px;
-
-    transition: background-color .15s ease-out, color .15s ease-out;
-
     &:hover {
-        background-color: var(--color-primary);
-        color: var(--color-primary-background);
+      color: var(--color-primary);
     }
+  }
 
-    &--active {
-        color: var(--color-primary);
-    }
+  &.shape-circle {
+    border-radius: 50%;
+  }
 
-    &--with-icon {
-        &>svg {
-            height: 1em;
-        }
-    }
-
-    &.type-text {
-        background: none;
-
-        &:hover {
-            color: var(--color-primary);
-        }
-    }
-
-    &.shape-circle {
-        border-radius: 50%;
-    }
-
-    &.shape-rect {
-        border-radius: var(--border-radius);
-    }
+  &.shape-rect {
+    border-radius: var(--border-radius);
+  }
 }

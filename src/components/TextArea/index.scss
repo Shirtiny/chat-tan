@@ -1,18 +1,21 @@
+@use "@/styles/mixins/common";
+
 .textarea-container {
   font-size: inherit;
   border: solid 1px var(--color-input-border);
   border-radius: var(--border-radius, 3px);
-  transition-property: var(--transition-property);
-  transition-duration: var(--transition-duration);
+  @include common.transition(out);
   cursor: text;
 
   &:hover {
     border-color: var(--color-input-border-dark);
+    @include common.transition(in);
   }
 
   &.focus {
     border-color: var(--color-primary);
     box-shadow: var(--color-primary) 0px 0px 0px 1px;
+    @include common.transition(in);
   }
 
   &.borderless {

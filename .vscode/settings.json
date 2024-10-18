@@ -9,5 +9,6 @@
     "uncompress"
   ],
   "eslint.nodePath": ".yarn/sdks",
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs"
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
+  "makefile.configureOnOpen": false
 }

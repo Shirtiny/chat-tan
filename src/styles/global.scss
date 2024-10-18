@@ -1,3 +1,5 @@
+@use "@/styles/mixins/common";
+
 html,
 body {
   padding: 0;
@@ -7,10 +9,23 @@ body {
 
   -webkit-font-smoothing: auto;
   text-size-adjust: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu,
-    Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB,
-    Microsoft YaHei UI, Microsoft YaHei, Source Han Sans CN, sans-serif,
-    Apple Color Emoji, Segoe UI Emoji !important;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Ubuntu,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    PingFang SC,
+    Hiragino Sans GB,
+    Microsoft YaHei UI,
+    Microsoft YaHei,
+    Source Han Sans CN,
+    sans-serif,
+    Apple Color Emoji,
+    Segoe UI Emoji !important;
   // font-family: "JetBrains Mono";
 }
 
@@ -20,9 +35,20 @@ a {
 }
 
 code {
-  font-family: "JetBrains Mono", monospace, -apple-system, BlinkMacSystemFont,
-    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-    Helvetica Neue, sans-serif;
+  font-family:
+    "JetBrains Mono",
+    monospace,
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
 }
 
 button,
@@ -39,6 +65,7 @@ textarea {
 
 * {
   box-sizing: border-box;
+  @include common.transition(out);
   /* will-change: background-color, color; */
 }
 
@@ -56,7 +83,7 @@ textarea {
 :root {
   --transition-property: background-color, border-color, color, fill, stroke,
     opacity, box-shadow, transform;
-  --transition-duration: 0.25s;
+  --transition-duration: 0.2s;
 
   --transition-timing-function-in: cubic-bezier(0.23, 1, 0.32, 1);
   --transition-timing-function-out: cubic-bezier(0.755, 0.05, 0.855, 0.06);
