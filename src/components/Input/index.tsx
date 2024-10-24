@@ -40,11 +40,12 @@ const Input = forwardRef<HTMLInputElement, IProps>(
     },
     ref,
   ) => {
-    const handleChange = useCallback(() => {
+    const handleChange = useCallback(
       (e: ChangeEvent<HTMLInputElement>) => {
         onChange && onChange(e);
-      };
-    }, []);
+      },
+      [onChange],
+    );
 
     const statusCls = css[`status-${status}`];
 
