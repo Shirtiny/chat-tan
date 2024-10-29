@@ -1,32 +1,36 @@
-import type { RouteObject } from "react-router-dom";
-import type { INavItem } from "./type";
-import { Navigate } from "react-router-dom";
-import RootLayout from "@/layouts/Root/index";
-import ErrorPage from "@/pages/Error";
-import NotFoundPage from "@/pages/404";
+import type { RouteObject } from 'react-router-dom';
+import type { INavItem } from './type';
+import { Navigate } from 'react-router-dom';
+import RootLayout from '@/layouts/Root/index';
+import ErrorPage from '@/pages/Error';
+import NotFoundPage from '@/pages/404';
 
 import {
   HiOutlineUser,
   HiOutlineChatBubbleLeftEllipsis,
-} from "react-icons/hi2";
+} from 'react-icons/hi2';
+import { FC } from 'react';
+
+const IconComponent: FC<any> = ({ Icon, ...rest }: { Icon: any }) => {
+  return <Icon {...rest} />;
+};
 
 const navItems: INavItem[] = [
   {
-    path: "adilgarden",
-    lazy: async () => import("@/pages/Public"),
-    icon: <HiOutlineChatBubbleLeftEllipsis />,
+    path: 'adilgarden',
+    lazy: async () => import('@/pages/Public'),
+    icon: <IconComponent Icon={HiOutlineChatBubbleLeftEllipsis} />,
   },
   {
-    path: "adilraid",
-    lazy: async () => import("@/pages/Personal"),
-    icon: <HiOutlineUser />,
+    path: 'adilraid',
+    lazy: async () => import('@/pages/Personal'),
+    icon: <IconComponent Icon={HiOutlineUser} />,
   },
-  
 ];
 
 const v1: RouteObject[] = [
   {
-    path: "/",
+    path: '/',
     errorElement: <ErrorPage />,
     element: <RootLayout />,
     children: [
@@ -37,7 +41,7 @@ const v1: RouteObject[] = [
       ...navItems,
     ],
   },
-  { path: "*", element: <NotFoundPage /> },
+  { path: '*', element: <NotFoundPage /> },
 ];
 
 const routerConfig = { v1, navItems };

@@ -6190,7 +6190,7 @@ __metadata:
     prettier: "npm:^3.3.3"
     react: "npm:19.0.0-rc-02c0e824-20241028"
     react-dom: "npm:19.0.0-rc-02c0e824-20241028"
-    react-icons: "npm:^4.8.0"
+    react-icons: "npm:^5.3.0"
     react-router-dom: "npm:^6.9.0"
     rxdb: "npm:^15.33.0"
     rxjs: "npm:^7.8.1"
@@ -11462,12 +11462,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-icons@npm:^4.8.0":
-  version: 4.8.0
-  resolution: "react-icons@npm:4.8.0"
+"react-icons@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "react-icons@npm:5.3.0"
   peerDependencies:
     react: "*"
-  checksum: 10/9907898513bf475e6e712e62a62d337ee1fbbcba2878fc522e25bc722a8f40a62f8e20f00948e72be420659aa4bc654b38fd772c2f5b2f8901313dc74d744f68
+  checksum: 10/7f315d2a5e0eee7fefe01eac5cbe818b9592d88964f6c99ba454539a78cd2efd4430152e88113585c5a54bca6a5e1e7e7978df9cf69a03d8479a8d3d106a027c
   languageName: node
   linkType: hard
 
