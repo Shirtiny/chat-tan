@@ -5,6 +5,6 @@ export interface INavItem {
   path: string;
   label?: string;
   desc?: string;
-  icon?: ReactNode;
+  icon?: any;
   lazy?: LazyRouteFunction<RouteObject>;
 }

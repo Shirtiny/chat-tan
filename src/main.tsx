@@ -21,9 +21,16 @@ async function beforeRender() {
 }
 
 beforeRender().then(() => {
-  ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  ReactDOM.createRoot(document.getElementById("root") as HTMLElement, {
+    onUncaughtError: (error, errorInfo) => {
+      console.error(error);
+    },
+    onCaughtError: (error, errorInfo) => {
+      console.error(error);
+    },
+  }).render(
     <React.StrictMode>
       <AppRouter />
-    </React.StrictMode>
+    </React.StrictMode>,
   );
 });

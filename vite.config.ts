@@ -4,6 +4,10 @@ import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 import { internalIpV4 } from "internal-ip";
 
+const ReactCompilerConfig = {
+  /* ... */
+};
+
 // https://vitejs.dev/config/
 export default defineConfig(async ({ command, mode }) => {
   console.log({ command, mode, nodeEnv: process.env.NODE_ENV });
@@ -14,14 +18,18 @@ export default defineConfig(async ({ command, mode }) => {
   /** @type {import('vite').UserConfig} */
   const config: import("vite").UserConfig = {
     plugins: [
-      react(),
-      !isDev &&
-      VitePWA({
-        registerType: "autoUpdate",
-        devOptions: {
-          enabled: true,
-        },
+      react({
+        // babel: {
+        //   plugins: [["babel-plugin-react-compiler", ReactCompilerConfig]],
+        // },
       }),
+      !isDev &&
+        VitePWA({
+          registerType: "autoUpdate",
+          devOptions: {
+            enabled: true,
+          },
+        }),
     ],
     server: {
       host: "0.0.0.0", // listen on all addresses
