@@ -1,18 +1,18 @@
-import { FC, useCallback, useEffect, useLayoutEffect, useRef } from "react";
-import { useImmer } from "use-immer";
-import { DataStatus, MessageTypes, Roles, type ICommonProps } from "@/types";
-import component from "@/hoc/component";
-import { cls } from "@shirtiny/utils/lib/style";
+import { FC, useCallback, useEffect, useLayoutEffect, useRef } from 'react';
+import { useImmer } from 'use-immer';
+import { DataStatus, MessageTypes, Roles, type ICommonProps } from '@/types';
+import component from '@/hoc/component';
+import { cls } from '@shirtiny/utils/lib/style';
 
-import Scrollbar, { IScrollbarRef } from "../Scrollbar";
-import ChatMessage from "./Message";
-import InputArea from "./InputArea";
-import GlobalContextStore from "@/store/global";
-import useMessageStore from "@/hooks/useMessageStore";
-import MessageStore from "@/hooks/useMessageStore/MessageStore";
-import logger from "@/utils/logger";
-import { DomEventStore } from "@shirtiny/utils";
-import css from "./index.module.scss";
+import Scrollbar, { IScrollbarRef } from '../Scrollbar';
+import ChatMessage from './Message';
+import InputArea from './InputArea';
+import GlobalContextStore from '@/store/global';
+import useMessageStore from '@/hooks/useMessageStore';
+import MessageStore from '@/hooks/useMessageStore/MessageStore';
+import logger from '@/utils/logger';
+import { DomEventStore } from '@shirtiny/utils';
+import css from './index.module.scss';
 
 interface IProps extends ICommonProps {
   dbName: string;
@@ -37,44 +37,44 @@ const Chat: FC<IProps> = ({
     (v: string) => {
       messageStore.saveMessage(Roles.user, MessageTypes.text, v);
     },
-    [messageStore]
+    [messageStore],
   );
 
   const fitScrollPosition = useCallback(() => {
     if (!scrollbarRef.current?.el) return;
     const el = scrollbarRef.current!.el;
-    logger.debug("el", el);
-  }, [scrollbarRef.current]);
+    logger.debug('el', el);
+  }, []);
 
   useLayoutEffect(() => {
     if (!scrollbarRef.current?.scrollableNode) return;
 
     domEventStore.observeResize(
-      "message-list-resize",
+      'message-list-resize',
       scrollbarRef.current.scrollableNode,
       (entries) => {
         entries.forEach(({ target }) => {
-          logger.debug("messageList observeResize", target);
+          logger.debug('messageList observeResize', target);
 
           if (target.scrollHeight > target.clientHeight) {
             target.scrollTop = target.scrollHeight - target.clientHeight;
           }
         });
       },
-      "border-box"
+      'border-box',
     );
     return () => {
-      domEventStore.removeObserver("message-list-resize");
+      domEventStore.removeObserver('message-list-resize');
     };
-  }, [scrollbarRef.current, fitScrollPosition]);
+  }, [fitScrollPosition]);
 
   useEffect(() => {
     if (messageStore.status === DataStatus.done) {
       onInit?.(messageStore);
     }
-  }, [messageStore.status]);
+  }, [messageStore, messageStore.status, onInit]);
 
-  logger.debug("chat render", messages);
+  logger.debug('chat render', messages);
 
   return (
     <div

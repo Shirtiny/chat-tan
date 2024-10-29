@@ -1,8 +1,8 @@
-import path from "path";
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import { VitePWA } from "vite-plugin-pwa";
-import { internalIpV4 } from "internal-ip";
+import path from 'path';
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { VitePWA } from 'vite-plugin-pwa';
+import { internalIpV4 } from 'internal-ip';
 
 const ReactCompilerConfig = {
   /* ... */
@@ -11,54 +11,54 @@ const ReactCompilerConfig = {
 // https://vitejs.dev/config/
 export default defineConfig(async ({ command, mode }) => {
   console.log({ command, mode, nodeEnv: process.env.NODE_ENV });
-  const isAndroid = mode === "ad";
-  const isDev = mode === "development";
-  const host = isAndroid ? await internalIpV4() : "localhost";
+  const isAndroid = mode === 'ad';
+  const isDev = mode === 'development';
+  const host = isAndroid ? await internalIpV4() : 'localhost';
 
   /** @type {import('vite').UserConfig} */
-  const config: import("vite").UserConfig = {
+  const config: import('vite').UserConfig = {
     plugins: [
       react({
         // babel: {
-        //   plugins: [["babel-plugin-react-compiler", ReactCompilerConfig]],
+        //   plugins: [['babel-plugin-react-compiler', ReactCompilerConfig]],
         // },
       }),
       !isDev &&
         VitePWA({
-          registerType: "autoUpdate",
+          registerType: 'autoUpdate',
           devOptions: {
             enabled: true,
           },
         }),
     ],
     server: {
-      host: "0.0.0.0", // listen on all addresses
+      host: '0.0.0.0', // listen on all addresses
       port: 2023,
       strictPort: true,
       hmr: {
-        protocol: "ws",
+        protocol: 'ws',
         host,
         port: 5183,
       },
     },
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "./src"),
+        '@': path.resolve(__dirname, './src'),
       },
     },
     build: {
-      target: ["es2015"],
-      minify: "terser",
+      target: ['es2015'],
+      minify: 'terser',
       // cssTarget: "chrome130",
-      cssMinify: "lightningcss",
+      cssMinify: 'lightningcss',
       sourcemap: isDev,
       rollupOptions: {
         output: {
-          manualChunks: { exoskeleton: ["lodash", "rxdb"] },
+          manualChunks: { exoskeleton: ['lodash', 'rxdb'] },
         },
       },
     },
-    base: "./",
+    base: './',
   };
   return config;
 });

@@ -1,22 +1,13 @@
-import {
-  FC,
-  memo,
-  useLayoutEffect,
-  useEffect,
-  forwardRef,
-  ComponentType,
-} from 'react';
+import { FC, memo, useLayoutEffect, useEffect, ComponentType } from 'react';
 import logger from '@/utils/logger';
 import { cls } from '@shirtiny/utils/lib/style';
 
 interface IOptions {
   memorize?: boolean;
-  useForwardRef?: boolean;
 }
 
 const defaultOptions = {
   memorize: true,
-  useForwardRef: false,
 };
 
 const NAME_PREFIX = '';
@@ -25,9 +16,9 @@ export default function component<P>(
   Component: FC<P>,
   options: IOptions = defaultOptions,
 ): FC<P> {
-  const { memorize, useForwardRef } = options;
-  const componentName = Component.displayName || Component.name;
-  const Func = (props: any, ref: any) => {
+  const { memorize } = options;
+  const componentName = Component.displayName || Component.name || '';
+  const Func = (props: any) => {
     useLayoutEffect(() => {
       logger.component(componentName, 'useLayoutEffect');
       return () => {
@@ -46,8 +37,6 @@ export default function component<P>(
       ...props,
     };
 
-    ref && (finalProps.ref = ref);
-
     return (
       <Component {...finalProps} data-comp={`${NAME_PREFIX}${componentName}`} />
     );
@@ -55,9 +44,5 @@ export default function component<P>(
   Object.assign(Func, Component);
   Func.displayName = `${componentName}Wrapper`;
 
-  const ForwardFunc = useForwardRef ? forwardRef(Func) : Func;
-
-  return (
-    memorize ? memo(ForwardFunc as ComponentType<P>) : ForwardFunc
-  ) as FC<P>;
+  return (memorize ? memo(Func as ComponentType<P>) : Func) as FC<P>;
 }
