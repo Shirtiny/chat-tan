@@ -1,5 +1,5 @@
-import type { FC } from "react";
-import { Outlet } from "react-router-dom";
+import type { FC } from 'react';
+import { Outlet } from 'react-router-dom';
 import {
   Tolgee,
   DevTools,
@@ -7,22 +7,22 @@ import {
   FormatSimple,
   LanguageStorage,
   LanguageDetector,
-} from "@tolgee/react";
-import { IconContext } from "react-icons/lib";
-import dev from "@shirtiny/utils/lib/dev";
+} from '@tolgee/react';
+import { IconContext } from 'react-icons/lib';
+import dev from '@shirtiny/utils/lib/dev';
 
-import Loading from "@/components/Loading";
-import AppLayout from "../App";
+import Loading from '@/components/Loading';
+import AppLayout from '../App';
 
-import component from "@/hoc/component";
-import GlobalContextStore from "@/store/global";
-import db from "@/database";
-import logger, { logVersion } from "@/utils/logger";
-import env from "@/utils/env";
+import component from '@/hoc/component';
+import GlobalContextStore from '@/store/global';
+import db from '@/database';
+import logger, { logVersion } from '@/utils/logger';
+import env from '@/utils/env';
 
 // import "@fontsource/jetbrains-mono";
 // import "modern-normalize/modern-normalize.css";
-import "./index.scss";
+import './index.scss';
 
 interface IProps {}
 
@@ -33,8 +33,8 @@ const tolgee: any = Tolgee()
   .use(LanguageStorage())
   .use(LanguageDetector())
   .init({
-    defaultLanguage: "en",
-    fallbackLanguage: "en",
+    defaultLanguage: 'en',
+    fallbackLanguage: 'en',
 
     // for development
     apiUrl: import.meta.env.VITE_TOLGEE_API_URL,
@@ -42,8 +42,8 @@ const tolgee: any = Tolgee()
 
     // for production
     staticData: {
-      en: () => import("../../i18n/en.json"),
-      "zh-Hans": () => import("../../i18n/zh-Hans.json"),
+      en: () => import('../../i18n/en.json'),
+      'zh-Hans': () => import('../../i18n/zh-Hans.json'),
     },
   });
 
@@ -56,14 +56,14 @@ const init = async () => {
 
 init();
 
-const RootLayout: FC<IProps> = ({}) => {
+const RootLayout: FC<IProps> = () => {
   // return <Loading />
   return (
     <TolgeeProvider
       tolgee={tolgee}
       fallback={<Loading />} // loading fallback
     >
-      <IconContext.Provider value={{ className: "react-icon", style: {} }}>
+      <IconContext.Provider value={{ className: 'react-icon', style: {} }}>
         <GlobalContextStore.Provider>
           <AppLayout>
             <Outlet />

@@ -1,14 +1,15 @@
-import { FC, memo } from "react";
-import type { ICommonProps, Roles } from "@/types";
-import component from "@/hoc/component";
-import { cls } from "@shirtiny/utils/lib/style";
-import * as Prompts from "@/components/_Prompts";
-import Avatar from "@/components/Avatar";
-import { HiOutlineCommandLine, HiOutlineUserCircle } from "react-icons/hi2";
+import { FC, memo } from 'react';
+import type { ICommonProps, Roles } from '@/types';
+import component from '@/hoc/component';
+import { cls } from '@shirtiny/utils/lib/style';
+import * as Prompts from '@/components/_Prompts';
+import Avatar from '@/components/Avatar';
+import { HiOutlineCommandLine, HiOutlineUserCircle } from 'react-icons/hi2';
 
-import { lang } from "@shirtiny/utils";
-import render, { Component } from "@/utils/render";
-import css from "./index.module.scss";
+import { lang } from '@shirtiny/utils';
+import render, { Component } from '@/utils/render';
+import css from './index.module.scss';
+import IconWrap from '@/components/Icon';
 
 interface IProps extends ICommonProps {
   role: Roles;
@@ -16,7 +17,7 @@ interface IProps extends ICommonProps {
 }
 
 const ChatMessage: FC<IProps> = ({ className, style, role, content }) => {
-  const isUser = role === "user";
+  const isUser = role === 'user';
   return (
     <div
       className={cls(css.message, className, css[`role-${role}`])}
@@ -24,9 +25,9 @@ const ChatMessage: FC<IProps> = ({ className, style, role, content }) => {
     >
       <div className={css.side}>
         {isUser ? (
-          <Avatar Icon={<HiOutlineUserCircle />} />
+          <Avatar Icon={<IconWrap Icon={HiOutlineUserCircle} />} />
         ) : (
-          <Avatar Icon={<HiOutlineCommandLine />} />
+          <Avatar Icon={<IconWrap Icon={HiOutlineCommandLine} />} />
         )}
         <div className="flex-space"></div>
       </div>

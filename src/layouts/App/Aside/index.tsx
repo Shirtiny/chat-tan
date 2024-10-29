@@ -1,19 +1,20 @@
-import type { FC } from "react";
-import type { ICommonProps } from "@/types";
-import type { INavItem } from "@/router/type";
-import { useMemo } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import type { FC } from 'react';
+import type { ICommonProps } from '@/types';
+import type { INavItem } from '@/router/type';
+import { useMemo } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-import { HiMoon, HiSun } from "react-icons/hi2";
-import Button from "@/components/Button";
-import ActiveBar from "@/components/ActiveBar";
+import { HiMoon, HiSun } from 'react-icons/hi2';
+import Button from '@/components/Button';
+import ActiveBar from '@/components/ActiveBar';
 
-import GlobalContextStore from "@/store/global";
-import component from "@/hoc/component";
-import { cls } from "@shirtiny/utils/lib/style";
-import logger from "@/utils/logger";
-import { ColorThemes } from "@/styles/theme";
-import "./index.scss";
+import GlobalContextStore from '@/store/global';
+import component from '@/hoc/component';
+import { cls } from '@shirtiny/utils/lib/style';
+import logger from '@/utils/logger';
+import { ColorThemes } from '@/styles/theme';
+import './index.scss';
+import IconWrap from '@/components/Icon';
 
 interface IProps extends ICommonProps {
   navItems: INavItem[];
@@ -31,7 +32,7 @@ const AppAside: FC<IProps> = ({ className, style = {}, navItems, ...rest }) => {
       if (flag) tempIndex = index;
       return flag;
     });
-    logger.debug("current route", {
+    logger.debug('current route', {
       route,
       currentActiveIndex: tempIndex,
       currentLocation,
@@ -45,7 +46,7 @@ const AppAside: FC<IProps> = ({ className, style = {}, navItems, ...rest }) => {
 
   return (
     <aside
-      className={cls("app-aside", className)}
+      className={cls('app-aside', className)}
       style={{
         ...style,
       }}
@@ -82,7 +83,11 @@ const AppAside: FC<IProps> = ({ className, style = {}, navItems, ...rest }) => {
           withIcon
           onClick={toggleTheme}
         >
-          {state.theme === ColorThemes.LIGHT ? <HiMoon /> : <HiSun />}
+          {state.theme === ColorThemes.LIGHT ? (
+            <IconWrap Icon={HiMoon} />
+          ) : (
+            <IconWrap Icon={HiSun} />
+          )}
         </Button>
       </div>
     </aside>

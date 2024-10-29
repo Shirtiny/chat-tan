@@ -4,27 +4,23 @@ import { Navigate } from 'react-router-dom';
 import RootLayout from '@/layouts/Root/index';
 import ErrorPage from '@/pages/Error';
 import NotFoundPage from '@/pages/404';
+import IconWrap from '@/components/Icon';
 
 import {
   HiOutlineUser,
   HiOutlineChatBubbleLeftEllipsis,
 } from 'react-icons/hi2';
-import { FC } from 'react';
-
-const IconComponent: FC<any> = ({ Icon, ...rest }: { Icon: any }) => {
-  return <Icon {...rest} />;
-};
 
 const navItems: INavItem[] = [
   {
     path: 'adilgarden',
     lazy: async () => import('@/pages/Public'),
-    icon: <IconComponent Icon={HiOutlineChatBubbleLeftEllipsis} />,
+    icon: <IconWrap Icon={HiOutlineChatBubbleLeftEllipsis} />,
   },
   {
     path: 'adilraid',
     lazy: async () => import('@/pages/Personal'),
-    icon: <IconComponent Icon={HiOutlineUser} />,
+    icon: <IconWrap Icon={HiOutlineUser} />,
   },
 ];
 
