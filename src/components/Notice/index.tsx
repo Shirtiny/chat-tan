@@ -1,10 +1,10 @@
 import type { FC } from "react";
 import type { ICommonProps } from "@/types";
-import {
-    NovuProvider,
-    PopoverNotificationCenter,
-    NotificationBell,
-} from "@novu/notification-center";
+// import {
+//     NovuProvider,
+//     PopoverNotificationCenter,
+//     NotificationBell,
+// } from "@novu/notification-center";
 
 import component from "@/hoc/component";
 import { cls } from "@shirtiny/utils/lib/style";
@@ -21,14 +21,14 @@ const Notice: FC<IProps> = ({ className, style = {}, ...rest }) => {
       }}
       {...rest}
     >
-      <NovuProvider
+      {/* <NovuProvider
         subscriberId={"on-boarding-subscriber-id-123"}
         applicationIdentifier={"N9Tqzm5nITzY"}
       >
         <PopoverNotificationCenter colorScheme={"light"}>
           {({ unseenCount }) => <NotificationBell unseenCount={unseenCount} />}
         </PopoverNotificationCenter>
-      </NovuProvider>
+      </NovuProvider> */}
     </div>
   );
 };
