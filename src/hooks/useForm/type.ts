@@ -1,11 +1,11 @@
 export enum FORMATTER_PRESETS {
-  TRIM = "TRIM",
-  NUMBER = "NUMBER",
+  TRIM = 'TRIM',
+  NUMBER = 'NUMBER',
 }
 
 export enum VALIDATOR_PRESETS {
-  REQUIRED = "REQUIRED",
-  EMAIL = "EMAIL",
+  REQUIRED = 'REQUIRED',
+  EMAIL = 'EMAIL',
 }
 
 export type UseFormFormatter = (v: any, oldV?: any) => any;
@@ -13,7 +13,6 @@ export type UseFormFormatter = (v: any, oldV?: any) => any;
 export interface ValidatorResult {
   name: string;
   pass: boolean;
-  message: string; // message与pass无关
 }
 
 export type UseFormValidator = (args: {

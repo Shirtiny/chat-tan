@@ -1,0 +1,64 @@
+@use "@/styles/mixins/layout";
+
+.formItem {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    :global {
+        .form-item-label {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-primary-text);
+        }
+
+        .form-item-required {
+            color: var(--color-primary-dark);
+        }
+
+        .form-item-content {}
+
+        .form-item-desc {
+            font-weight: normal;
+            font-size: 12px;
+            color: var(--color-primary-text-light);
+            margin-top: 12px;
+        }
+
+
+
+        .form-item-warning {
+            position: absolute;
+            left: 4px;
+            bottom: -16px;
+            height: 15px;
+            display: inline-block;
+            font-size: 12px;
+            color: var(--color-primary-dark);
+        }
+    }
+
+    .layout_vertical {
+        display: flex;
+        flex-direction: column;
+
+        :global {
+            .form-item-content {
+                @include layout.flex-gap(16px, 0, column);
+            }
+        }
+    }
+
+    .layout_horizontal {
+        display: flex;
+        align-items: center;
+
+        :global {
+            .form-item-content {
+                flex: 1;
+                @include layout.flex-gap(0, 16px);
+            }
+        }
+    }
+}

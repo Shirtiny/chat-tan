@@ -1,3 +1,7 @@
 {
-  "CHAT_INPUT_PLACEHOLDER" : "Paste or type something here\nPress Shift+Enter to start a new line"
+  "CHAT_INPUT_PLACEHOLDER": "Paste or type something here\nPress Shift+Enter to start a new line",
+  "PHONE_NUMBER_INVALID": "Phone number is invalid.",
+  "PHONE_NUMBER_PLACEHOLDER": "Please input your phone number.",
+  "SEND": "Send",
+  "SIGN_IN_PLEASE": "Log In"
 }

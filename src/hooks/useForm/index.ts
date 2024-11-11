@@ -1,10 +1,10 @@
-import { merge, set as _set, get as _get } from "lodash";
-import { useCallback } from "react";
-import { useImmer } from "use-immer";
-import { Path, UseFormControllerOption } from "./type";
-import { lang } from "@shirtiny/utils";
-import useControllers from "./controller";
-import { execValidates, MESSAGE_LABEL_CHAR, toPathArr } from "./common";
+import { merge, set as _set, get as _get } from 'lodash';
+import { useCallback } from 'react';
+import { useImmer } from 'use-immer';
+import { Path, UseFormControllerOption } from './type';
+import { lang } from '@shirtiny/utils';
+import useControllers from './controller';
+import { execValidates, toPathArr } from './common';
 
 interface Params {
   defaultValues?: object;
@@ -14,8 +14,8 @@ interface Params {
 }
 
 interface FormState {
-  values: object;
-  validates: object;
+  values: any;
+  validates: Record<string, any>;
 }
 
 const useForm = ({
@@ -23,24 +23,30 @@ const useForm = ({
   controllerOptions = [],
   valueControl = false,
 }: Params) => {
-  const [formState, update] = useImmer({
+  const [formState, update] = useImmer<FormState>({
     values: defaultValues,
     validates: {},
   });
 
-  const set = useCallback((pathArr: string[], payload: any) => {
-    update((draft: FormState) => {
-      const oldValue = _get(draft, pathArr);
-      const value = lang.isFn(payload) ? payload(oldValue) : payload;
-      _set(draft, pathArr, value);
-    });
-  }, []);
+  const set = useCallback(
+    (pathArr: string[], payload: any) => {
+      update((draft: FormState) => {
+        const oldValue = _get(draft, pathArr);
+        const value = lang.isFn(payload) ? payload(oldValue) : payload;
+        _set(draft, pathArr, value);
+      });
+    },
+    [update],
+  );
 
-  const deepSet = useCallback((payload: any) => {
-    update((draft: FormState) => {
-      merge(draft, payload);
-    });
-  }, []);
+  const deepSet = useCallback(
+    (payload: any) => {
+      update((draft: FormState) => {
+        merge(draft, payload);
+      });
+    },
+    [update],
+  );
 
   const getForm = useCallback(
     (path: Path) => {
@@ -56,35 +62,21 @@ const useForm = ({
     [set],
   );
 
-  // 所有字段初始取值 均为{pass: true}
+  // 所有字段初始取值 均为{pass: false}
   const getValidate = useCallback(
-    (filedPath = [], key = "") => {
+    (filedPath: any[] = [], key = '') => {
       const tempPathArr = toPathArr(filedPath);
       const pathArr = key ? [...tempPathArr, key] : tempPathArr;
-      return getForm(["validates", ...pathArr]) || { pass: true };
+      return getForm(['validates', ...pathArr]) || { pass: false };
     },
     [getForm],
   );
 
   // 是否通过
   const isPass = useCallback(
-    (filedPath = [], key = "") => {
+    (filedPath: any[] = [], key = '') => {
       const validate = getValidate(filedPath, key);
       return !!validate.pass;
-    },
-    [getValidate],
-  );
-
-  // 只在校验没有通过时返回信息
-  const errMsg = useCallback(
-    (filedPath = [], key = "", label = "") => {
-      const validate = getValidate(filedPath, key);
-      return validate.pass
-        ? ""
-        : validate.message.replace(
-            MESSAGE_LABEL_CHAR,
-            label || String(filedPath),
-          );
     },
     [getValidate],
   );
@@ -96,25 +88,25 @@ const useForm = ({
     controllerOptions.forEach((option, index) => {
       // 解构controllerOption时 注意reg函数处的默认值
       const { filedPath = [], validators = [] } = option;
-      const value = getForm(["values", ...toPathArr(filedPath)]);
+      const value = getForm(['values', ...toPathArr(filedPath)]);
       const validateResults = execValidates({ value, validators, filedPath });
       // 合并校验结果
       if (!validateResults.pass) newValidates.pass = false;
-      set(["validates", ...toPathArr(filedPath)], validateResults);
+      set(['validates', ...toPathArr(filedPath)], validateResults);
     });
 
     deepSet({ validates: newValidates });
-    console.log("validatesFormValues", { newValidates });
+    console.log('validatesFormValues', { newValidates });
     return newValidates;
-  }, [controllerOptions, deepSet]);
+  }, [controllerOptions, deepSet, getForm, set]);
 
   const submitFormValues = useCallback(() => {
     const validates = validatesFormValues();
     if (validates.pass) {
-      return _get(formState, "values");
+      return _get(formState, 'values');
     }
     return null;
-  }, [validatesFormValues]);
+  }, [formState, validatesFormValues]);
 
   const { reg, controllers } = useControllers({ controllerOptions, set });
 
@@ -123,12 +115,12 @@ const useForm = ({
       const {
         name = index,
         filedPath = [],
-        valueName = "value",
+        valueName = 'value',
         valueHandle = (v) => v,
       } = option;
       const controller: Record<string, any> = controllers[name];
       controller[valueName] = valueHandle(
-        getForm(["values", ...toPathArr(filedPath)]),
+        getForm(['values', ...toPathArr(filedPath)]),
       );
     });
   }
@@ -137,7 +129,7 @@ const useForm = ({
     formState,
     fillFormValue,
     getValidate,
-    errMsg,
+    // errMsg,
     isPass,
     validatesFormValues,
     submitFormValues,

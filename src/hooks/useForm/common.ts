@@ -1,4 +1,4 @@
-import { lang } from "@shirtiny/utils";
+import { lang } from '@shirtiny/utils';
 import {
   FORMATTER_PRESETS,
   Path,
@@ -6,9 +6,7 @@ import {
   UseFormValidator,
   VALIDATOR_PRESETS,
   ValidatorResult,
-} from "./type";
-
-export const MESSAGE_LABEL_CHAR = `{{label}}`;
+} from './type';
 
 // Formatters
 export const formatterPresets: Record<FORMATTER_PRESETS, UseFormFormatter> = {
@@ -19,21 +17,19 @@ export const formatterPresets: Record<FORMATTER_PRESETS, UseFormFormatter> = {
 // Validators 校验通过则返回true
 export const validatorPresets: Record<VALIDATOR_PRESETS, UseFormValidator> = {
   [VALIDATOR_PRESETS.REQUIRED]: ({ v, filedPath }) => ({
-    name: "required",
-    pass: !!v || typeof v === "number",
-    message: `${MESSAGE_LABEL_CHAR} is required.`,
+    name: 'required',
+    pass: !!v || typeof v === 'number',
   }),
   [VALIDATOR_PRESETS.EMAIL]: ({ v, filedPath }) => ({
-    name: "email",
+    name: 'email',
     pass: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
       v,
     ),
-    message: `${MESSAGE_LABEL_CHAR} is not email`,
   }),
 };
 
 export const toPathArr = (path: Path = []) => {
-  return Array.isArray(path) ? path : String(path).split(".");
+  return Array.isArray(path) ? path : String(path).split('.');
 };
 
 interface FormatPipeParams {
@@ -89,13 +85,11 @@ export const execValidates = ({
     if (!result || !result.name) {
       return rs;
     }
-    const { name, pass, message } = result;
+    const { name, pass } = result;
     if (!pass) rs.pass = false;
     rs[name] = {
       name,
       pass: !!pass,
-      // message与pass无关
-      message,
     };
     return rs;
   }, initRs);

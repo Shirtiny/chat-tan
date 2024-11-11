@@ -1,3 +1,7 @@
 {
-  "CHAT_INPUT_PLACEHOLDER" : "在此处粘贴或输入内容\n按 Shift + Enter 开始新的一行"
+  "CHAT_INPUT_PLACEHOLDER": "在此处粘贴或输入内容\n按 Shift + Enter 开始新的一行",
+  "PHONE_NUMBER_INVALID": "手机号码格式无效",
+  "PHONE_NUMBER_PLACEHOLDER": "请输入手机号",
+  "SEND": "发送",
+  "SIGN_IN_PLEASE": "请先登录哦"
 }
