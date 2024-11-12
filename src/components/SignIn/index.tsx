@@ -1,4 +1,4 @@
-import { ChangeEvent, useRef, type FC } from 'react';
+import { ChangeEvent, useCallback, useRef, type FC } from 'react';
 import type { ICommonProps } from '@/types';
 import component from '@/hoc/component';
 import { cls } from '@shirtiny/utils/lib/style';
@@ -11,6 +11,8 @@ import FormItem from '../FormItem';
 import { HiOutlinePaperAirplane } from 'react-icons/hi2';
 import IconWrap from '@/components/Icon';
 import Button from '../Button';
+import { useImmer } from 'use-immer';
+import Timer from '../Timer';
 
 interface IProps extends ICommonProps {}
 
@@ -42,6 +44,8 @@ const controllerOptions = [
 ];
 
 const SignIn: FC<IProps> = ({ className, style = {}, ...rest }) => {
+  const [state, update] = useImmer({ waiting: false });
+
   const {
     controllers,
     formState: { validates },
@@ -56,7 +60,62 @@ const SignIn: FC<IProps> = ({ className, style = {}, ...rest }) => {
     valueControl: true,
   });
 
+  const handleSubmit = () => {
+    update((s) => {
+      s.waiting = true;
+    });
+  };
+
+  const handleTimerStop = useCallback(() => {
+    update((s) => {
+      s.waiting = false;
+    });
+  }, [update]);
+
   const { t } = GlobalContextStore.use();
+
+  const sign = (
+    <div className={css.form}>
+      <FormItem
+        errorMsg={
+          validates.phone &&
+          !validates.phone.phoneValid.pass &&
+          t('PHONE_NUMBER_INVALID')
+        }
+      >
+        <Input
+          className={css.input}
+          type="tel"
+          placeholder={t('PHONE_NUMBER_PLACEHOLDER')}
+          {...controllers.phone}
+        />
+      </FormItem>
+      {!!isPass(['phone']) && (
+        <Button
+          className={css.submit}
+          theme="primary"
+          withIcon
+          title={t('SEND')}
+          onClick={handleSubmit}
+        >
+          <IconWrap Icon={HiOutlinePaperAirplane} />
+        </Button>
+      )}
+    </div>
+  );
+
+  const verify = (
+    <div className={css.form}>
+      <Input
+        className={css.input}
+        type="text"
+        inputMode="numeric"
+        pattern="\d{1}"
+        autocomplete="one-time-code"
+      />
+      <Timer start={10} end={0} onStop={handleTimerStop} />
+    </div>
+  );
 
   return (
     <div
@@ -67,32 +126,7 @@ const SignIn: FC<IProps> = ({ className, style = {}, ...rest }) => {
       {...rest}
     >
       <div className={css.title}>{t('SIGN_IN_PLEASE')}</div>
-      <div className={css.form}>
-        <FormItem
-          errorMsg={
-            validates.phone &&
-            !validates.phone.phoneValid.pass &&
-            t('PHONE_NUMBER_INVALID')
-          }
-        >
-          <Input
-            className={css.input}
-            type="tel"
-            placeholder={t('PHONE_NUMBER_PLACEHOLDER')}
-            {...controllers.phone}
-          />
-        </FormItem>
-        {!!isPass(['phone']) && (
-          <Button
-            className={css.submit}
-            theme="primary"
-            withIcon
-            title={t('SEND')}
-          >
-            <IconWrap Icon={HiOutlinePaperAirplane} />
-          </Button>
-        )}
-      </div>
+      {state.waiting ? verify : sign}
     </div>
   );
 };
