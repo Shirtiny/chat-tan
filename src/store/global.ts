@@ -1,15 +1,15 @@
-import type { Draft, Immutable } from "immer";
-import { useCallback, useMemo, useReducer } from "react";
-import produce from "immer";
-import { updatedDiff } from "deep-object-diff";
-import { useTranslate } from "@tolgee/react";
+import type { Draft, Immutable } from 'immer';
+import { useCallback, useMemo, useReducer } from 'react';
+import produce from 'immer';
+import { updatedDiff } from 'deep-object-diff';
+import { useTranslate } from '@tolgee/react';
 
-import createContextStore from "@/store/contextStore";
-import useOnlineStatus from "@/hooks/useOnlineStatus";
-import useClientWidth from "@/hooks/useClientWidth";
-import theme, { ColorThemes } from "@/styles/theme";
-import env from "@/utils/env";
-import logger from "@/utils/logger";
+import createContextStore from '@/store/contextStore';
+import useOnlineStatus from '@/hooks/useOnlineStatus';
+import useClientWidth from '@/hooks/useClientWidth';
+import theme, { ColorThemes } from '@/styles/theme';
+import env from '@/utils/env';
+import logger from '@/utils/logger';
 
 type State = Immutable<{
   theme: ColorThemes;
@@ -26,14 +26,14 @@ export const globalInitialState: State = {
 const reducerWithImmer = produce<StateIndexed, [Action]>(
   (draft, { type, name, payload }) => {
     switch (type) {
-      case "set": {
+      case 'set': {
         draft[name] = payload;
         break;
       }
       default:
         break;
     }
-  }
+  },
 );
 
 const reducer = env.isDev()
@@ -48,7 +48,7 @@ const reducer = env.isDev()
           logger.globalState.action(action);
           logger.globalState.next(nextState);
           logger.globalState.changes(updatedDiff(state, nextState));
-        }
+        },
       );
 
       return nextState;
@@ -68,7 +68,7 @@ const useGlobalState = (initialState = globalInitialState) => {
 
   const toggleTheme = useCallback(() => {
     const newTheme = theme.toggleTheme();
-    dispatch({ type: "set", name: "theme", payload: newTheme });
+    dispatch({ type: 'set', name: 'theme', payload: newTheme });
   }, []);
 
   return {
